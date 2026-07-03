@@ -1,0 +1,41 @@
+name: Experiment proposal
+description: Propose a reproducible experiment
+title: "[EXP] "
+labels: ["type: experiment", "status: proposed"]
+body:
+  - type: input
+    id: rq
+    attributes:
+      label: Research question
+      placeholder: RQ-NNN
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+    validations:
+      required: true
+  - type: textarea
+    id: variables
+    attributes:
+      label: Variables and controls
+    validations:
+      required: true
+  - type: textarea
+    id: procedure
+    attributes:
+      label: Procedure
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence to capture
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Limitations, privacy, or redistribution risks
+

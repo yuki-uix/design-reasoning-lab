@@ -1,0 +1,20 @@
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+dist/
+build/
+.cache/
+.idea/
+.vscode/
+*.tmp
+*.swp
+
+# Local research material that has not been reviewed for publication
+private/
+scratch/
+
