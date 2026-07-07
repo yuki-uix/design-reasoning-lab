@@ -14,7 +14,8 @@ None yet.
 
 ## Related experiments
 
-None yet.
+- [EXP-20260707-001-ambiguity-ladder](../../experiments/claude-design/EXP-20260707-001-ambiguity-ladder.md) (planned)
+- [EXP-20260707-005-ambiguity-ladder-v0](../../experiments/v0/EXP-20260707-005-ambiguity-ladder-v0.md) (planned)
 
 ## Competing definitions
 

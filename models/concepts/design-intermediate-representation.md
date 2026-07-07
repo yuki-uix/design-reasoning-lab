@@ -14,7 +14,8 @@ None yet.
 
 ## Related experiments
 
-None yet.
+- [EXP-20260707-002-artifact-code-autopsy](../../experiments/claude-design/EXP-20260707-002-artifact-code-autopsy.md) (planned)
+- [EXP-20260707-003-cross-mode-consistency](../../experiments/claude-design/EXP-20260707-003-cross-mode-consistency.md) (planned)
 
 ## Competing definitions
 
