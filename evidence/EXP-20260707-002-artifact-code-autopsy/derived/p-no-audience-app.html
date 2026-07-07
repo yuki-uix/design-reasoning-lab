@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="0ad15e90-e7af-425b-8117-23ac64263d7d"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>/* hebrew */
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("0eaf2f30-1e3f-4889-bfe9-938d2c20e2e7") format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("20eac6ae-bc26-4bc3-b89f-88d9ce0ea411") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("cd96a78b-e788-4397-84cc-e4daffaf62f6") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* hebrew */
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("0eaf2f30-1e3f-4889-bfe9-938d2c20e2e7") format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("20eac6ae-bc26-4bc3-b89f-88d9ce0ea411") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("cd96a78b-e788-4397-84cc-e4daffaf62f6") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* hebrew */
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("0eaf2f30-1e3f-4889-bfe9-938d2c20e2e7") format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("20eac6ae-bc26-4bc3-b89f-88d9ce0ea411") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("cd96a78b-e788-4397-84cc-e4daffaf62f6") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("554ab90f-3be2-4541-b980-fee53bc1ad3f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("a6659e93-aa66-4b31-8e91-851d5d46d21f") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("360b778a-bd41-4785-9115-43739e25cfd7") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("875e3cf2-ba88-41f0-995c-2c3e66383f27") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("b7899126-fb32-4146-bae7-9b54e6b7fb08") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("e0683f8e-da09-483f-a83e-d33c3dd13bff") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fda785ea-0b23-49e0-ae45-af391a7dca5c") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("554ab90f-3be2-4541-b980-fee53bc1ad3f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("a6659e93-aa66-4b31-8e91-851d5d46d21f") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("360b778a-bd41-4785-9115-43739e25cfd7") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("875e3cf2-ba88-41f0-995c-2c3e66383f27") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("b7899126-fb32-4146-bae7-9b54e6b7fb08") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("e0683f8e-da09-483f-a83e-d33c3dd13bff") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fda785ea-0b23-49e0-ae45-af391a7dca5c") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("554ab90f-3be2-4541-b980-fee53bc1ad3f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("a6659e93-aa66-4b31-8e91-851d5d46d21f") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("360b778a-bd41-4785-9115-43739e25cfd7") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("875e3cf2-ba88-41f0-995c-2c3e66383f27") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("b7899126-fb32-4146-bae7-9b54e6b7fb08") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("e0683f8e-da09-483f-a83e-d33c3dd13bff") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fda785ea-0b23-49e0-ae45-af391a7dca5c") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  @keyframes bounceCheck { 0% { transform: scale(1); } 35% { transform: scale(1.18); } 60% { transform: scale(0.94); } 100% { transform: scale(1); } }
+  @keyframes popIn { 0% { transform: scale(0.85); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+  input[type="time"] { font-family: 'Inter', sans-serif; }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; background: oklch(94% 0.014 75); font-family: 'Inter', system-ui, sans-serif; padding: 32px 16px;">
+  <div style="width: 420px; max-width: 100%; height: 860px; max-height: 92vh; background: oklch(98.5% 0.006 75); border-radius: 36px; box-shadow: 0 30px 60px -20px oklch(30% 0.02 60 / 0.25), 0 2px 8px oklch(30% 0.02 60 / 0.08); overflow: hidden; display: flex; flex-direction: column; position: relative; border: 1px solid oklch(91% 0.012 75);">
+
+    <!-- TODAY SCREEN -->
+    <sc-if value="{{ isToday }}" hint-placeholder-val="{{ true }}">
+      <div data-screen-label="Today" style="flex: 1; overflow-y: auto; padding: 32px 24px 24px;">
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 4px;">
+          <div>
+            <div style="font: 600 26px/1.2 'Fredoka', sans-serif; color: oklch(28% 0.02 50);">{{ greeting }}</div>
+            <div style="font: 400 14px/1.4 'Inter', sans-serif; color: oklch(55% 0.02 55); margin-top: 2px;">{{ todayDateLabel }}</div>
+          </div>
+          <button onclick="{{ startNewHabit }}" style="width: 44px; height: 44px; border-radius: 14px; border: none; background: oklch(58% 0.08 150); color: white; font: 600 22px/1 'Inter', sans-serif; cursor: pointer; flex-shrink: 0;" style-hover="background: oklch(52% 0.08 150);">+</button>
+        </div>
+
+        <div style="margin-top: 20px; padding: 16px 18px; background: oklch(93% 0.035 150); border-radius: 20px; display: flex; align-items: center; gap: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: oklch(98.5% 0.006 75); display: flex; align-items: center; justify-content: center; font: 600 14px 'Fredoka', sans-serif; color: oklch(46% 0.08 150); flex-shrink: 0;">{{ progressFraction }}</div>
+          <div style="font: 500 14px/1.4 'Inter', sans-serif; color: oklch(35% 0.03 130);">{{ progressMessage }}</div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 20px;">
+          <sc-for list="{{ habits }}" as="habit" hint-placeholder-count="4">
+            <div style="{{ habit.cardStyle }}">
+              <div style="{{ habit.iconStyle }}">{{ habit.initial }}</div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="{{ habit.nameStyle }}">{{ habit.name }}</div>
+                <div style="font: 400 13px/1.4 'Inter', sans-serif; color: oklch(55% 0.02 55); margin-top: 2px;">{{ habit.timeLabel }} · {{ habit.streakLabel }}</div>
+              </div>
+              <button onclick="{{ habit.toggle }}" style="{{ habit.checkStyle }}">{{ habit.checkMark }}</button>
+            </div>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ allDone }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 24px; padding: 28px 22px; background: oklch(98.5% 0.006 75); border: 1.5px dashed oklch(70% 0.06 150); border-radius: 22px; text-align: center; animation: popIn 0.4s ease;">
+            <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 14px;">
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: oklch(80% 0.05 145);"></div>
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: oklch(70% 0.07 150); margin-top: 6px;"></div>
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: oklch(80% 0.05 155);"></div>
+            </div>
+            <div style="font: 600 18px 'Fredoka', sans-serif; color: oklch(30% 0.03 130); margin-bottom: 6px;">All done for today</div>
+            <div style="font: 400 14px/1.5 'Inter', sans-serif; color: oklch(50% 0.02 55);">Nice work showing up for yourself. See you tomorrow.</div>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <!-- WEEKLY SCREEN -->
+    <sc-if value="{{ isWeekly }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Weekly" style="flex: 1; overflow-y: auto; padding: 32px 24px 24px;">
+        <div style="font: 600 26px/1.2 'Fredoka', sans-serif; color: oklch(28% 0.02 50);">This week</div>
+        <div style="font: 400 14px/1.4 'Inter', sans-serif; color: oklch(55% 0.02 55); margin-top: 4px;">{{ weekRangeLabel }}</div>
+
+        <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 24px;">
+          <sc-for list="{{ weeklyHabits }}" as="habit" hint-placeholder-count="4">
+            <div style="background: oklch(98.5% 0.006 75); border: 1px solid oklch(91% 0.012 75); border-radius: 20px; padding: 18px 18px 16px;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+                <div style="{{ habit.dotStyle }}"></div>
+                <div style="font: 600 15px 'Fredoka', sans-serif; color: oklch(28% 0.02 50); flex: 1;">{{ habit.name }}</div>
+                <div style="font: 500 12.5px 'Inter', sans-serif; color: oklch(46% 0.08 150);">{{ habit.streakLabel }}</div>
+              </div>
+              <div style="display: flex; justify-content: space-between; gap: 6px;">
+                <sc-for list="{{ habit.week }}" as="day" hint-placeholder-count="7">
+                  <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;">
+                    <div style="font: 500 11px 'Inter', sans-serif; color: oklch(60% 0.02 55);">{{ day.label }}</div>
+                    <div style="{{ day.dotStyle }}"></div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="margin-top: 22px; padding: 18px; background: oklch(93% 0.035 150); border-radius: 18px; font: 400 13.5px/1.6 'Inter', sans-serif; color: oklch(35% 0.03 130); text-align: center;">
+          {{ weeklyEncouragement }}
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- NEW HABIT WIZARD -->
+    <sc-if value="{{ isNew }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="New Habit" style="flex: 1; overflow-y: auto; padding: 28px 24px 24px; display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+          <button onclick="{{ cancelWizard }}" style="width: 36px; height: 36px; border-radius: 12px; border: none; background: oklch(93% 0.012 75); color: oklch(40% 0.02 55); font: 600 16px 'Inter', sans-serif; cursor: pointer;">✕</button>
+          <div style="font: 500 13px 'Inter', sans-serif; color: oklch(55% 0.02 55);">{{ stepLabel }}</div>
+          <div style="width: 36px;"></div>
+        </div>
+
+        <div style="display: flex; gap: 6px; margin: 18px 0 26px;">
+          <sc-for list="{{ stepDots }}" as="dot" hint-placeholder-count="3">
+            <div style="{{ dot.style }}"></div>
+          </sc-for>
+        </div>
+
+        <!-- STEP 1: NAME -->
+        <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
+          <div style="font: 600 22px 'Fredoka', sans-serif; color: oklch(28% 0.02 50); margin-bottom: 8px;">What habit would you like to build?</div>
+          <div style="font: 400 14px/1.5 'Inter', sans-serif; color: oklch(55% 0.02 55); margin-bottom: 20px;">Pick something small and specific — it's easier to keep going.</div>
+          <input type="text" placeholder="e.g. Drink a glass of water" value="{{ draftName }}" onchange="{{ updateDraftName }}" style="width: 100%; padding: 16px 18px; border-radius: 16px; border: 1.5px solid oklch(88% 0.012 75); background: white; font: 500 16px 'Inter', sans-serif; color: oklch(28% 0.02 50); outline: none;" style-focus="border-color: oklch(58% 0.08 150);">
+        </sc-if>
+
+        <!-- STEP 2: SCHEDULE -->
+        <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
+          <div style="font: 600 22px 'Fredoka', sans-serif; color: oklch(28% 0.02 50); margin-bottom: 8px;">When should this happen?</div>
+          <div style="font: 400 14px/1.5 'Inter', sans-serif; color: oklch(55% 0.02 55); margin-bottom: 18px;">Choose the days that work for you.</div>
+          <button onclick="{{ selectEveryDay }}" style="{{ everyDayStyle }}">Every day</button>
+          <div style="display: flex; gap: 8px; margin-top: 14px;">
+            <sc-for list="{{ dayOptions }}" as="day" hint-placeholder-count="7">
+              <button onclick="{{ day.toggle }}" style="{{ day.style }}">{{ day.label }}</button>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <!-- STEP 3: REMINDER -->
+        <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ false }}">
+          <div style="font: 600 22px 'Fredoka', sans-serif; color: oklch(28% 0.02 50); margin-bottom: 8px;">When's a good time to remind you?</div>
+          <div style="font: 400 14px/1.5 'Inter', sans-serif; color: oklch(55% 0.02 55); margin-bottom: 18px;">A gentle nudge — you can always change this later.</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <sc-for list="{{ presetOptions }}" as="preset" hint-placeholder-count="4">
+              <button onclick="{{ preset.select }}" style="{{ preset.style }}">
+                <span>{{ preset.label }}</span>
+                <span style="font: 400 13px 'Inter', sans-serif; opacity: 0.7;">{{ preset.sublabel }}</span>
+              </button>
+            </sc-for>
+          </div>
+          <sc-if value="{{ showCustomTime }}" hint-placeholder-val="{{ false }}">
+            <input type="time" value="{{ customTime }}" onchange="{{ updateCustomTime }}" style="margin-top: 14px; width: 100%; padding: 14px 18px; border-radius: 16px; border: 1.5px solid oklch(88% 0.012 75); background: white; font: 500 16px 'Inter', sans-serif; color: oklch(28% 0.02 50); outline: none;">
+          </sc-if>
+        </sc-if>
+
+        <div style="flex: 1;"></div>
+
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+          <sc-if value="{{ showBack }}" hint-placeholder-val="{{ false }}">
+            <button onclick="{{ goBack }}" style="flex: 0 0 auto; padding: 16px 22px; border-radius: 16px; border: 1.5px solid oklch(88% 0.012 75); background: white; color: oklch(40% 0.02 55); font: 600 15px 'Inter', sans-serif; cursor: pointer;">Back</button>
+          </sc-if>
+          <button onclick="{{ primaryAction }}" disabled="{{ primaryDisabled }}" style="{{ primaryButtonStyle }}">{{ primaryLabel }}</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- BOTTOM NAV -->
+    <div style="display: flex; align-items: center; justify-content: space-around; padding: 12px 20px 18px; border-top: 1px solid oklch(91% 0.012 75); background: oklch(98.5% 0.006 75); flex-shrink: 0;">
+      <sc-for list="{{ navItems }}" as="nav" hint-placeholder-count="3">
+        <button onclick="{{ nav.onClick }}" style="display: flex; flex-direction: column; align-items: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px 18px;">
+          <div style="{{ nav.iconStyle }}"></div>
+          <div style="{{ nav.labelStyle }}">{{ nav.label }}</div>
+        </button>
+      </sc-for>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+const WEEKDAY_LABELS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+const WEEKDAY_FULL = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const GREEN = 150;
+
+function formatTime24to12(hhmm) {
+  if (!hhmm) return '';
+  const [h, m] = hhmm.split(':').map(Number);
+  const period = h >= 12 ? 'PM' : 'AM';
+  let hour = h % 12;
+  if (hour === 0) hour = 12;
+  return hour + ':' + String(m).padStart(2, '0') + ' ' + period;
+}
+
+function scheduleLabel(days) {
+  if (days.every(d => d)) return 'Every day';
+  const picked = days.map((d, i) => d ? WEEKDAY_FULL[i] : null).filter(Boolean);
+  if (picked.length === 0) return 'No days set';
+  return picked.join(', ');
+}
+
+class Component extends DCLogic {
+  state = {
+    screen: 'today',
+    habits: [
+      { id: 1, name: 'Drink water', hue: 145, timeLabel: '8:00 AM', streak: 12, history: [true, true, true, true, true, true, false] },
+      { id: 2, name: 'Morning walk', hue: 150, timeLabel: '7:30 AM', streak: 4, history: [false, true, true, true, true, true, true] },
+      { id: 3, name: 'Read 10 pages', hue: 160, timeLabel: '9:00 PM', streak: 21, history: [true, true, false, true, true, true, true] },
+      { id: 4, name: 'Stretch', hue: 132, timeLabel: '6:30 AM', streak: 2, history: [false, false, true, true, false, true, false] },
+    ],
+    wizardStep: 1,
+    draft: { name: '', days: [false, false, false, false, false, false, false], reminderPreset: null, customTime: '' },
+    justCompletedId: null,
+  };
+
+  setScreen = (s) => this.setState({ screen: s });
+
+  startNewHabit = () => this.setState({
+    screen: 'new',
+    wizardStep: 1,
+    draft: { name: '', days: [false, false, false, false, false, false, false], reminderPreset: null, customTime: '' },
+  });
+
+  cancelWizard = () => this.setState({ screen: 'today' });
+
+  toggleComplete = (id) => {
+    this.setState(s => ({
+      habits: s.habits.map(h => {
+        if (h.id !== id) return h;
+        const hist = h.history.slice();
+        const wasDone = hist[6];
+        hist[6] = !wasDone;
+        return { ...h, history: hist, streak: wasDone ? Math.max(0, h.streak - 1) : h.streak + 1 };
+      }),
+      justCompletedId: id,
+    }));
+    setTimeout(() => this.setState(s => s.justCompletedId === id ? { justCompletedId: null } : {}), 450);
+  };
+
+  updateDraftName = (e) => {
+    const val = e.target.value;
+    this.setState(s => ({ draft: { ...s.draft, name: val } }));
+  };
+
+  toggleDay = (index) => {
+    this.setState(s => {
+      const days = s.draft.days.slice();
+      days[index] = !days[index];
+      return { draft: { ...s.draft, days } };
+    });
+  };
+
+  selectEveryDay = () => {
+    this.setState(s => ({ draft: { ...s.draft, days: [true, true, true, true, true, true, true] } }));
+  };
+
+  selectPreset = (preset) => {
+    this.setState(s => ({ draft: { ...s.draft, reminderPreset: preset } }));
+  };
+
+  updateCustomTime = (e) => {
+    const val = e.target.value;
+    this.setState(s => ({ draft: { ...s.draft, customTime: val } }));
+  };
+
+  goNext = () => this.setState(s => ({ wizardStep: s.wizardStep + 1 }));
+  goBack = () => this.setState(s => ({ wizardStep: s.wizardStep - 1 }));
+
+  createHabit = () => {
+    const d = this.state.draft;
+    let timeLabel;
+    if (d.reminderPreset === 'Morning') timeLabel = '7:00 AM';
+    else if (d.reminderPreset === 'Afternoon') timeLabel = '1:00 PM';
+    else if (d.reminderPreset === 'Evening') timeLabel = '7:00 PM';
+    else timeLabel = formatTime24to12(d.customTime) || 'No reminder';
+
+    const hues = [145, 150, 160, 132, 140, 155];
+    const newHabit = {
+      id: Date.now(),
+      name: d.name.trim(),
+      hue: hues[this.state.habits.length % hues.length],
+      timeLabel,
+      streak: 0,
+      history: d.days.slice(),
+    };
+    newHabit.history[6] = false;
+    this.setState(s => ({ habits: [...s.habits, newHabit], screen: 'today' }));
+  };
+
+  renderVals() {
+    const s = this.state;
+    const today = new Date();
+    const hour = today.getHours();
+    const greeting = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+    const todayDateLabel = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+
+    const habits = s.habits.map(h => {
+      const done = h.history[6];
+      const bounce = s.justCompletedId === h.id ? 'animation: bounceCheck 0.4s ease;' : '';
+      return {
+        id: h.id,
+        name: h.name,
+        initial: h.name.trim().charAt(0).toUpperCase(),
+        timeLabel: h.timeLabel,
+        streakLabel: h.streak === 0 ? 'New habit' : h.streak + ' day streak',
+        checkMark: done ? '✓' : '',
+        toggle: () => this.toggleComplete(h.id),
+        cardStyle: `display:flex; align-items:center; gap:14px; padding:16px; border-radius:20px; background:${done ? `oklch(96% 0.02 ${h.hue})` : 'oklch(98.5% 0.006 75)'}; border:1px solid ${done ? `oklch(88% 0.03 ${h.hue})` : 'oklch(91% 0.012 75)'}; transition: background 0.25s ease, border-color 0.25s ease;`,
+        iconStyle: `width:42px; height:42px; border-radius:14px; background:oklch(90% 0.045 ${h.hue}); color:oklch(38% 0.06 ${h.hue}); display:flex; align-items:center; justify-content:center; font:600 16px 'Fredoka', sans-serif; flex-shrink:0;`,
+        nameStyle: `font:600 15.5px 'Fredoka', sans-serif; color:oklch(28% 0.02 50); ${done ? 'text-decoration: line-through; text-decoration-color: oklch(70% 0.03 ' + h.hue + ');' : ''}`,
+        checkStyle: `width:44px; height:44px; border-radius:50%; flex-shrink:0; cursor:pointer; border:2px solid ${done ? `oklch(58% 0.08 ${h.hue})` : 'oklch(85% 0.015 75)'}; background:${done ? `oklch(58% 0.08 ${h.hue})` : 'white'}; color:white; font:700 18px sans-serif; display:flex; align-items:center; justify-content:center; ${bounce}`,
+      };
+    });
+
+    const doneCount = habits.filter(h => h.checkMark === '✓').length;
+    const totalCount = habits.length;
+    const allDone = totalCount > 0 && doneCount === totalCount;
+    const progressMessage = allDone
+      ? "You've completed every habit today."
+      : doneCount === 0
+        ? `${totalCount} habit${totalCount === 1 ? '' : 's'} waiting for you today.`
+        : `${doneCount} of ${totalCount} done — keep going.`;
+
+    const weekDates = [];
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(today);
+      d.setDate(today.getDate() - (6 - i));
+      weekDates.push(d);
+    }
+    const weekRangeLabel = weekDates[0].toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' – ' + weekDates[6].toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+    const weeklyHabits = s.habits.map(h => ({
+      name: h.name,
+      streakLabel: h.streak === 0 ? 'New' : h.streak + ' day streak',
+      dotStyle: `width:9px; height:9px; border-radius:50%; background:oklch(60% 0.07 ${h.hue}); flex-shrink:0;`,
+      week: h.history.map((done, i) => ({
+        label: WEEKDAY_LABELS[i],
+        dotStyle: `width:30px; height:30px; border-radius:10px; background:${done ? `oklch(60% 0.08 ${h.hue})` : 'oklch(93% 0.012 75)'}; ${i === 6 ? `box-shadow: 0 0 0 2px oklch(98.5% 0.006 75), 0 0 0 3.5px oklch(60% 0.08 ${h.hue});` : ''}`,
+      })),
+    }));
+
+    const weekDoneTotal = s.habits.reduce((sum, h) => sum + h.history.filter(Boolean).length, 0);
+    const weekPossible = s.habits.length * 7;
+    const weeklyEncouragement = weekDoneTotal >= weekPossible * 0.7
+      ? "Strong week — you're building real momentum."
+      : "Every check-in counts, even the small ones. Keep at your own pace.";
+
+    const draft = s.draft;
+    const dayOptions = draft.days.map((selected, i) => ({
+      label: WEEKDAY_LABELS[i],
+      toggle: () => this.toggleDay(i),
+      style: `width:40px; height:40px; border-radius:12px; border:1.5px solid ${selected ? 'oklch(58% 0.08 150)' : 'oklch(88% 0.012 75)'}; background:${selected ? 'oklch(58% 0.08 150)' : 'white'}; color:${selected ? 'white' : 'oklch(40% 0.02 55)'}; font:600 13px 'Inter', sans-serif; cursor:pointer;`,
+    }));
+    const everyDayStyle = `width:100%; padding:14px; border-radius:16px; border:1.5px solid ${draft.days.every(d => d) ? 'oklch(58% 0.08 150)' : 'oklch(88% 0.012 75)'}; background:${draft.days.every(d => d) ? 'oklch(93% 0.035 150)' : 'white'}; color:${draft.days.every(d => d) ? 'oklch(40% 0.08 150)' : 'oklch(40% 0.02 55)'}; font:600 14.5px 'Inter', sans-serif; cursor:pointer; text-align:center;`;
+
+    const presetDefs = [
+      { key: 'Morning', label: 'Morning', sublabel: '7:00 AM' },
+      { key: 'Afternoon', label: 'Afternoon', sublabel: '1:00 PM' },
+      { key: 'Evening', label: 'Evening', sublabel: '7:00 PM' },
+      { key: 'Custom', label: 'Custom time', sublabel: 'Pick your own' },
+    ];
+    const presetOptions = presetDefs.map(p => {
+      const selected = draft.reminderPreset === p.key;
+      return {
+        label: p.label,
+        sublabel: p.sublabel,
+        select: () => this.selectPreset(p.key),
+        style: `width:100%; padding:15px 18px; border-radius:16px; border:1.5px solid ${selected ? 'oklch(58% 0.08 150)' : 'oklch(88% 0.012 75)'}; background:${selected ? 'oklch(93% 0.035 150)' : 'white'}; color:${selected ? 'oklch(38% 0.08 150)' : 'oklch(30% 0.02 50)'}; font:600 15px 'Inter', sans-serif; cursor:pointer; display:flex; align-items:center; justify-content:space-between; text-align:left;`,
+      };
+    });
+
+    const isStep1 = s.wizardStep === 1;
+    const isStep2 = s.wizardStep === 2;
+    const isStep3 = s.wizardStep === 3;
+    const stepLabels = ['Name', 'Schedule', 'Reminder'];
+    const stepDots = [1, 2, 3].map(n => ({
+      style: `flex:1; height:5px; border-radius:3px; background:${n <= s.wizardStep ? 'oklch(58% 0.08 150)' : 'oklch(90% 0.012 75)'};`,
+    }));
+
+    const canProceedStep1 = draft.name.trim().length > 0;
+    const canProceedStep2 = draft.days.some(d => d);
+    const canProceedStep3 = draft.reminderPreset && (draft.reminderPreset !== 'Custom' || draft.customTime);
+
+    let primaryLabel, primaryAction, primaryDisabled;
+    if (isStep1) { primaryLabel = 'Next'; primaryAction = this.goNext; primaryDisabled = !canProceedStep1; }
+    else if (isStep2) { primaryLabel = 'Next'; primaryAction = this.goNext; primaryDisabled = !canProceedStep2; }
+    else { primaryLabel = 'Create habit'; primaryAction = this.createHabit; primaryDisabled = !canProceedStep3; }
+
+    const primaryButtonStyle = `flex:1; padding:16px 22px; border-radius:16px; border:none; background:${primaryDisabled ? 'oklch(90% 0.012 75)' : 'oklch(58% 0.08 150)'}; color:${primaryDisabled ? 'oklch(65% 0.01 75)' : 'white'}; font:600 15.5px 'Inter', sans-serif; cursor:${primaryDisabled ? 'default' : 'pointer'};`;
+
+    const navItems = [
+      { key: 'today', label: 'Today', onClick: () => this.setScreen('today') },
+      { key: 'weekly', label: 'Weekly', onClick: () => this.setScreen('weekly') },
+      { key: 'new', label: 'Add', onClick: this.startNewHabit },
+    ].map(n => {
+      const active = s.screen === n.key || (n.key === 'new' && s.screen === 'new');
+      let iconStyle;
+      if (n.key === 'today') iconStyle = `width:20px; height:20px; border-radius:50%; background:${active ? 'oklch(58% 0.08 150)' : 'none'}; border:2px solid ${active ? 'oklch(58% 0.08 150)' : 'oklch(65% 0.015 60)'};`;
+      else if (n.key === 'weekly') iconStyle = `width:20px; height:14px; background: linear-gradient(to top, ${active ? 'oklch(58% 0.08 150)' : 'oklch(65% 0.015 60)'} 60%, transparent 60%) no-repeat; background-size: 4px 100%, 4px 70%, 4px 100%; background-position: 0 bottom, 8px bottom, 16px bottom; background-repeat: no-repeat;`;
+      else iconStyle = `width:20px; height:20px; position:relative;`;
+      return {
+        label: n.label,
+        onClick: n.onClick,
+        iconStyle,
+        labelStyle: `font:600 11px 'Inter', sans-serif; color:${active ? 'oklch(46% 0.08 150)' : 'oklch(60% 0.015 60)'};`,
+      };
+    });
+
+    return {
+      isToday: s.screen === 'today',
+      isWeekly: s.screen === 'weekly',
+      isNew: s.screen === 'new',
+      greeting, todayDateLabel,
+      startNewHabit: this.startNewHabit,
+      progressFraction: doneCount + '/' + totalCount,
+      progressMessage,
+      habits,
+      allDone,
+      weekRangeLabel,
+      weeklyHabits,
+      weeklyEncouragement,
+      cancelWizard: this.cancelWizard,
+      stepLabel: 'Step ' + s.wizardStep + ' of 3: ' + stepLabels[s.wizardStep - 1],
+      stepDots,
+      isStep1, isStep2, isStep3,
+      draftName: draft.name,
+      updateDraftName: this.updateDraftName,
+      dayOptions,
+      everyDayStyle,
+      selectEveryDay: this.selectEveryDay,
+      presetOptions,
+      showCustomTime: draft.reminderPreset === 'Custom',
+      customTime: draft.customTime,
+      updateCustomTime: this.updateCustomTime,
+      showBack: s.wizardStep > 1,
+      goBack: this.goBack,
+      primaryAction, primaryLabel, primaryDisabled, primaryButtonStyle,
+      navItems,
+    };
+  }
+}
+
+</script>
+
+
+</body></html>

@@ -3,7 +3,7 @@ id: EXP-20260707-002-artifact-code-autopsy
 product: claude-design
 date: 2026-07-07
 researcher: yuki
-status: planned
+status: in-progress
 protocol: protocols/behavioral-observation-v1.md
 research_question: research/questions/RQ-002-intermediate-representation.md
 ---
@@ -52,7 +52,8 @@ Same as the source run: fresh session, no design system, no uploads.
 
 ## Deviations
 
-None.
+1. Scope expanded beyond pre-registration: standalone exports were captured for all five EXP-001 conditions, not only P-FULL, enabling cross-run comparison. Preliminary structural findings are recorded in OBS-20260708-008 and OBS-20260708-009.
+2. Code was obtained via the product's standalone export (a bundler wrapper); templates were extracted by decoding the bundle rather than via Claude Code hand-off. The hand-off comparison remains to be done.
 
 ## Observations
 

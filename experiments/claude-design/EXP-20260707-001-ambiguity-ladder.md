@@ -3,7 +3,7 @@ id: EXP-20260707-001-ambiguity-ladder
 product: claude-design
 date: 2026-07-07
 researcher: yuki
-status: planned
+status: completed
 protocol: protocols/behavioral-observation-v1.md
 research_question: research/questions/RQ-001-intent-to-artifact.md
 ---
@@ -68,11 +68,28 @@ Fresh Claude Design session per condition; no design system connected; no upload
 
 ## Deviations
 
-None.
+1. A pilot P-FULL run was executed with the researcher's design system ("Nice Try 01") attached, violating the registered initial state. It was discarded and re-run clean; the pilot is documented in the manifest's Missing evidence and in OBS-20260708-002 (its question set differed from the official run's).
+2. The registered response policy assumed conversational questions; the product presented structured forms instead. "Use your best judgment." was entered via each question's free-text affordance, preserving the policy's wording.
+3. Evidence was captured into a working folder and renamed on ingestion (`p-value-*` → `p-vague-*`; P-FULL export gained its condition prefix); see manifest Transformations.
+4. The P-VAGUE run occurred at 92% of a session usage limit (banner captured); its artifact was exported the following morning.
+5. Process logs were not fully expanded before every capture, so starter/plan lines may be under-observed in early runs (see OBS-20260708-010).
 
 ## Observations
 
-Link atomic observation records. Do not interpret behavior in this section.
+- [OBS-20260708-001-structured-intake-form](../../observations/OBS-20260708-001-structured-intake-form.md)
+- [OBS-20260708-002-intake-schema-per-run](../../observations/OBS-20260708-002-intake-schema-per-run.md)
+- [OBS-20260708-003-question-count-flat-altitude-varies](../../observations/OBS-20260708-003-question-count-flat-altitude-varies.md)
+- [OBS-20260708-004-audience-removed-silent-default](../../observations/OBS-20260708-004-audience-removed-silent-default.md)
+- [OBS-20260708-005-content-removed-triggers-questions](../../observations/OBS-20260708-005-content-removed-triggers-questions.md)
+- [OBS-20260708-006-style-removed-triggers-style-questions](../../observations/OBS-20260708-006-style-removed-triggers-style-questions.md)
+- [OBS-20260708-007-unspecified-dimensions-become-controls](../../observations/OBS-20260708-007-unspecified-dimensions-become-controls.md)
+- [OBS-20260708-008-proprietary-artifact-dsl](../../observations/OBS-20260708-008-proprietary-artifact-dsl.md)
+- [OBS-20260708-009-color-system-oscillates](../../observations/OBS-20260708-009-color-system-oscillates.md)
+- [OBS-20260708-010-starters-and-verifier](../../observations/OBS-20260708-010-starters-and-verifier.md)
+- [OBS-20260708-011-self-qa-loop](../../observations/OBS-20260708-011-self-qa-loop.md)
+- [OBS-20260708-012-spec-propagation](../../observations/OBS-20260708-012-spec-propagation.md)
+- [OBS-20260708-013-sliders-mirror-spec-ranges](../../observations/OBS-20260708-013-sliders-mirror-spec-ranges.md)
+- [OBS-20260708-014-branding-fills-vacuum](../../observations/OBS-20260708-014-branding-fills-vacuum.md)
 
 ## Evidence
 
@@ -84,13 +101,17 @@ Questioning tracks a cost-of-error × inferability trade-off: removing audience 
 
 Alternative explanations to keep open: a fixed question script independent of prompt content; question count driven by prompt length rather than missing dimensions.
 
+### Outcome
+
+Partially falsified. The "fixed question script" alternative is falsified (OBS-002). The predicted question gradient did not appear: question count stayed roughly flat across conditions (OBS-003), audience removal triggered no question (OBS-004), while content and style removal both triggered questions (OBS-005, OBS-006). The cost-of-error × inferability framing survives only if reformulated: ambiguity changes the altitude of a roughly fixed question budget, and elicitation operates exclusively through artifact-level questions — abstract brief dimensions like audience are never asked directly, only reached via concrete proxies.
+
 ## Conclusion
 
-Not yet run.
+Supported by evidence: elicitation is a per-run generated, parameterized intake form with delegation as a first-class primitive (OBS-001, OBS-002); the question budget is roughly constant and its altitude tracks ambiguity (OBS-003); the observed decision boundary is audience→assume, content/style→ask (OBS-004–006); given specifications propagate into distant decisions and their absence widens the artifact's decision space, up to invented branding (OBS-012, OBS-014); unresolved freedoms are parameterized into controls at intake (sliders, OBS-013) and at runtime (Tweaks, OBS-007). Not supported / revised: the pre-registered question gradient; the single-run oklch token inference (falsified as a stable mechanism by OBS-009). Confidence: moderate for the boundary shape (single run per condition), high for the intake-form mechanism and artifact format (replicated ×5).
 
 ## Limitations
 
-Single intent domain (habit tracking); single run per condition; product is a research preview and behavior may change between access dates.
+Single intent domain (habit tracking); single run per condition, and OBS-002 shows within-condition variance exists, so per-condition question sets should not be over-read; product is a research preview (Sonnet 5 Medium visible) and behavior may change between access dates; process logs were inconsistently expanded at capture time.
 
 ## Next experiment
 
