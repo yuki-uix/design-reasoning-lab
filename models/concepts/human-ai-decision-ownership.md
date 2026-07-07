@@ -14,7 +14,7 @@ None yet.
 
 ## Related experiments
 
-None yet.
+- [EXP-20260707-004-slider-comment-ownership](../../experiments/claude-design/EXP-20260707-004-slider-comment-ownership.md) (planned)
 
 ## Open questions
 
