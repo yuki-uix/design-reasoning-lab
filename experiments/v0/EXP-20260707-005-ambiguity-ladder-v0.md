@@ -3,7 +3,7 @@ id: EXP-20260707-005-ambiguity-ladder-v0
 product: v0
 date: 2026-07-07
 researcher: yuki
-status: planned
+status: in-progress
 protocol: protocols/behavioral-observation-v1.md
 research_question: research/questions/RQ-001-intent-to-artifact.md
 ---
@@ -47,11 +47,17 @@ Fresh v0 session per condition; no connected repositories or design context.
 
 ## Deviations
 
-None.
+1. Only the P-FULL condition has been run (2026-07-08); the four removed-dimension conditions are pending, so the ladder is incomplete and the hypothesis is not yet adjudicable.
+2. The run used an anonymous v0 "Drafts" session (not signed in), so the registered "account tier" is recorded as anonymous; no model/version indicator is exposed anywhere in v0's UI.
+3. The phrase "high-fidelity prototype" was kept verbatim (v0 has no mode selector, and keeping the registered wording is the byte-identical default; the registered permission to drop it was not needed).
+4. Evidence was captured into a working folder `evidence/0708/` and reorganized on ingestion; see manifest Transformations.
 
 ## Observations
 
-Link atomic observation records. Do not interpret behavior in this section.
+- [OBS-20260709-015-v0-generates-without-questions](../../observations/OBS-20260709-015-v0-generates-without-questions.md)
+- [OBS-20260709-016-v0-self-qa-browser-loop](../../observations/OBS-20260709-016-v0-self-qa-browser-loop.md)
+- [OBS-20260709-017-v0-invents-brand-and-persona](../../observations/OBS-20260709-017-v0-invents-brand-and-persona.md)
+- [OBS-20260709-021-cross-product-design-language-convergence](../../observations/OBS-20260709-021-cross-product-design-language-convergence.md)
 
 ## Evidence
 
@@ -61,9 +67,25 @@ See `evidence/EXP-20260707-005-ambiguity-ladder-v0/manifest.md`.
 
 v0 generates immediately across all conditions, resolving ambiguity by assumption rather than by question, while Claude Design shifts from generating to asking as dimensions are removed. Falsified if v0's questioning behavior matches Claude Design's, which would indicate the elicitation pattern is generic to the category rather than a Claude Design design choice.
 
+### Outcome (partial)
+
+Consistent so far, but not yet discriminating. On P-FULL, v0 generated immediately with zero questions (OBS-20260709-015), where Claude Design raised a 7-question intake form — matching the hypothesis's v0 half in the one condition where any tool has the least reason to ask. The falsification test lives in the removed-dimension conditions, which have not been run.
+
+## Side-by-side, P-FULL only
+
+| Measure | Claude Design (EXP-001) | v0 (this run) |
+| --- | --- | --- |
+| Questions before generation | 7-question intake form, all delegated | none (OBS-20260709-015) |
+| Generation proceeds unprompted | after form submission | yes, single turn |
+| Time to artifact | not precisely recorded | "Worked for 5m 11s" (product's own counter) |
+| Visible plan/brief | intake form echo | "Generated design direction" step, contents not shown |
+| Self-QA | verifier/fix pass (OBS-20260708-011) | embedded-browser verification with screenshots (OBS-20260709-016) |
+| Brand/persona invention | none on P-FULL; "Sprout" only under P-NO-CONTENT | "Little Wins" + persona "Riley" on P-FULL (OBS-20260709-017) |
+| Design language | warm base + sage green, oklch (this run) | same structure, Nunito + oklch (OBS-20260709-021) |
+
 ## Conclusion
 
-Not yet run.
+Partial (1 of 5 conditions). The P-FULL contrast is as hypothesized: v0 resolves everything by assumption and asks nothing, while Claude Design elicits even a fully specified brief through its intake form. What v0 assumed and Claude Design also assumed converge on the same design language (OBS-20260709-021), and both products self-QA (OBS-20260709-016) — so the candidate Claude Design-distinctive behavior narrows to elicitation itself, pending the four remaining conditions.
 
 ## Limitations
 

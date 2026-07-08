@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="5355e4f3-e668-414d-89f0-8b0b13923ece"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("f907b55e-ed5b-49df-bf17-cce29879fc88") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("f17ca0ce-1401-47e5-9979-f216fabf5150") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("2e7e2ffd-6f05-474f-992e-8a00c8c01c60") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("c0a9794f-648c-4a59-815c-11273de5f5ca") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("a2beeb37-d8b3-46ca-8614-b59eab46fbaa") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("f907b55e-ed5b-49df-bf17-cce29879fc88") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("f17ca0ce-1401-47e5-9979-f216fabf5150") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("2e7e2ffd-6f05-474f-992e-8a00c8c01c60") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("c0a9794f-648c-4a59-815c-11273de5f5ca") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("a2beeb37-d8b3-46ca-8614-b59eab46fbaa") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("f907b55e-ed5b-49df-bf17-cce29879fc88") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("f17ca0ce-1401-47e5-9979-f216fabf5150") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("2e7e2ffd-6f05-474f-992e-8a00c8c01c60") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("c0a9794f-648c-4a59-815c-11273de5f5ca") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("a2beeb37-d8b3-46ca-8614-b59eab46fbaa") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("f907b55e-ed5b-49df-bf17-cce29879fc88") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("f17ca0ce-1401-47e5-9979-f216fabf5150") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("2e7e2ffd-6f05-474f-992e-8a00c8c01c60") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("c0a9794f-648c-4a59-815c-11273de5f5ca") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("a2beeb37-d8b3-46ca-8614-b59eab46fbaa") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+  <style>
+    body { margin: 0; }
+    @keyframes toastIn {
+      from { opacity: 0; transform: translate(-50%, 10px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+    @keyframes popCheck {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</helmet>
+
+<div style="font-family: 'Nunito', sans-serif; min-height: 100vh; width: 100%; background: oklch(0.97 0.012 95); display: flex; align-items: center; justify-content: center; padding: 40px 16px; box-sizing: border-box;">
+
+  <div style="width: 400px; height: 852px; background: oklch(0.985 0.008 95); border-radius: 40px; box-shadow: 0 30px 60px -20px rgba(80,70,50,0.25), 0 2px 8px rgba(80,70,50,0.08); position: relative; overflow: hidden; flex-shrink: 0;">
+
+    <!-- TODAY VIEW -->
+    <sc-if value="{{ isToday }}" hint-placeholder-val="{{ true }}">
+      <div style="position: absolute; inset: 0; display: flex; flex-direction: column;">
+        <div style="padding: 40px 28px 8px 28px;">
+          <div style="color: oklch(0.52 0.02 90); font-size: 15px; font-weight: 600; letter-spacing: 0.2px;">{{ dateLabel }}</div>
+          <div style="color: oklch(0.28 0.02 90); font-size: 28px; font-weight: 800; margin-top: 4px;">{{ greeting }}</div>
+        </div>
+
+        <div style="margin: 20px 24px 8px 24px; background: oklch(0.93 0.035 150); border-radius: 22px; padding: 20px 22px;">
+          <div style="color: oklch(0.28 0.02 90); font-size: 17px; font-weight: 700;">{{ todaySummaryLabel }}</div>
+          <div style="color: oklch(0.36 0.06 150); font-size: 14px; font-weight: 700; margin-top: 3px;">{{ todayCountLabel }}</div>
+          <div style="margin-top: 12px; height: 10px; border-radius: 6px; background: oklch(0.98 0.01 150); overflow: hidden;">
+            <div style="height: 100%; border-radius: 6px; background: oklch(0.58 0.08 150); width: {{ todayProgressPct }}%; transition: width 0.4s ease;"></div>
+          </div>
+        </div>
+
+        <div style="flex: 1; overflow-y: auto; padding: 12px 24px 100px 24px; display: flex; flex-direction: column; gap: 14px;">
+          <sc-for list="{{ habits }}" as="habit" hint-placeholder-count="4">
+            <div style="background: #ffffff; border-radius: 20px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; box-shadow: 0 1px 3px rgba(80,70,50,0.06); opacity: {{ habit.rowOpacity }};">
+              <div onclick="{{ habit.onToggle }}" style="width: 46px; height: 46px; border-radius: 50%; border: 2.5px solid {{ habit.checkBorderColor }}; background: {{ habit.checkBg }}; flex-shrink: 0; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease, border-color 0.2s ease; animation: {{ habit.checkAnim }};">
+                <sc-if value="{{ habit.completedToday }}" hint-placeholder-val="{{ false }}">
+                  <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
+                    <path d="M2 8L7.5 13.5L18 2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </sc-if>
+              </div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="color: oklch(0.28 0.02 90); font-size: 17px; font-weight: 700;">{{ habit.name }}</div>
+                <div style="color: oklch(0.52 0.02 90); font-size: 13.5px; font-weight: 600; margin-top: 2px;">{{ habit.scheduleTimeLabel }}</div>
+              </div>
+              <sc-if value="{{ habit.streakVisible }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; align-items: center; gap: 5px; background: oklch(0.94 0.02 95); border-radius: 100px; padding: 6px 10px; flex-shrink: 0;">
+                  <div style="width: 7px; height: 7px; border-radius: 50%; background: oklch(0.58 0.08 150);"></div>
+                  <div style="color: oklch(0.4 0.02 90); font-size: 12.5px; font-weight: 700;">{{ habit.streakLabel }}</div>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- WEEKLY VIEW -->
+    <sc-if value="{{ isWeekly }}" hint-placeholder-val="{{ false }}">
+      <div style="position: absolute; inset: 0; display: flex; flex-direction: column;">
+        <div style="padding: 40px 28px 8px 28px;">
+          <div style="color: oklch(0.52 0.02 90); font-size: 15px; font-weight: 600;">{{ weekRangeLabel }}</div>
+          <div style="color: oklch(0.28 0.02 90); font-size: 28px; font-weight: 800; margin-top: 4px;">This week</div>
+        </div>
+
+        <div style="margin: 20px 24px 8px 24px; background: #ffffff; border-radius: 22px; padding: 20px 22px; box-shadow: 0 1px 3px rgba(80,70,50,0.06);">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 62px; height: 62px; border-radius: 50%; background: conic-gradient(oklch(0.58 0.08 150) {{ weekPct }}%, oklch(0.92 0.02 95) 0); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; color: oklch(0.28 0.02 90); font-size: 14px; font-weight: 800;">{{ weekPctLabel }}</div>
+            </div>
+            <div>
+              <div style="color: oklch(0.28 0.02 90); font-size: 15.5px; font-weight: 700;">{{ weekCheckinsLabel }}</div>
+              <div style="color: oklch(0.52 0.02 90); font-size: 13.5px; font-weight: 600; margin-top: 3px;">{{ weekEncouragement }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex: 1; overflow-y: auto; padding: 16px 24px 100px 24px; display: flex; flex-direction: column; gap: 18px;">
+          <sc-for list="{{ habits }}" as="habit" hint-placeholder-count="4">
+            <div style="background: #ffffff; border-radius: 20px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(80,70,50,0.06);">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="color: oklch(0.28 0.02 90); font-size: 16px; font-weight: 700;">{{ habit.name }}</div>
+                <div style="color: oklch(0.4 0.02 90); font-size: 12.5px; font-weight: 700;">{{ habit.streakLabel }}</div>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-top: 14px;">
+                <sc-for list="{{ habit.weekDays }}" as="day" hint-placeholder-count="7">
+                  <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                    <div style="font-size: 11px; font-weight: 700; color: oklch(0.55 0.02 90);">{{ day.letter }}</div>
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: {{ day.bg }}; border: {{ day.border }}; display: flex; align-items: center; justify-content: center;">
+                      <sc-if value="{{ day.showCheck }}" hint-placeholder-val="{{ false }}">
+                        <svg width="12" height="10" viewBox="0 0 20 16" fill="none">
+                          <path d="M2 8L7.5 13.5L18 2" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                      </sc-if>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- CREATE HABIT FLOW -->
+    <sc-if value="{{ isCreate }}" hint-placeholder-val="{{ false }}">
+      <div style="position: absolute; inset: 0; background: oklch(0.985 0.008 95); display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 32px 24px 0 24px;">
+          <div onclick="{{ onBack }}" style="width: 38px; height: 38px; border-radius: 50%; background: oklch(0.94 0.02 95); display: flex; align-items: center; justify-content: center; cursor: pointer;">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M9 1L2 8L9 15" stroke="oklch(0.4 0.02 90)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <div style="display: flex; gap: 6px;">
+            <sc-for list="{{ stepDots }}" as="dot" hint-placeholder-count="3">
+              <div style="width: 7px; height: 7px; border-radius: 50%; background: {{ dot.color }};"></div>
+            </sc-for>
+          </div>
+          <div onclick="{{ onCancel }}" style="color: oklch(0.55 0.02 90); font-size: 14px; font-weight: 700; cursor: pointer;">Cancel</div>
+        </div>
+
+        <div style="flex: 1; padding: 28px 28px 24px 28px; display: flex; flex-direction: column;">
+
+          <sc-if value="{{ isStep0 }}" hint-placeholder-val="{{ true }}">
+            <div style="color: oklch(0.28 0.02 90); font-size: 24px; font-weight: 800; line-height: 1.3;">What's a small habit<br>you'd like to build?</div>
+            <div style="color: oklch(0.52 0.02 90); font-size: 14.5px; font-weight: 600; margin-top: 8px;">Start tiny. You can always build on it later.</div>
+            <input type="text" placeholder="e.g. Drink water before coffee" value="{{ newHabitName }}" onchange="{{ onNameChange }}" style="margin-top: 24px; border: 2px solid oklch(0.9 0.015 90); border-radius: 16px; padding: 16px 18px; font-size: 16px; font-family: 'Nunito', sans-serif; font-weight: 700; color: oklch(0.28 0.02 90); outline: none; background: #fff;">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px;">
+              <sc-for list="{{ suggestions }}" as="s" hint-placeholder-count="5">
+                <div onclick="{{ s.onPick }}" style="padding: 9px 14px; border-radius: 100px; background: oklch(0.94 0.02 95); color: oklch(0.36 0.02 90); font-size: 13.5px; font-weight: 700; cursor: pointer;">{{ s.label }}</div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ false }}">
+            <div style="color: oklch(0.28 0.02 90); font-size: 24px; font-weight: 800;">When works best?</div>
+            <div style="color: oklch(0.52 0.02 90); font-size: 14.5px; font-weight: 600; margin-top: 8px;">Pick the days that fit your week.</div>
+            <div style="display: flex; gap: 8px; margin-top: 20px;">
+              <div onclick="{{ onPresetEveryday }}" style="flex: 1; text-align: center; padding: 10px 0; border-radius: 100px; background: {{ presetEverydayBg }}; color: {{ presetEverydayColor }}; font-size: 13.5px; font-weight: 700; cursor: pointer;">Every day</div>
+              <div onclick="{{ onPresetWeekdays }}" style="flex: 1; text-align: center; padding: 10px 0; border-radius: 100px; background: {{ presetWeekdaysBg }}; color: {{ presetWeekdaysColor }}; font-size: 13.5px; font-weight: 700; cursor: pointer;">Weekdays</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+              <sc-for list="{{ dayPickers }}" as="d" hint-placeholder-count="7">
+                <div onclick="{{ d.onToggle }}" style="width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; cursor: pointer; background: {{ d.bg }}; color: {{ d.color }}; border: {{ d.border }};">{{ d.letter }}</div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
+            <div style="color: oklch(0.28 0.02 90); font-size: 24px; font-weight: 800;">Want a gentle nudge?</div>
+            <div style="color: oklch(0.52 0.02 90); font-size: 14.5px; font-weight: 600; margin-top: 8px;">A reminder can help, but it's optional.</div>
+
+            <div style="margin-top: 22px; background: #fff; border: 2px solid oklch(0.9 0.015 90); border-radius: 18px; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between;">
+              <div style="color: oklch(0.28 0.02 90); font-size: 15.5px; font-weight: 700;">Daily reminder</div>
+              <div onclick="{{ onToggleRemind }}" style="width: 46px; height: 27px; border-radius: 100px; background: {{ remindTrackBg }}; position: relative; cursor: pointer; transition: background 0.2s ease;">
+                <div style="width: 21px; height: 21px; border-radius: 50%; background: #fff; position: absolute; top: 3px; left: {{ remindKnobLeft }}px; transition: left 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.15);"></div>
+              </div>
+            </div>
+
+            <sc-if value="{{ remindOn }}" hint-placeholder-val="{{ true }}">
+              <div style="margin-top: 14px;">
+                <input type="time" value="{{ newHabitTime }}" onchange="{{ onTimeChange }}" style="border: 2px solid oklch(0.9 0.015 90); border-radius: 16px; padding: 14px 18px; font-size: 16px; font-family: 'Nunito', sans-serif; font-weight: 700; color: oklch(0.28 0.02 90); outline: none; background: #fff; width: 100%; box-sizing: border-box;">
+              </div>
+            </sc-if>
+          </sc-if>
+
+          <div style="flex: 1;"></div>
+
+          <div onclick="{{ onPrimaryAction }}" style="background: oklch(0.58 0.08 150); color: #fff; text-align: center; padding: 17px 0; border-radius: 18px; font-size: 16.5px; font-weight: 800; cursor: pointer;">{{ primaryActionLabel }}</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- BOTTOM NAV -->
+    <sc-if value="{{ showNav }}" hint-placeholder-val="{{ true }}">
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 92px; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-top: 1px solid oklch(0.92 0.015 90); display: flex; align-items: center; justify-content: space-around; padding-bottom: 10px;">
+        <div onclick="{{ onGoToday }}" style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; width: 76px;">
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: {{ todayDotColor }};"></div>
+          <div style="font-size: 13px; font-weight: 700; color: {{ todayTextColor }};">Today</div>
+        </div>
+        <div onclick="{{ onOpenCreate }}" style="width: 56px; height: 56px; border-radius: 50%; background: oklch(0.58 0.08 150); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 6px 16px -4px oklch(0.58 0.08 150 / 0.6); margin-top: -20px;">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2V18M2 10H18" stroke="white" stroke-width="2.6" stroke-linecap="round"></path></svg>
+        </div>
+        <div onclick="{{ onGoWeekly }}" style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; width: 76px;">
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: {{ weeklyDotColor }};"></div>
+          <div style="font-size: 13px; font-weight: 700; color: {{ weeklyTextColor }};">Weekly</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- TOAST -->
+    <sc-if value="{{ toast }}" hint-placeholder-val="{{ false }}">
+      <div style="position: absolute; bottom: 108px; left: 50%; background: oklch(0.28 0.02 90); color: #fff; padding: 12px 20px; border-radius: 100px; font-size: 14px; font-weight: 700; white-space: nowrap; animation: toastIn 0.25s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">{{ toast }}</div>
+    </sc-if>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+const DAY_LETTERS = ['M','T','W','T','F','S','S'];
+const DAY_NAMES = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const TODAY_INDEX = 3; // Thursday, fixed for a consistent demo state
+
+function formatTime(t) {
+  if (!t) return '';
+  const [hStr, mStr] = t.split(':');
+  let h = parseInt(hStr, 10);
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  h = h % 12;
+  if (h === 0) h = 12;
+  return `${h}:${mStr} ${ampm}`;
+}
+
+class Component extends DCLogic {
+  state = {
+    view: 'today', // today | weekly | create
+    createStep: 0,
+    newHabitName: '',
+    newHabitDays: [0, 1, 2, 3, 4, 5, 6],
+    newHabitTime: '08:00',
+    remindOn: true,
+    toast: null,
+    habits: [
+      { id: 1, name: 'Morning stretch', schedule: [0,1,2,3,4], time: '06:30', streak: 2, weekHistory: [true,true,true,false,false,false,false] },
+      { id: 2, name: 'Drink water before coffee', schedule: [0,1,2,3,4,5,6], time: '07:00', streak: 3, weekHistory: [true,true,true,false,false,false,false] },
+      { id: 3, name: 'Read with the kids', schedule: [0,1,2,3,4,5,6], time: '19:30', streak: 1, weekHistory: [true,false,true,false,false,false,false] },
+      { id: 4, name: '10-minute walk', schedule: [0,2,4], time: '12:30', streak: 2, weekHistory: [true,false,true,false,false,false,false] },
+    ],
+  };
+
+  _toastTimer = null;
+
+  showToast(msg) {
+    if (this._toastTimer) clearTimeout(this._toastTimer);
+    this.setState({ toast: msg });
+    this._toastTimer = setTimeout(() => this.setState({ toast: null }), 2200);
+  }
+
+  toggleHabit(id) {
+    this.setState(s => {
+      const habits = s.habits.map(h => {
+        if (h.id !== id) return h;
+        const wh = h.weekHistory.slice();
+        const wasDone = wh[TODAY_INDEX];
+        wh[TODAY_INDEX] = !wasDone;
+        const streak = wasDone ? Math.max(0, h.streak - 1) : h.streak + 1;
+        return { ...h, weekHistory: wh, streak };
+      });
+      return { habits };
+    });
+    const h = this.state.habits.find(x => x.id === id);
+    if (h && !h.weekHistory[TODAY_INDEX]) {
+      const messages = ['Nice, that\u2019s done!', 'One more for today.', 'Great, keep it easy.', 'That counts.'];
+      this.showToast(messages[id % messages.length]);
+    }
+  }
+
+  openCreate() {
+    this.setState({ view: 'create', createStep: 0, newHabitName: '', newHabitDays: [0,1,2,3,4,5,6], newHabitTime: '08:00', remindOn: true });
+  }
+  closeCreate() { this.setState({ view: 'today' }); }
+  goBackStep() {
+    if (this.state.createStep === 0) { this.setState({ view: 'today' }); }
+    else { this.setState(s => ({ createStep: s.createStep - 1 })); }
+  }
+  goNextStep() {
+    if (this.state.createStep < 2) { this.setState(s => ({ createStep: s.createStep + 1 })); }
+    else { this.finishCreate(); }
+  }
+  finishCreate() {
+    const name = this.state.newHabitName.trim() || 'New habit';
+    const weekHistory = [false,false,false,false,false,false,false];
+    const newHabit = {
+      id: Date.now(),
+      name,
+      schedule: this.state.newHabitDays.slice().sort(),
+      time: this.state.remindOn ? this.state.newHabitTime : '',
+      streak: 0,
+      weekHistory,
+    };
+    this.setState(s => ({ habits: [...s.habits, newHabit], view: 'today' }));
+    this.showToast('New habit added \u2014 one step at a time.');
+  }
+
+  toggleNewHabitDay(i) {
+    this.setState(s => {
+      const has = s.newHabitDays.includes(i);
+      const days = has ? s.newHabitDays.filter(d => d !== i) : [...s.newHabitDays, i];
+      return { newHabitDays: days };
+    });
+  }
+
+  renderVals() {
+    const s = this.state;
+    const todayHabits = s.habits.map(h => {
+      const scheduledToday = h.schedule.includes(TODAY_INDEX);
+      const completedToday = h.weekHistory[TODAY_INDEX];
+      const weekDays = DAY_LETTERS.map((letter, i) => {
+        const off = !h.schedule.includes(i);
+        const done = h.weekHistory[i];
+        const future = i > TODAY_INDEX;
+        let bg, border, showCheck = false;
+        if (off) { bg = 'oklch(0.96 0.01 95)'; border = 'none'; }
+        else if (done) { bg = 'oklch(0.58 0.08 150)'; border = 'none'; showCheck = true; }
+        else if (future) { bg = '#fff'; border = '2px solid oklch(0.9 0.015 90)'; }
+        else if (i === TODAY_INDEX) { bg = '#fff'; border = '2px solid oklch(0.58 0.08 150)'; }
+        else { bg = '#fff'; border = '2px solid oklch(0.9 0.015 90)'; }
+        return { letter, bg, border, showCheck };
+      });
+      return {
+        id: h.id,
+        name: h.name,
+        scheduledToday,
+        completedToday,
+        scheduleTimeLabel: scheduledToday ? (h.time ? `Today \u00b7 ${formatTime(h.time)}` : 'Today') : `Not scheduled today`,
+        streakVisible: h.streak > 0,
+        streakLabel: `${h.streak} day${h.streak === 1 ? '' : 's'} streak`,
+        checkBorderColor: completedToday ? 'oklch(0.58 0.08 150)' : (scheduledToday ? 'oklch(0.75 0.03 150)' : 'oklch(0.9 0.015 90)'),
+        checkBg: completedToday ? 'oklch(0.58 0.08 150)' : '#fff',
+        checkAnim: 'none',
+        rowOpacity: scheduledToday ? 1 : 0.55,
+        onToggle: () => this.toggleHabit(h.id),
+        weekDays,
+      };
+    });
+
+    const scheduledTodayHabits = todayHabits.filter(h => h.scheduledToday);
+    const doneCount = scheduledTodayHabits.filter(h => h.completedToday).length;
+    const totalCount = scheduledTodayHabits.length;
+    const pct = totalCount ? Math.round((doneCount / totalCount) * 100) : 0;
+    let todaySummaryLabel;
+    if (totalCount === 0) todaySummaryLabel = 'Nothing scheduled today';
+    else if (doneCount === 0) todaySummaryLabel = 'Ready when you are';
+    else if (doneCount < totalCount) todaySummaryLabel = 'Nice progress today';
+    else todaySummaryLabel = 'All done for today';
+
+    let weekPossible = 0, weekDone = 0;
+    s.habits.forEach(h => {
+      h.schedule.forEach(i => {
+        if (i <= TODAY_INDEX) {
+          weekPossible++;
+          if (h.weekHistory[i]) weekDone++;
+        }
+      });
+    });
+    const weekPct = weekPossible ? Math.round((weekDone / weekPossible) * 100) : 0;
+    let weekEncouragement;
+    if (weekPct >= 80) weekEncouragement = 'A really steady week so far.';
+    else if (weekPct >= 40) weekEncouragement = 'Solid progress \u2014 keep it up.';
+    else weekEncouragement = 'Every check-in counts.';
+
+    const isCreate = s.view === 'create';
+    const step = s.createStep;
+
+    return {
+      isToday: s.view === 'today',
+      isWeekly: s.view === 'weekly',
+      isCreate,
+      showNav: !isCreate,
+      dateLabel: `${DAY_NAMES[TODAY_INDEX]}, July 9`,
+      greeting: 'Good morning',
+      todaySummaryLabel,
+      todayCountLabel: totalCount ? `${doneCount} of ${totalCount} done` : '\u2014',
+      todayProgressPct: pct,
+      habits: todayHabits,
+
+      weekRangeLabel: 'Jul 6 \u2013 12',
+      weekPct,
+      weekPctLabel: `${weekPct}%`,
+      weekCheckinsLabel: `${weekDone} of ${weekPossible} check-ins`,
+      weekEncouragement,
+
+      todayDotColor: s.view === 'today' ? 'oklch(0.58 0.08 150)' : 'oklch(0.88 0.015 90)',
+      todayTextColor: s.view === 'today' ? 'oklch(0.28 0.02 90)' : 'oklch(0.6 0.02 90)',
+      weeklyDotColor: s.view === 'weekly' ? 'oklch(0.58 0.08 150)' : 'oklch(0.88 0.015 90)',
+      weeklyTextColor: s.view === 'weekly' ? 'oklch(0.28 0.02 90)' : 'oklch(0.6 0.02 90)',
+      onGoToday: () => this.setState({ view: 'today' }),
+      onGoWeekly: () => this.setState({ view: 'weekly' }),
+      onOpenCreate: () => this.openCreate(),
+
+      toast: s.toast,
+
+      // create flow
+      isStep0: step === 0,
+      isStep1: step === 1,
+      isStep2: step === 2,
+      stepDots: [0, 1, 2].map(i => ({ color: i === step ? 'oklch(0.58 0.08 150)' : 'oklch(0.88 0.015 90)' })),
+      onBack: () => this.goBackStep(),
+      onCancel: () => this.closeCreate(),
+      onPrimaryAction: () => this.goNextStep(),
+      primaryActionLabel: step < 2 ? 'Continue' : 'Start today',
+
+      newHabitName: s.newHabitName,
+      onNameChange: (e) => this.setState({ newHabitName: e.target.value }),
+      suggestions: ['Drink water', 'Stretch', 'Read together', 'Walk outside', 'Deep breath'].map(label => ({
+        label,
+        onPick: () => this.setState({ newHabitName: label }),
+      })),
+
+      presetEverydayBg: s.newHabitDays.length === 7 ? 'oklch(0.58 0.08 150)' : 'oklch(0.94 0.02 95)',
+      presetEverydayColor: s.newHabitDays.length === 7 ? '#fff' : 'oklch(0.4 0.02 90)',
+      presetWeekdaysBg: (s.newHabitDays.length === 5 && [0,1,2,3,4].every(d => s.newHabitDays.includes(d))) ? 'oklch(0.58 0.08 150)' : 'oklch(0.94 0.02 95)',
+      presetWeekdaysColor: (s.newHabitDays.length === 5 && [0,1,2,3,4].every(d => s.newHabitDays.includes(d))) ? '#fff' : 'oklch(0.4 0.02 90)',
+      onPresetEveryday: () => this.setState({ newHabitDays: [0,1,2,3,4,5,6] }),
+      onPresetWeekdays: () => this.setState({ newHabitDays: [0,1,2,3,4] }),
+
+      dayPickers: DAY_LETTERS.map((letter, i) => {
+        const active = s.newHabitDays.includes(i);
+        return {
+          letter,
+          bg: active ? 'oklch(0.58 0.08 150)' : '#fff',
+          color: active ? '#fff' : 'oklch(0.4 0.02 90)',
+          border: active ? 'none' : '2px solid oklch(0.9 0.015 90)',
+          onToggle: () => this.toggleNewHabitDay(i),
+        };
+      }),
+
+      remindOn: s.remindOn,
+      remindTrackBg: s.remindOn ? 'oklch(0.58 0.08 150)' : 'oklch(0.9 0.015 90)',
+      remindKnobLeft: s.remindOn ? 22 : 3,
+      onToggleRemind: () => this.setState(st => ({ remindOn: !st.remindOn })),
+      newHabitTime: s.newHabitTime,
+      onTimeChange: (e) => this.setState({ newHabitTime: e.target.value }),
+    };
+  }
+}
+
+</script>
+
+
+</body></html>
