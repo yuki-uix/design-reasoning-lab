@@ -3,7 +3,7 @@ id: EXP-20260707-003-cross-mode-consistency
 product: claude-design
 date: 2026-07-07
 researcher: yuki
-status: planned
+status: in-progress
 protocol: protocols/behavioral-observation-v1.md
 research_question: research/questions/RQ-002-intermediate-representation.md
 ---
@@ -54,11 +54,17 @@ Condition A starts from the completed EXP-001 P-FULL run or an equivalent fresh 
 
 ## Deviations
 
-None.
+1. Condition B was attempted (twice, 2026-07-08) with the registered P-FULL prototype wording kept verbatim plus the product's "Make a deck" mode chip, instead of rewording the intent for slides as registered. This created an unregistered conflicting-cue setup: text says prototype, chip says deck.
+2. The manipulation failed in both runs: no slide deck was produced; both artifacts are interactive prototypes (OBS-20260709-018). The registered dependent measures cannot be tabulated from these runs, which are archived as evidence but do not constitute Condition B.
+3. Condition A (same-session prototype → deck conversion) has not been run.
+4. The image-choice intake questions could not receive the registered "Use your best judgment." response (no free-text affordance) and were left unanswered (OBS-20260709-019).
+5. Evidence was captured into a working folder `evidence/0708/` and reorganized on ingestion; see manifest Transformations.
 
 ## Observations
 
-Link atomic observation records. Do not interpret behavior in this section.
+- [OBS-20260709-018-deck-mode-overridden-by-prompt-text](../../observations/OBS-20260709-018-deck-mode-overridden-by-prompt-text.md)
+- [OBS-20260709-019-intake-schema-varies-again](../../observations/OBS-20260709-019-intake-schema-varies-again.md)
+- [OBS-20260709-020-craft-idiom-tracks-starter](../../observations/OBS-20260709-020-craft-idiom-tracks-starter.md)
 
 ## Evidence
 
@@ -76,7 +82,7 @@ Falsification of the "shared intermediate representation" reading requires only 
 
 ## Conclusion
 
-Not yet run.
+Not yet adjudicable — the pre-registered interpretation matrix requires slide artifacts, and none were produced. What the failed attempts did yield: (a) the mode chip is overridden by conflicting prompt text, replicated ×2 (OBS-20260709-018), which matters for RQ-003 decision ownership; (b) further replication of the per-run intake schema (OBS-20260709-019) and craft-idiom oscillation, now with a starter co-occurrence (OBS-20260709-020). Conditions A and B still need to be run with slide-worded intents.
 
 ## Limitations
 
