@@ -11,6 +11,7 @@ Raw artifacts are the five standalone HTML exports archived under `evidence/EXP-
 | `derived/p-vague-app.html` | extracted template | 2026-07-08 | script extraction | pending | |
 | `derived/200c92cc-…` | runtime JS | 2026-07-07 | bundle asset | pending | dc-runtime, header: "GENERATED from dc-runtime/src/*.ts" |
 | `derived/0003af38-…`, `3a9556ba-…`, `5454ebc3-…`, `65b6e1bf-…` | WOFF2 fonts | 2026-07-07 | bundle assets | pending | self-hosted Karla/Sora subsets (P-FULL) |
+| `derived/tabulate.py` | analysis script | 2026-07-09 | written for this audit | pending | regex tabulation producing the counts cited in OBS-022/023; not evidence of product behavior |
 
 ## Environment
 
