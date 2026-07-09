@@ -47,10 +47,11 @@ Fresh v0 session per condition; no connected repositories or design context.
 
 ## Deviations
 
-1. Only the P-FULL condition has been run (2026-07-08); the four removed-dimension conditions are pending, so the ladder is incomplete and the hypothesis is not yet adjudicable.
-2. The run used an anonymous v0 "Drafts" session (not signed in), so the registered "account tier" is recorded as anonymous; no model/version indicator is exposed anywhere in v0's UI.
+1. Two of five conditions have been run (P-FULL 2026-07-08, P-NO-AUDIENCE 2026-07-09); the remaining three are pending, so the ladder is incomplete and the hypothesis is only partially adjudicable.
+2. The P-FULL captures show "Sign In" / "Sign Up" buttons, which was originally recorded as an anonymous session; the researcher later reported both runs used the same personal free-tier account, so the registered "account tier" is recorded as personal free tier, with the P-FULL anonymity inference superseded (see manifest Environment). No model/version indicator is exposed anywhere in v0's UI.
 3. The phrase "high-fidelity prototype" was kept verbatim (v0 has no mode selector, and keeping the registered wording is the byte-identical default; the registered permission to drop it was not needed).
-4. Evidence was captured into a working folder `evidence/0708/` and reorganized on ingestion; see manifest Transformations.
+4. Evidence was captured into working folders (`evidence/0708/`, `evidence/0709/`) and reorganized on ingestion; see manifest Transformations.
+5. The middle of the P-NO-AUDIENCE process log (between the opening turn and the captured tail) was not expanded before capture; the zero-question reading rests on the captured portions plus the run being a single uninterrupted turn with no user input after the prompt.
 
 ## Observations
 
@@ -58,6 +59,8 @@ Fresh v0 session per condition; no connected repositories or design context.
 - [OBS-20260709-016-v0-self-qa-browser-loop](../../observations/OBS-20260709-016-v0-self-qa-browser-loop.md)
 - [OBS-20260709-017-v0-invents-brand-and-persona](../../observations/OBS-20260709-017-v0-invents-brand-and-persona.md)
 - [OBS-20260709-021-cross-product-design-language-convergence](../../observations/OBS-20260709-021-cross-product-design-language-convergence.md)
+- [OBS-20260709-030-v0-no-audience-zero-questions-same-default](../../observations/OBS-20260709-030-v0-no-audience-zero-questions-same-default.md)
+- [OBS-20260709-031-v0-rederives-same-brand-across-sessions](../../observations/OBS-20260709-031-v0-rederives-same-brand-across-sessions.md)
 
 ## Evidence
 
@@ -69,9 +72,11 @@ v0 generates immediately across all conditions, resolving ambiguity by assumptio
 
 ### Outcome (partial)
 
-Consistent so far, but not yet discriminating. On P-FULL, v0 generated immediately with zero questions (OBS-20260709-015), where Claude Design raised a 7-question intake form — matching the hypothesis's v0 half in the one condition where any tool has the least reason to ask. The falsification test lives in the removed-dimension conditions, which have not been run.
+Consistent so far, but still not discriminating. On P-FULL, v0 generated immediately with zero questions (OBS-20260709-015), where Claude Design raised a 7-question intake form — matching the hypothesis's v0 half in the one condition where any tool has the least reason to ask. On P-NO-AUDIENCE, the first removed-dimension condition, v0 again asked nothing and opened with an explicit "I have clear design direction" (OBS-20260709-030) — but this condition cannot separate the products, because audience is the one dimension Claude Design also never asked about (OBS-20260708-004): both products silently defaulted it, and their defaults converge on near-identical generic self-care seed content. The falsification test now lives entirely in P-NO-CONTENT, P-NO-STYLE, and P-VAGUE — the conditions where Claude Design asked.
 
-## Side-by-side, P-FULL only
+## Side-by-side, per condition run
+
+### P-FULL
 
 | Measure | Claude Design (EXP-001) | v0 (this run) |
 | --- | --- | --- |
@@ -83,9 +88,21 @@ Consistent so far, but not yet discriminating. On P-FULL, v0 generated immediate
 | Brand/persona invention | none on P-FULL; "Sprout" only under P-NO-CONTENT | "Little Wins" + persona "Riley" on P-FULL (OBS-20260709-017) |
 | Design language | warm base + sage green, oklch (this run) | same structure, Nunito + oklch (OBS-20260709-021) |
 
+### P-NO-AUDIENCE
+
+| Measure | Claude Design (EXP-001) | v0 (this run) |
+| --- | --- | --- |
+| Questions before generation | 6-question intake form, none about audience (OBS-20260708-003, -004) | none; opens with "I have clear design direction" (OBS-20260709-030) |
+| Generation proceeds unprompted | after form submission | yes, single turn (one auto-resumed "Agent Paused") |
+| Time to artifact | not precisely recorded | "Worked for 10m 24s" + "Worked for 23s" (product's own counters) |
+| Silent audience default | generic adult self-care seeds: Drink water, Morning walk, Read 10 pages, Stretch (OBS-20260708-004) | generic adult self-care seeds: Morning stretch, Drink water, Read a few pages, Evening walk (OBS-20260709-030) |
+| Persona | none | none — P-FULL's "Riley" disappears with the audience clause (OBS-20260709-030) |
+| Brand/persona invention | no brand invented | same brand "Little Wins" re-derived in a fresh session (OBS-20260709-031) |
+| Self-QA | verifier/fix pass | embedded-browser verification again, then deletes its own screenshots ("Cleaned up screenshots") |
+
 ## Conclusion
 
-Partial (1 of 5 conditions). The P-FULL contrast is as hypothesized: v0 resolves everything by assumption and asks nothing, while Claude Design elicits even a fully specified brief through its intake form. What v0 assumed and Claude Design also assumed converge on the same design language (OBS-20260709-021), and both products self-QA (OBS-20260709-016) — so the candidate Claude Design-distinctive behavior narrows to elicitation itself, pending the four remaining conditions.
+Partial (2 of 5 conditions). The elicitation contrast is stable so far: v0 has asked nothing in either condition, while Claude Design raised an intake form in both. But P-NO-AUDIENCE is a non-discriminating rung of the ladder — audience is the dimension Claude Design also silently defaults (OBS-20260708-004), and both products fill the vacuum with near-identical generic self-care content (OBS-20260709-030), consistent with a shared prior rather than product-specific judgment. v0's cross-session behavior adds a wrinkle: it re-derives the identical invented brand "Little Wins" in a fresh session while its token values only near-miss (OBS-20260709-031), echoing Claude Design's language-not-values split (OBS-20260709-027) but converging harder at the naming layer. The candidate Claude Design-distinctive behavior remains elicitation itself, now adjudicable only by the three pending conditions where Claude Design demonstrably asked.
 
 ## Limitations
 
