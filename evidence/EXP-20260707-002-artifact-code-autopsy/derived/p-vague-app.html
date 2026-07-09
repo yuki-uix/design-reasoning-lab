@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="da725ac9-8e5b-46a8-8ce1-ef9c081462d5"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("8ae69d32-e5c4-4519-86d7-e14ab0608d16") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("9aedb791-70b1-48e7-bf37-12ae43792616") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("ce4a50c2-c844-447e-8e57-ee2d012bbf1b") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("f226f05e-5dcd-46cc-9b09-a9e7e3b0e1a2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("79e0f5d8-c38c-4e7c-82e8-2ebf8d279065") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("16a26170-cba1-4c9f-885a-39a012ced446") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("604d12bc-6f8f-4cfa-9c04-db2e02bc5988") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("8ae69d32-e5c4-4519-86d7-e14ab0608d16") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("9aedb791-70b1-48e7-bf37-12ae43792616") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("ce4a50c2-c844-447e-8e57-ee2d012bbf1b") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("f226f05e-5dcd-46cc-9b09-a9e7e3b0e1a2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("79e0f5d8-c38c-4e7c-82e8-2ebf8d279065") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("16a26170-cba1-4c9f-885a-39a012ced446") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("604d12bc-6f8f-4cfa-9c04-db2e02bc5988") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("8ae69d32-e5c4-4519-86d7-e14ab0608d16") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("9aedb791-70b1-48e7-bf37-12ae43792616") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("ce4a50c2-c844-447e-8e57-ee2d012bbf1b") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("f226f05e-5dcd-46cc-9b09-a9e7e3b0e1a2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("79e0f5d8-c38c-4e7c-82e8-2ebf8d279065") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("16a26170-cba1-4c9f-885a-39a012ced446") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("604d12bc-6f8f-4cfa-9c04-db2e02bc5988") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("8ae69d32-e5c4-4519-86d7-e14ab0608d16") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("9aedb791-70b1-48e7-bf37-12ae43792616") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("ce4a50c2-c844-447e-8e57-ee2d012bbf1b") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("f226f05e-5dcd-46cc-9b09-a9e7e3b0e1a2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("79e0f5d8-c38c-4e7c-82e8-2ebf8d279065") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("16a26170-cba1-4c9f-885a-39a012ced446") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("604d12bc-6f8f-4cfa-9c04-db2e02bc5988") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("8ae69d32-e5c4-4519-86d7-e14ab0608d16") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("9aedb791-70b1-48e7-bf37-12ae43792616") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("ce4a50c2-c844-447e-8e57-ee2d012bbf1b") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("f226f05e-5dcd-46cc-9b09-a9e7e3b0e1a2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("79e0f5d8-c38c-4e7c-82e8-2ebf8d279065") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("16a26170-cba1-4c9f-885a-39a012ced446") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("604d12bc-6f8f-4cfa-9c04-db2e02bc5988") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+  body { margin:0; background:#EDEAE2; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  button { font-family:'Inter',sans-serif; border:none; background:none; padding:0; cursor:pointer; }
+  input { font-family:'Inter',sans-serif; }
+  ::-webkit-scrollbar { display:none; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:60px 20px;background:radial-gradient(ellipse at 50% 30%, #F4F1EA 0%, #E8E4D9 100%);font-family:'Inter',sans-serif">
+  <x-import component-from-global-scope="IOSDevice" from="fdb5efd5-5952-49ee-808a-81f9f24e32db#/ios-frame.jsx" width="{{ deviceWidth }}" height="{{ deviceHeight }}" hint-size="402px,874px">
+    <div style="position:relative;height:100%;width:100%;overflow:hidden;background:#F7F4EE" data-screen-label="Habit Tracker">
+
+      <!-- TODAY SCREEN -->
+      <sc-if value="{{ isToday }}" hint-placeholder-val="{{ true }}">
+        <div style="height:100%;display:flex;flex-direction:column">
+          <div style="flex:1;overflow-y:auto;padding:54px 20px 8px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px">
+              <div>
+                <div style="font-size:12.5px;font-weight:600;color:rgba(42,38,32,.5);text-transform:uppercase;letter-spacing:.07em">{{ todayDateLabel }}</div>
+                <div style="font-size:29px;font-weight:800;color:#2A2620;letter-spacing:-0.5px;margin-top:3px">Today</div>
+              </div>
+              <button onclick="{{ openAdd }}" style="width:40px;height:40px;border-radius:50%;background:#2F6D5C;color:#fff;font-size:22px;font-weight:400;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(47,109,92,.35);flex-shrink:0">+</button>
+            </div>
+
+            <div style="background:#fff;border-radius:20px;border:1px solid rgba(0,0,0,.06);padding:16px 18px;display:flex;align-items:center;gap:16px;margin-bottom:18px">
+              <svg width="56" height="56" viewBox="0 0 60 60" style="flex-shrink:0">
+                <circle cx="30" cy="30" r="26" fill="none" stroke="rgba(0,0,0,.07)" stroke-width="6"></circle>
+                <circle cx="30" cy="30" r="26" fill="none" stroke="#2F6D5C" stroke-width="6" stroke-linecap="round" transform="rotate(-90 30 30)" style="stroke-dasharray:{{ summaryCircumference }};stroke-dashoffset:{{ summaryDashOffset }};transition:stroke-dashoffset .3s ease"></circle>
+              </svg>
+              <div>
+                <div style="font-size:19px;font-weight:800;color:#2A2620">{{ summaryDoneCount }}/{{ summaryTotalCount }}</div>
+                <div style="font-size:12.5px;color:rgba(42,38,32,.55);margin-top:1px">habits done today</div>
+              </div>
+            </div>
+
+            <sc-for list="{{ habits }}" as="h" hint-placeholder-count="5">
+              <div onclick="{{ h.openDetail }}" style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:16px;border:1px solid rgba(0,0,0,.06);padding:13px 15px;margin-bottom:9px;cursor:pointer">
+                <div style="width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:15px;flex-shrink:0;background:{{ h.color }}">{{ h.letter }}</div>
+                <div style="flex:1;min-width:0">
+                  <div style="font-size:15px;font-weight:600;color:#2A2620">{{ h.name }}</div>
+                  <div style="font-size:12px;color:rgba(42,38,32,.5);margin-top:2px">{{ h.streakText }}</div>
+                </div>
+                <sc-if value="{{ h.isCheck }}" hint-placeholder-val="{{ true }}">
+                  <sc-if value="{{ h.scheduledToday }}" hint-placeholder-val="{{ true }}">
+                    <button onclick="{{ h.toggleCheck }}" style="width:30px;height:30px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;border:2px solid {{ h.checkBorder }};background:{{ h.checkBg }};transition:all .15s ease">
+                      <sc-if value="{{ h.doneToday }}" hint-placeholder-val="{{ false }}">
+                        <svg width="14" height="11" viewBox="0 0 14 11"><path d="M1 5.5L5 9.5L13 1.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                      </sc-if>
+                    </button>
+                  </sc-if>
+                </sc-if>
+                <sc-if value="{{ h.isCounter }}" hint-placeholder-val="{{ false }}">
+                  <sc-if value="{{ h.scheduledToday }}" hint-placeholder-val="{{ true }}">
+                    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+                      <button onclick="{{ h.dec }}" style="width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.05);font-size:15px;font-weight:600;color:#2A2620;display:flex;align-items:center;justify-content:center">–</button>
+                      <div style="font-size:12.5px;font-weight:600;color:#2A2620;min-width:44px;text-align:center">{{ h.progressLabel }}</div>
+                      <button onclick="{{ h.inc }}" style="width:26px;height:26px;border-radius:50%;background:#2F6D5C;font-size:15px;font-weight:600;color:#fff;display:flex;align-items:center;justify-content:center">+</button>
+                    </div>
+                  </sc-if>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+          <sc-if value="{{ showTabBar }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;border-top:1px solid rgba(0,0,0,.07);background:#fff;padding:10px 30px 22px">
+              <button onclick="{{ goToday }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div style="width:20px;height:20px;border-radius:6px;background:{{ todayTabColor }}"></div>
+                <div style="font-size:10.5px;font-weight:600;color:{{ todayTabColor }}">Today</div>
+              </button>
+              <button onclick="{{ goStats }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div style="display:flex;align-items:flex-end;gap:2px;height:20px">
+                  <div style="width:4px;height:9px;border-radius:2px;background:{{ statsTabColor }}"></div>
+                  <div style="width:4px;height:16px;border-radius:2px;background:{{ statsTabColor }}"></div>
+                  <div style="width:4px;height:13px;border-radius:2px;background:{{ statsTabColor }}"></div>
+                </div>
+                <div style="font-size:10.5px;font-weight:600;color:{{ statsTabColor }}">Stats</div>
+              </button>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <!-- DETAIL SCREEN -->
+      <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+        <div style="height:100%;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:12px;padding:54px 20px 4px 16px">
+            <button onclick="{{ backToToday }}" style="width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.05);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="9" height="15" viewBox="0 0 9 15"><path d="M8 1L1.5 7.5L8 14" stroke="#2A2620" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            <div style="width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:14px;flex-shrink:0;background:{{ selectedHabit.color }}">{{ selectedHabit.letter }}</div>
+            <div style="font-size:18px;font-weight:700;color:#2A2620">{{ selectedHabit.name }}</div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:14px 20px 24px">
+            <div style="display:flex;gap:10px;margin-bottom:16px">
+              <div style="flex:1;background:#fff;border-radius:16px;border:1px solid rgba(0,0,0,.06);padding:14px 10px;text-align:center">
+                <div style="font-size:22px;font-weight:800;color:#2A2620">{{ selectedHabit.streak }}</div>
+                <div style="font-size:11px;color:rgba(42,38,32,.5);margin-top:2px">Current streak</div>
+              </div>
+              <div style="flex:1;background:#fff;border-radius:16px;border:1px solid rgba(0,0,0,.06);padding:14px 10px;text-align:center">
+                <div style="font-size:22px;font-weight:800;color:#2A2620">{{ selectedHabit.best }}</div>
+                <div style="font-size:11px;color:rgba(42,38,32,.5);margin-top:2px">Best streak</div>
+              </div>
+              <div style="flex:1;background:#fff;border-radius:16px;border:1px solid rgba(0,0,0,.06);padding:14px 10px;text-align:center">
+                <div style="font-size:22px;font-weight:800;color:#2A2620">{{ selectedHabit.pct }}%</div>
+                <div style="font-size:11px;color:rgba(42,38,32,.5);margin-top:2px">Consistency</div>
+              </div>
+            </div>
+
+            <div style="background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06);padding:16px;margin-bottom:16px">
+              <div style="font-size:13.5px;font-weight:700;color:#2A2620;margin-bottom:12px">{{ selectedHabit.monthLabel }}</div>
+              <div style="display:flex;margin-bottom:6px">
+                <div style="flex:1;text-align:center;font-size:10.5px;font-weight:600;color:rgba(42,38,32,.4)">S</div>
+                <div style="flex:1;text-align:center;font-size:10.5px;font-weight:600;color:rgba(42,38,32,.4)">M</div>
+                <div style="flex:1;text-align:center;font-size:10.5px;font-weight:600;color:rgba(42,38,32,.4)">T</div>
+                <div style="flex:1;text-align:center;font-size:10.5px;font-weight:600;color:rgba(42,38,32,.4)">W</div>
+                <div style="flex:1;text-align:center;font-size:10.5px;font-weight:600;color:rgba(42,38,32,.4)">T</div>
+                <div style="flex:1;text-align:center;font-size:10.5px;font-weight:600;color:rgba(42,38,32,.4)">F</div>
+                <div style="flex:1;text-align:center;font-size:10.5px;font-weight:600;color:rgba(42,38,32,.4)">S</div>
+              </div>
+              <sc-for list="{{ selectedHabit.weeks }}" as="week" hint-placeholder-count="5">
+                <div style="display:flex;margin-bottom:4px">
+                  <sc-for list="{{ week }}" as="cell" hint-placeholder-count="7">
+                    <div style="flex:1;display:flex;justify-content:center">
+                      <div style="width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;{{ cell.styleStr }}">{{ cell.dayLabel }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-for>
+            </div>
+
+            <sc-if value="{{ selectedHabit.scheduledToday }}" hint-placeholder-val="{{ true }}">
+              <sc-if value="{{ selectedHabit.isCheck }}" hint-placeholder-val="{{ true }}">
+                <button onclick="{{ selectedHabit.toggleCheck }}" style="width:100%;padding:14px;border-radius:16px;background:{{ selectedHabit.checkBg }};border:2px solid {{ selectedHabit.checkBorder }};color:{{ selectedHabit.actionTextColor }};font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px">{{ selectedHabit.actionLabel }}</button>
+              </sc-if>
+              <sc-if value="{{ selectedHabit.isCounter }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:16px;border:1px solid rgba(0,0,0,.06);padding:12px 16px">
+                  <button onclick="{{ selectedHabit.dec }}" style="width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.05);font-size:19px;font-weight:600;color:#2A2620;display:flex;align-items:center;justify-content:center;flex-shrink:0">–</button>
+                  <div style="flex:1;text-align:center;font-size:15px;font-weight:700;color:#2A2620">{{ selectedHabit.countToday }} / {{ selectedHabit.target }} {{ selectedHabit.unit }}</div>
+                  <button onclick="{{ selectedHabit.inc }}" style="width:38px;height:38px;border-radius:50%;background:#2F6D5C;font-size:19px;font-weight:600;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">+</button>
+                </div>
+              </sc-if>
+            </sc-if>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- STATS SCREEN -->
+      <sc-if value="{{ isStats }}" hint-placeholder-val="{{ false }}">
+        <div style="height:100%;display:flex;flex-direction:column">
+          <div style="flex:1;overflow-y:auto;padding:54px 20px 8px">
+            <div style="font-size:29px;font-weight:800;color:#2A2620;letter-spacing:-0.5px;margin-bottom:16px">Stats</div>
+
+            <div style="background:#2F6D5C;border-radius:20px;padding:18px 20px;margin-bottom:16px">
+              <div style="font-size:30px;font-weight:800;color:#fff">{{ overallPct }}%</div>
+              <div style="font-size:12.5px;color:rgba(255,255,255,.8);margin-top:2px">overall consistency, last 60 days</div>
+            </div>
+
+            <div style="background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06);padding:16px;margin-bottom:16px">
+              <div style="font-size:13.5px;font-weight:700;color:#2A2620;margin-bottom:14px">This week</div>
+              <div style="display:flex;align-items:flex-end;gap:8px;height:80px">
+                <sc-for list="{{ weekBars }}" as="bar" hint-placeholder-count="7">
+                  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:6px">
+                    <div style="width:100%;max-width:26px;border-radius:6px;background:rgba(0,0,0,.07);height:100%;display:flex;align-items:flex-end;overflow:hidden">
+                      <div style="width:100%;{{ bar.barStyle }}"></div>
+                    </div>
+                    <div style="font-size:10.5px;font-weight:{{ bar.labelWeight }};color:{{ bar.labelColor }}">{{ bar.label }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="font-size:13.5px;font-weight:700;color:#2A2620;margin:4px 0 10px">Your habits</div>
+            <sc-for list="{{ habitStatVMs }}" as="h" hint-placeholder-count="5">
+              <div onclick="{{ h.openDetail }}" style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:16px;border:1px solid rgba(0,0,0,.06);padding:12px 15px;margin-bottom:9px;cursor:pointer">
+                <div style="width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:13.5px;flex-shrink:0;background:{{ h.color }}">{{ h.letter }}</div>
+                <div style="flex:1;min-width:0;font-size:14.5px;font-weight:600;color:#2A2620">{{ h.name }}</div>
+                <div style="font-size:12px;color:rgba(42,38,32,.5);margin-right:8px">{{ h.streak }}d streak</div>
+                <div style="font-size:13px;font-weight:700;color:#2F6D5C">{{ h.pct }}%</div>
+              </div>
+            </sc-for>
+          </div>
+          <sc-if value="{{ showTabBar }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;border-top:1px solid rgba(0,0,0,.07);background:#fff;padding:10px 30px 22px">
+              <button onclick="{{ goToday }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div style="width:20px;height:20px;border-radius:6px;background:{{ todayTabColor }}"></div>
+                <div style="font-size:10.5px;font-weight:600;color:{{ todayTabColor }}">Today</div>
+              </button>
+              <button onclick="{{ goStats }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div style="display:flex;align-items:flex-end;gap:2px;height:20px">
+                  <div style="width:4px;height:9px;border-radius:2px;background:{{ statsTabColor }}"></div>
+                  <div style="width:4px;height:16px;border-radius:2px;background:{{ statsTabColor }}"></div>
+                  <div style="width:4px;height:13px;border-radius:2px;background:{{ statsTabColor }}"></div>
+                </div>
+                <div style="font-size:10.5px;font-weight:600;color:{{ statsTabColor }}">Stats</div>
+              </button>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <!-- ADD HABIT SHEET -->
+      <sc-if value="{{ showAdd }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;inset:0;background:rgba(20,18,14,.35);display:flex;align-items:flex-end;z-index:30">
+          <div style="width:100%;background:#F7F4EE;border-radius:24px 24px 0 0;padding:18px 20px 28px;max-height:88%;overflow-y:auto">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+              <div style="font-size:18px;font-weight:800;color:#2A2620">New Habit</div>
+              <button onclick="{{ closeAdd }}" style="width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.06);display:flex;align-items:center;justify-content:center">
+                <svg width="12" height="12" viewBox="0 0 12 12"><path d="M1 1L11 11M11 1L1 11" stroke="#2A2620" stroke-width="1.6" stroke-linecap="round"></path></svg>
+              </button>
+            </div>
+
+            <div style="font-size:12px;font-weight:600;color:rgba(42,38,32,.5);margin-bottom:6px">NAME</div>
+            <input value="{{ form.name }}" onchange="{{ setFormName }}" placeholder="e.g. Stretch" style="width:100%;padding:12px 14px;border-radius:14px;border:1px solid rgba(0,0,0,.1);background:#fff;font-size:15px;color:#2A2620;margin-bottom:16px;outline:none">
+
+            <div style="font-size:12px;font-weight:600;color:rgba(42,38,32,.5);margin-bottom:8px">COLOR</div>
+            <div style="display:flex;gap:12px;margin-bottom:16px">
+              <sc-for list="{{ formSwatches }}" as="sw" hint-placeholder-count="4">
+                <button onclick="{{ sw.onClick }}" style="width:36px;height:36px;border-radius:50%;background:{{ sw.color }};{{ sw.ringStyle }}"></button>
+              </sc-for>
+            </div>
+
+            <div style="font-size:12px;font-weight:600;color:rgba(42,38,32,.5);margin-bottom:8px">TYPE</div>
+            <div style="display:flex;background:rgba(0,0,0,.05);border-radius:14px;padding:3px;margin-bottom:16px">
+              <button onclick="{{ setTypeCheck }}" style="flex:1;padding:9px;border-radius:11px;font-size:13.5px;font-weight:600;{{ typeCheckStyle }}">Check-off</button>
+              <button onclick="{{ setTypeCounter }}" style="flex:1;padding:9px;border-radius:11px;font-size:13.5px;font-weight:600;{{ typeCounterStyle }}">Counter</button>
+            </div>
+
+            <sc-if value="{{ isFormCounter }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;gap:10px;margin-bottom:16px">
+                <div style="flex:1">
+                  <div style="font-size:12px;font-weight:600;color:rgba(42,38,32,.5);margin-bottom:6px">TARGET</div>
+                  <input type="number" value="{{ form.target }}" onchange="{{ setFormTarget }}" style="width:100%;padding:12px 14px;border-radius:14px;border:1px solid rgba(0,0,0,.1);background:#fff;font-size:15px;color:#2A2620;outline:none">
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:12px;font-weight:600;color:rgba(42,38,32,.5);margin-bottom:6px">UNIT</div>
+                  <input value="{{ form.unit }}" onchange="{{ setFormUnit }}" placeholder="glasses" style="width:100%;padding:12px 14px;border-radius:14px;border:1px solid rgba(0,0,0,.1);background:#fff;font-size:15px;color:#2A2620;outline:none">
+                </div>
+              </div>
+            </sc-if>
+
+            <div style="font-size:12px;font-weight:600;color:rgba(42,38,32,.5);margin-bottom:8px">REPEAT ON</div>
+            <div style="display:flex;gap:6px;margin-bottom:22px">
+              <sc-for list="{{ formWeekdays }}" as="wd" hint-placeholder-count="7">
+                <button onclick="{{ wd.onClick }}" style="flex:1;height:38px;border-radius:11px;font-size:12.5px;font-weight:700;{{ wd.style }}">{{ wd.label }}</button>
+              </sc-for>
+            </div>
+
+            <button onclick="{{ addHabit }}" disabled="{{ addDisabled }}" style="width:100%;padding:15px;border-radius:16px;background:{{ addButtonBg }};color:#fff;font-size:15.5px;font-weight:700">Add Habit</button>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </x-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.TODAY = new Date(2026, 6, 7);
+    this.palette = [
+      'oklch(52% 0.10 155)',
+      'oklch(58% 0.13 45)',
+      'oklch(55% 0.09 250)',
+      'oklch(50% 0.11 320)',
+    ];
+    this.state = {
+      screen: 'today',
+      selectedHabitId: null,
+      showAdd: false,
+      habits: this.seedHabits(),
+      form: this.blankForm(),
+    };
+  }
+
+  blankForm() {
+    return { name: '', colorIdx: 0, type: 'check', target: 8, unit: 'times', weekdays: [0,1,2,3,4,5,6] };
+  }
+
+  pad(n) { return String(n).padStart(2, '0'); }
+  dateKey(d) { return `${d.getFullYear()}-${this.pad(d.getMonth()+1)}-${this.pad(d.getDate())}`; }
+  addDays(d, delta) { return new Date(d.getFullYear(), d.getMonth(), d.getDate() + delta); }
+
+  mulberry32(seed) {
+    let a = seed;
+    return function() {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      let t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  hash(str) { let h = 0; for (let i=0;i<str.length;i++) { h = (h*31 + str.charCodeAt(i))|0; } return h; }
+
+  buildHistory(name, params) {
+    const { weekdays, bias, type, target, currentStreakLen, bestStreakStart, bestStreakLen, todayOverride } = params;
+    const rand = this.mulberry32(this.hash(name));
+    const history = {};
+    for (let daysAgo = 59; daysAgo >= 0; daysAgo--) {
+      const date = this.addDays(this.TODAY, -daysAgo);
+      const wd = date.getDay();
+      if (!weekdays.includes(wd)) continue;
+      let success;
+      if (daysAgo === 0 && typeof todayOverride !== 'undefined') {
+        history[this.dateKey(date)] = todayOverride;
+        continue;
+      }
+      if (daysAgo < currentStreakLen) success = true;
+      else if (daysAgo >= bestStreakStart && daysAgo < bestStreakStart + bestStreakLen) success = true;
+      else success = rand() < bias;
+      if (type === 'check') history[this.dateKey(date)] = success;
+      else history[this.dateKey(date)] = success ? target + Math.floor(rand()*3) : Math.floor(rand()*target);
+    }
+    return history;
+  }
+
+  seedHabits() {
+    const defs = [
+      { name:'Drink Water', type:'counter', target:8, unit:'glasses', colorIdx:2, weekdays:[0,1,2,3,4,5,6], bias:.7, currentStreakLen:6, bestStreakStart:25, bestStreakLen:14, todayOverride:5 },
+      { name:'Meditate', type:'check', colorIdx:0, weekdays:[0,1,2,3,4,5,6], bias:.65, currentStreakLen:12, bestStreakStart:28, bestStreakLen:18, todayOverride:true },
+      { name:'Read', type:'counter', target:20, unit:'pages', colorIdx:1, weekdays:[0,1,2,3,4,5,6], bias:.55, currentStreakLen:3, bestStreakStart:14, bestStreakLen:9, todayOverride:12 },
+      { name:'Morning Run', type:'check', colorIdx:3, weekdays:[1,3,5], bias:.6, currentStreakLen:4, bestStreakStart:18, bestStreakLen:6 },
+      { name:'No Phone After 10pm', type:'check', colorIdx:0, weekdays:[0,1,2,3,4,5,6], bias:.5, currentStreakLen:0, bestStreakStart:10, bestStreakLen:15, todayOverride:false },
+    ];
+    return defs.map((d, i) => ({
+      id: 'h' + i,
+      name: d.name,
+      type: d.type,
+      target: d.target || 1,
+      unit: d.unit || '',
+      color: this.palette[d.colorIdx],
+      weekdays: d.weekdays,
+      history: this.buildHistory(d.name, d),
+    }));
+  }
+
+  isSuccess(habit, val) {
+    return habit.type === 'check' ? val === true : (typeof val === 'number' && val >= habit.target);
+  }
+
+  calcStreak(habit) {
+    let streak = 0, d = new Date(this.TODAY);
+    for (let i = 0; i < 120; i++) {
+      const wd = d.getDay();
+      if (habit.weekdays.includes(wd)) {
+        const val = habit.history[this.dateKey(d)];
+        if (this.isSuccess(habit, val)) streak++; else break;
+      }
+      d = this.addDays(d, -1);
+    }
+    return streak;
+  }
+
+  calcBest(habit) {
+    let best = 0, current = 0, d = this.addDays(this.TODAY, -89);
+    for (let i = 0; i < 90; i++) {
+      const wd = d.getDay();
+      if (habit.weekdays.includes(wd)) {
+        const val = habit.history[this.dateKey(d)];
+        if (this.isSuccess(habit, val)) { current++; best = Math.max(best, current); } else current = 0;
+      }
+      d = this.addDays(d, 1);
+    }
+    return best;
+  }
+
+  completionPct(habit) {
+    let done = 0, total = 0, d = this.addDays(this.TODAY, -59);
+    for (let i = 0; i < 60; i++) {
+      const wd = d.getDay();
+      if (habit.weekdays.includes(wd)) {
+        total++;
+        const val = habit.history[this.dateKey(d)];
+        if (this.isSuccess(habit, val)) done++;
+      }
+      d = this.addDays(d, 1);
+    }
+    return total ? Math.round(done/total*100) : 0;
+  }
+
+  buildCalendar(habit, year, month) {
+    const firstDay = new Date(year, month, 1);
+    const startWeekday = firstDay.getDay();
+    const daysInMonth = new Date(year, month+1, 0).getDate();
+    const cells = [];
+    for (let i = 0; i < startWeekday; i++) cells.push({ dayLabel: '', styleStr: '' });
+    for (let day = 1; day <= daysInMonth; day++) {
+      const date = new Date(year, month, day);
+      const wd = date.getDay();
+      const key = this.dateKey(date);
+      const isToday = key === this.dateKey(this.TODAY);
+      const isFuture = date > this.TODAY;
+      let bg = 'transparent', fg = 'rgba(42,38,32,.25)';
+      if (!habit.weekdays.includes(wd)) { bg = 'transparent'; fg = 'rgba(42,38,32,.2)'; }
+      else if (isFuture) { bg = 'transparent'; fg = 'rgba(42,38,32,.3)'; }
+      else {
+        const val = habit.history[key];
+        if (typeof val === 'undefined') { bg = 'transparent'; fg = 'rgba(42,38,32,.3)'; }
+        else if (this.isSuccess(habit, val)) { bg = habit.color; fg = '#fff'; }
+        else { bg = 'rgba(0,0,0,.06)'; fg = 'rgba(42,38,32,.4)'; }
+      }
+      const ring = isToday ? `box-shadow:0 0 0 2px ${habit.color};` : '';
+      cells.push({ dayLabel: String(day), styleStr: `background:${bg};color:${fg};${ring}` });
+    }
+    while (cells.length % 7 !== 0) cells.push({ dayLabel: '', styleStr: '' });
+    const weeks = [];
+    for (let i = 0; i < cells.length; i += 7) weeks.push(cells.slice(i, i+7));
+    return weeks;
+  }
+
+  toggleCheck(id) {
+    const key = this.dateKey(this.TODAY);
+    this.setState(s => ({
+      habits: s.habits.map(h => {
+        if (h.id !== id) return h;
+        const hist = { ...h.history };
+        hist[key] = !(hist[key] === true);
+        return { ...h, history: hist };
+      })
+    }));
+  }
+
+  incCounter(id, delta) {
+    const key = this.dateKey(this.TODAY);
+    this.setState(s => ({
+      habits: s.habits.map(h => {
+        if (h.id !== id) return h;
+        const hist = { ...h.history };
+        const cur = typeof hist[key] === 'number' ? hist[key] : 0;
+        hist[key] = Math.max(0, Math.min(999, cur + delta));
+        return { ...h, history: hist };
+      })
+    }));
+  }
+
+  toggleFormWeekday(idx) {
+    this.setState(s => {
+      const has = s.form.weekdays.includes(idx);
+      const weekdays = has ? s.form.weekdays.filter(x => x !== idx) : [...s.form.weekdays, idx].sort();
+      return { form: { ...s.form, weekdays } };
+    });
+  }
+
+  addHabit() {
+    const f = this.state.form;
+    if (!f.name.trim()) return;
+    const habit = {
+      id: 'h' + Date.now(),
+      name: f.name.trim(),
+      type: f.type,
+      target: f.type === 'counter' ? (parseInt(f.target,10) || 1) : 1,
+      unit: f.unit || '',
+      color: this.palette[f.colorIdx],
+      weekdays: f.weekdays.length ? f.weekdays : [0,1,2,3,4,5,6],
+      history: {},
+    };
+    this.setState(s => ({ habits: [...s.habits, habit], showAdd: false, form: this.blankForm() }));
+  }
+
+  openDetail(id) { this.setState({ screen: 'detail', selectedHabitId: id }); }
+
+  renderVals() {
+    const habits = this.state.habits;
+    const todayKey = this.dateKey(this.TODAY);
+
+    const habitVMs = habits.map(h => {
+      const scheduledToday = h.weekdays.includes(this.TODAY.getDay());
+      const todayVal = h.history[todayKey];
+      const streak = this.calcStreak(h);
+      const doneToday = this.isSuccess(h, todayVal);
+      const countToday = typeof todayVal === 'number' ? todayVal : 0;
+      return {
+        id: h.id, name: h.name, color: h.color, letter: h.name[0].toUpperCase(),
+        isCheck: h.type === 'check', isCounter: h.type === 'counter',
+        scheduledToday, doneToday, countToday, target: h.target, unit: h.unit,
+        progressLabel: `${countToday}/${h.target}`,
+        streakText: scheduledToday ? (streak > 0 ? `${streak} day streak` : 'Start today') : 'Rest day',
+        checkBg: doneToday ? h.color : '#fff',
+        checkBorder: doneToday ? h.color : 'rgba(0,0,0,.15)',
+        openDetail: () => this.openDetail(h.id),
+        toggleCheck: (e) => { e.stopPropagation(); this.toggleCheck(h.id); },
+        inc: (e) => { e.stopPropagation(); this.incCounter(h.id, 1); },
+        dec: (e) => { e.stopPropagation(); this.incCounter(h.id, -1); },
+      };
+    });
+
+    const scheduledTodayHabits = habitVMs.filter(h => h.scheduledToday);
+    const summaryDoneCount = scheduledTodayHabits.filter(h => h.doneToday).length;
+    const summaryTotalCount = scheduledTodayHabits.length;
+    const pct = summaryTotalCount ? summaryDoneCount / summaryTotalCount : 0;
+    const summaryCircumference = 2 * Math.PI * 26;
+    const summaryDashOffset = summaryCircumference * (1 - pct);
+
+    let selectedHabit = null;
+    if (this.state.selectedHabitId) {
+      const h = habits.find(x => x.id === this.state.selectedHabitId);
+      if (h) {
+        const streak = this.calcStreak(h);
+        const best = this.calcBest(h);
+        const cpct = this.completionPct(h);
+        const weeks = this.buildCalendar(h, this.TODAY.getFullYear(), this.TODAY.getMonth());
+        const scheduledToday = h.weekdays.includes(this.TODAY.getDay());
+        const todayVal = h.history[todayKey];
+        const doneToday = this.isSuccess(h, todayVal);
+        selectedHabit = {
+          id: h.id, name: h.name, color: h.color, letter: h.name[0].toUpperCase(),
+          streak, best, pct: cpct,
+          weeks, monthLabel: this.TODAY.toLocaleString('en-US', { month:'long', year:'numeric' }),
+          isCheck: h.type === 'check', isCounter: h.type === 'counter',
+          scheduledToday, doneToday,
+          countToday: typeof todayVal === 'number' ? todayVal : 0, target: h.target, unit: h.unit,
+          checkBg: doneToday ? h.color : '#fff',
+          checkBorder: doneToday ? h.color : 'rgba(0,0,0,.15)',
+          actionTextColor: doneToday ? '#fff' : '#2A2620',
+          actionLabel: doneToday ? 'Done today' : 'Mark as done',
+          toggleCheck: () => this.toggleCheck(h.id),
+          inc: () => this.incCounter(h.id, 1),
+          dec: () => this.incCounter(h.id, -1),
+        };
+      }
+    }
+
+    const weekBars = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = this.addDays(this.TODAY, -i);
+      const wd = d.getDay();
+      let done = 0, total = 0;
+      habits.forEach(h => {
+        if (h.weekdays.includes(wd)) {
+          total++;
+          const val = h.history[this.dateKey(d)];
+          if (this.isSuccess(h, val)) done++;
+        }
+      });
+      const barPct = total ? done/total : 0;
+      const isToday = this.dateKey(d) === todayKey;
+      weekBars.push({
+        label: d.toLocaleString('en-US', { weekday:'narrow' }),
+        barStyle: `height:${Math.round(barPct*100)}%;background:#2F6D5C;`,
+        labelColor: isToday ? '#2F6D5C' : 'rgba(42,38,32,.5)',
+        labelWeight: isToday ? 700 : 500,
+      });
+    }
+    const overallPct = habits.length ? Math.round(habits.reduce((s,h) => s + this.completionPct(h), 0) / habits.length) : 0;
+    const habitStatVMs = habits.map(h => ({
+      id: h.id, name: h.name, color: h.color, letter: h.name[0].toUpperCase(),
+      streak: this.calcStreak(h), pct: this.completionPct(h),
+      openDetail: () => this.openDetail(h.id),
+    }));
+
+    const f = this.state.form;
+    const formSwatches = this.palette.map((c, idx) => ({
+      color: c,
+      ringStyle: f.colorIdx === idx ? `box-shadow:0 0 0 3px #fff, 0 0 0 5px ${c};` : '',
+      onClick: () => this.setState(s => ({ form: { ...s.form, colorIdx: idx } })),
+    }));
+    const weekdayLabels = ['S','M','T','W','T','F','S'];
+    const formWeekdays = weekdayLabels.map((label, idx) => {
+      const selected = f.weekdays.includes(idx);
+      return {
+        label, idx,
+        style: selected ? 'background:#2F6D5C;color:#fff;' : 'background:rgba(0,0,0,.05);color:#2A2620;',
+        onClick: () => this.toggleFormWeekday(idx),
+      };
+    });
+
+    return {
+      deviceWidth: 402, deviceHeight: 874,
+      screen: this.state.screen,
+      isToday: this.state.screen === 'today',
+      isDetail: this.state.screen === 'detail',
+      isStats: this.state.screen === 'stats',
+      showTabBar: this.state.screen !== 'detail',
+      todayTabColor: this.state.screen === 'today' ? '#2F6D5C' : 'rgba(42,38,32,.35)',
+      statsTabColor: this.state.screen === 'stats' ? '#2F6D5C' : 'rgba(42,38,32,.35)',
+      todayDateLabel: this.TODAY.toLocaleString('en-US', { weekday:'long', month:'long', day:'numeric' }),
+      habits: habitVMs,
+      summaryDoneCount, summaryTotalCount, summaryDashOffset, summaryCircumference,
+      selectedHabit,
+      weekBars, overallPct, habitStatVMs,
+      showAdd: this.state.showAdd,
+      form: f,
+      formSwatches, formWeekdays,
+      isFormCounter: f.type === 'counter',
+      typeCheckStyle: f.type === 'check' ? 'background:#2F6D5C;color:#fff;' : 'color:rgba(42,38,32,.55);',
+      typeCounterStyle: f.type === 'counter' ? 'background:#2F6D5C;color:#fff;' : 'color:rgba(42,38,32,.55);',
+      addDisabled: !f.name.trim(),
+      addButtonBg: f.name.trim() ? '#2F6D5C' : 'rgba(0,0,0,.15)',
+      goToday: () => this.setState({ screen: 'today' }),
+      goStats: () => this.setState({ screen: 'stats' }),
+      openAdd: () => this.setState({ showAdd: true }),
+      closeAdd: () => this.setState({ showAdd: false, form: this.blankForm() }),
+      backToToday: () => this.setState({ screen: 'today', selectedHabitId: null }),
+      setFormName: (e) => this.setState(s => ({ form: { ...s.form, name: e.target.value } })),
+      setFormTarget: (e) => this.setState(s => ({ form: { ...s.form, target: e.target.value } })),
+      setFormUnit: (e) => this.setState(s => ({ form: { ...s.form, unit: e.target.value } })),
+      setTypeCheck: () => this.setState(s => ({ form: { ...s.form, type: 'check' } })),
+      setTypeCounter: () => this.setState(s => ({ form: { ...s.form, type: 'counter' } })),
+      addHabit: () => this.addHabit(),
+    };
+  }
+}
+
+</script>
+
+
+</body></html>
