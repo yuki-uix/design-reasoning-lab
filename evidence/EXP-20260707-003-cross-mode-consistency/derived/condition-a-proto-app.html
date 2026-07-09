@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="6f7db9ad-d755-4dde-8d63-3d97328047c5"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #EFEAE2; font-family: 'Nunito', system-ui, sans-serif; }
+  input[type="time"]::-webkit-calendar-picker-indicator { opacity: 0.6; }
+</style>
+</helmet>
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:60px 20px;box-sizing:border-box;">
+  <x-import component-from-global-scope="IOSDevice" from="a34d5da1-da30-4fe6-a793-b963fccc08b8#/ios-frame.jsx" hint-size="402px,874px">
+    <div style="height:100%;width:100%;display:flex;flex-direction:column;position:relative;background:#FBF8F3;font-family:'Nunito',system-ui,sans-serif;">
+
+      <div style="flex:1;overflow:auto;padding:74px 20px 116px;box-sizing:border-box;">
+
+        <sc-if value="{{ isToday }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:22px;">
+            <div style="font-size:14px;color:#9A9284;font-weight:700;letter-spacing:0.2px;">{{ todayDateStr }}</div>
+            <div style="font-size:27px;font-weight:800;color:#2B2721;">{{ greeting }}</div>
+          </div>
+
+          <div style="background:#FFFFFF;border:1px solid #ECE6DB;border-radius:20px;padding:18px 20px;margin-bottom:22px;display:flex;align-items:center;gap:14px;">
+            <div style="width:48px;height:48px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;background:{{ accentColor }};">{{ summaryFraction }}</div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0;">
+              <div style="font-size:15px;font-weight:700;color:#2B2721;">{{ summaryHeadline }}</div>
+              <div style="font-size:13px;color:#8A8377;">{{ summarySub }}</div>
+            </div>
+          </div>
+
+          <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:44px 16px;">
+              <div style="width:84px;height:84px;border-radius:26px;background:{{ accentTint }};display:flex;align-items:center;justify-content:center;">
+                <div style="width:34px;height:34px;border-radius:50%;border:3px dashed {{ accentColor }};"></div>
+              </div>
+              <div style="font-size:18px;font-weight:800;color:#2B2721;">A blank slate</div>
+              <div style="font-size:14px;color:#8A8377;line-height:1.5;max-width:230px;">No habits yet — and that's perfectly fine. Add one small thing you'd like to do most days.</div>
+              <button onclick="{{ goCreate }}" style-active="transform:scale(0.96)" style="margin-top:8px;padding:14px 26px;border-radius:16px;border:none;background:{{ accentColor }};color:#fff;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;">Add your first habit</button>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ hasHabits }}" hint-placeholder-val="{{ true }}">
+            <sc-for list="{{ habitsToday }}" as="h" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;gap:14px;background:{{ h.cardBg }};border:1px solid {{ h.cardBorder }};border-radius:20px;padding:16px 18px;margin-bottom:12px;transition:background 0.25s ease, border-color 0.25s ease;">
+                <div style="width:44px;height:44px;border-radius:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;color:#fff;background:{{ h.iconColor }};">{{ h.letter }}</div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:3px;min-width:0;">
+                  <div style="font-size:16px;font-weight:700;color:#2B2721;">{{ h.name }}</div>
+                  <div style="font-size:13px;color:#8A8377;">{{ h.subtitle }}</div>
+                </div>
+                <div onclick="{{ h.toggle }}" style-active="transform:scale(0.9)" style="width:40px;height:40px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;cursor:pointer;border:2px solid {{ h.circleBorder }};background:{{ h.circleBg }};transition:all 0.2s ease;">
+                  <sc-if value="{{ h.isDone }}" hint-placeholder-val="{{ false }}">
+                    <svg width="18" height="14" viewBox="0 0 18 14"><path d="M1 7l5 5L17 1" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-for>
+          </sc-if>
+        </sc-if>
+
+        <sc-if value="{{ isWeekly }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:20px;">
+            <div style="font-size:14px;color:#9A9284;font-weight:700;letter-spacing:0.2px;">{{ weeklyRangeLabel }}</div>
+            <div style="font-size:27px;font-weight:800;color:#2B2721;">This week</div>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #ECE6DB;border-radius:20px;padding:16px 18px;margin-bottom:20px;">
+            <div style="font-size:14px;color:#4A453C;line-height:1.5;">{{ weeklySummaryText }}</div>
+          </div>
+          <sc-for list="{{ weeklyHabits }}" as="h" hint-placeholder-count="4">
+            <div style="background:#FFFFFF;border:1px solid #ECE6DB;border-radius:20px;padding:16px 18px;margin-bottom:12px;display:flex;flex-direction:column;gap:14px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                <div style="font-size:15px;font-weight:700;color:#2B2721;">{{ h.name }}</div>
+                <div style="font-size:12px;font-weight:700;color:{{ h.streakColor }};background:{{ h.streakBg }};padding:4px 10px;border-radius:100px;white-space:nowrap;">{{ h.streakLabel }}</div>
+              </div>
+              <div style="display:flex;gap:6px;justify-content:space-between;">
+                <sc-for list="{{ h.days }}" as="d" hint-placeholder-count="7">
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+                    <div style="font-size:11px;font-weight:700;color:#B3AC9E;">{{ d.label }}</div>
+                    <div style="width:26px;height:26px;border-radius:50%;background:{{ d.fill }};border:2px solid {{ d.border }};box-sizing:border-box;"></div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </sc-if>
+
+        <sc-if value="{{ isCreate }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:26px;">
+            <div onclick="{{ onClose }}" style-active="transform:scale(0.92)" style="width:36px;height:36px;border-radius:50%;background:#FFFFFF;border:1px solid #ECE6DB;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+              <svg width="13" height="13" viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13" stroke="#8A8377" stroke-width="2" stroke-linecap="round"></path></svg>
+            </div>
+            <div style="font-size:13px;font-weight:700;color:#8A8377;">{{ stepLabel }}</div>
+            <div style="width:36px;"></div>
+          </div>
+
+          <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
+            <div style="font-size:24px;font-weight:800;color:#2B2721;margin-bottom:8px;">What's the habit?</div>
+            <div style="font-size:14px;color:#8A8377;margin-bottom:24px;line-height:1.5;">Keep it small — something you can do most days without much effort.</div>
+            <input type="text" value="{{ draftName }}" onchange="{{ onNameChange }}" placeholder="e.g. Family dinner together" style="width:100%;box-sizing:border-box;padding:16px 18px;border-radius:16px;border:1px solid #ECE6DB;background:#FFFFFF;font-size:16px;font-family:inherit;color:#2B2721;margin-bottom:28px;outline:none;">
+            <div style="font-size:13px;font-weight:700;color:#8A8377;margin-bottom:12px;">Pick a color</div>
+            <div style="display:flex;gap:14px;">
+              <sc-for list="{{ colorOptions }}" as="c" hint-placeholder-count="4">
+                <div onclick="{{ c.select }}" style-active="transform:scale(0.9)" style="width:40px;height:40px;border-radius:50%;background:{{ c.hex }};border:3px solid {{ c.ring }};cursor:pointer;box-sizing:border-box;"></div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size:24px;font-weight:800;color:#2B2721;margin-bottom:8px;">When works best?</div>
+            <div style="font-size:14px;color:#8A8377;margin-bottom:22px;line-height:1.5;">Pick a rhythm — you can always change it later.</div>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px;">
+              <sc-for list="{{ scheduleOptions }}" as="opt" hint-placeholder-count="3">
+                <div onclick="{{ opt.select }}" style-active="transform:scale(0.98)" style="display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-radius:16px;border:2px solid {{ opt.border }};background:{{ opt.bg }};cursor:pointer;box-sizing:border-box;">
+                  <div style="font-size:15px;font-weight:700;color:#2B2721;">{{ opt.label }}</div>
+                  <div style="width:20px;height:20px;border-radius:50%;border:2px solid {{ opt.dotBorder }};background:{{ opt.dotBg }};box-sizing:border-box;"></div>
+                </div>
+              </sc-for>
+            </div>
+            <sc-if value="{{ isCustomSchedule }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;gap:6px;justify-content:space-between;">
+                <sc-for list="{{ customDayToggles }}" as="d" hint-placeholder-count="7">
+                  <div onclick="{{ d.toggle }}" style-active="transform:scale(0.9)" style="width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;cursor:pointer;background:{{ d.bg }};color:{{ d.color }};border:2px solid {{ d.border }};box-sizing:border-box;">{{ d.label }}</div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </sc-if>
+
+          <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size:24px;font-weight:800;color:#2B2721;margin-bottom:8px;">Want a gentle reminder?</div>
+            <div style="font-size:14px;color:#8A8377;margin-bottom:22px;line-height:1.5;">A quiet nudge at the right moment — never a guilt trip.</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;background:#FFFFFF;border:1px solid #ECE6DB;border-radius:16px;padding:16px 18px;margin-bottom:18px;box-sizing:border-box;">
+              <div style="font-size:15px;font-weight:700;color:#2B2721;">Daily reminder</div>
+              <div onclick="{{ onReminderToggle }}" style="width:50px;height:30px;border-radius:100px;background:{{ reminderTrackBg }};position:relative;cursor:pointer;transition:background 0.2s;flex-shrink:0;">
+                <div style="position:absolute;top:3px;left:{{ reminderKnobLeft }};width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.22);transition:left 0.2s;"></div>
+              </div>
+            </div>
+            <sc-if value="{{ reminderOn }}" hint-placeholder-val="{{ true }}">
+              <input type="time" value="{{ reminderTime }}" onchange="{{ onReminderTimeChange }}" style="width:100%;box-sizing:border-box;padding:16px 18px;border-radius:16px;border:1px solid #ECE6DB;background:#FFFFFF;font-size:16px;font-family:inherit;color:#2B2721;outline:none;">
+            </sc-if>
+          </sc-if>
+
+          <sc-if value="{{ isStep4 }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;padding:36px 8px;">
+              <div style="width:76px;height:76px;border-radius:50%;background:{{ accentColor }};display:flex;align-items:center;justify-content:center;">
+                <svg width="30" height="23" viewBox="0 0 18 14"><path d="M1 7l5 5L17 1" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </div>
+              <div style="font-size:22px;font-weight:800;color:#2B2721;">You're all set</div>
+              <div style="font-size:14px;color:#8A8377;line-height:1.6;max-width:250px;">{{ confirmSummary }}</div>
+            </div>
+          </sc-if>
+        </sc-if>
+
+      </div>
+
+      <sc-if value="{{ isCreate }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:14px 20px 34px;background:#FBF8F3;border-top:1px solid #ECE6DB;display:flex;gap:12px;box-sizing:border-box;">
+          <sc-if value="{{ showBack }}" hint-placeholder-val="{{ false }}">
+            <button onclick="{{ onBack }}" style-active="transform:scale(0.96)" style="flex:none;padding:16px 22px;border-radius:16px;border:1px solid #ECE6DB;background:#FFFFFF;color:#2B2721;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;">Back</button>
+          </sc-if>
+          <button onclick="{{ onPrimary }}" disabled="{{ primaryDisabled }}" style-active="transform:scale(0.98)" style="flex:1;padding:16px 22px;border-radius:16px;border:none;background:{{ primaryBg }};color:#fff;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;">{{ primaryLabel }}</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ showTabBar }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:10px 24px 30px;background:rgba(251,248,243,0.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid #ECE6DB;display:flex;align-items:center;justify-content:space-around;box-sizing:border-box;">
+          <div onclick="{{ goToday }}" style-active="transform:scale(0.92)" style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;">
+            <div style="width:22px;height:22px;border-radius:7px;background:{{ todayIconBg }};"></div>
+            <div style="font-size:11px;font-weight:700;color:{{ todayLabelColor }};">Today</div>
+          </div>
+          <div onclick="{{ goCreate }}" style-active="transform:scale(0.9)" style="width:52px;height:52px;border-radius:50%;background:{{ accentColor }};display:flex;align-items:center;justify-content:center;cursor:pointer;margin-top:-26px;box-shadow:0 6px 16px rgba(0,0,0,0.18);">
+            <svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 2v16M2 10h16" stroke="#fff" stroke-width="2.4" stroke-linecap="round"></path></svg>
+          </div>
+          <div onclick="{{ goWeekly }}" style-active="transform:scale(0.92)" style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;">
+            <div style="width:22px;height:22px;border-radius:7px;background:{{ weeklyIconBg }};"></div>
+            <div style="font-size:11px;font-weight:700;color:{{ weeklyLabelColor }};">Weekly</div>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </x-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 500, &quot;height&quot;: 950},
+  &quot;accentColor&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#6B8E7F&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#6B8E7F&quot;, &quot;#7A9B76&quot;, &quot;#8FA382&quot;, &quot;#5C7A63&quot;]},
+  &quot;demoState&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;withHabits&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;withHabits&quot;, &quot;empty&quot;]},
+  &quot;userName&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Alex&quot;, &quot;tsType&quot;: &quot;string&quot;}
+}">
+const DAY_LABELS = ['M','T','W','T','F','S','S'];
+const DAY_NAMES = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const ICON_COLORS = ['#6B8E7F','#4F6D5A','#B08966','#8A8377'];
+
+function formatTime12(t) {
+  if (!t) return '';
+  const parts = t.split(':');
+  let h = parseInt(parts[0], 10);
+  const m = parts[1];
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  h = h % 12;
+  if (h === 0) h = 12;
+  return h + ':' + m + ' ' + ampm;
+}
+
+function scheduleLabel(draftLike) {
+  let base;
+  if (draftLike.scheduleType === 'daily') base = 'Every day';
+  else if (draftLike.scheduleType === 'weekdays') base = 'Weekdays';
+  else {
+    const active = draftLike.days.map((v, i) => v ? DAY_NAMES[i] : null).filter(Boolean);
+    base = active.length ? active.join(', ') : 'No days set';
+  }
+  if (draftLike.reminderOn && draftLike.reminderTime) base += ' · ' + formatTime12(draftLike.reminderTime);
+  return base;
+}
+
+function daysForType(type, current) {
+  if (type === 'daily') return [true, true, true, true, true, true, true];
+  if (type === 'weekdays') return [true, true, true, true, true, false, false];
+  return current && current.length === 7 ? current.slice() : [true, true, true, true, true, true, true];
+}
+
+function computeStreak(habit, todayIndex) {
+  const combined = habit.history.slice(0, todayIndex).concat([habit.doneToday]);
+  let streak = 0;
+  for (let i = combined.length - 1; i >= 0; i--) {
+    if (!habit.days[i]) continue;
+    if (combined[i]) streak++; else break;
+  }
+  return streak;
+}
+
+function buildWeekDays(habit, todayIndex, accent) {
+  const combined = habit.history.slice(0, todayIndex).concat([habit.doneToday]);
+  const days = [];
+  for (let i = 0; i < 7; i++) {
+    const scheduled = habit.days[i];
+    let fill, border;
+    if (i < combined.length) {
+      const done = combined[i];
+      if (!scheduled) { fill = '#F4F1EA'; border = '#F4F1EA'; }
+      else if (done) { fill = accent; border = accent; }
+      else { fill = '#FFFFFF'; border = '#E3DDCF'; }
+    } else {
+      fill = scheduled ? '#FFFFFF' : '#F4F1EA';
+      border = scheduled ? '#E3DDCF' : '#F4F1EA';
+    }
+    if (i === todayIndex && fill !== accent) border = accent;
+    days.push({ label: DAY_LABELS[i], fill: fill, border: border });
+  }
+  return days;
+}
+
+function defaultHabits() {
+  return [
+    { id: 'h1', name: 'Family dinner together', colorHex: '#B08966', scheduleType: 'daily', days: [true,true,true,true,true,true,true], reminderOn: true, reminderTime: '18:00', history: [true,true,false,true,true,true], doneToday: false },
+    { id: 'h2', name: '10-minute walk', colorHex: '#6B8E7F', scheduleType: 'weekdays', days: [true,true,true,true,true,false,false], reminderOn: true, reminderTime: '12:30', history: [true,false,true,true,true,false], doneToday: true },
+    { id: 'h3', name: 'Bedtime story', colorHex: '#4F6D5A', scheduleType: 'daily', days: [true,true,true,true,true,true,true], reminderOn: true, reminderTime: '19:30', history: [true,true,true,false,true,true], doneToday: true },
+    { id: 'h4', name: 'Drink water', colorHex: '#8A8377', scheduleType: 'daily', days: [true,true,true,true,true,true,true], reminderOn: false, reminderTime: '09:00', history: [false,true,true,true,false,true], doneToday: false }
+  ];
+}
+
+function emptyDraft(accent) {
+  return { name: '', colorHex: accent, scheduleType: 'daily', days: [true,true,true,true,true,true,true], reminderOn: true, reminderTime: '19:00' };
+}
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const accent = props.accentColor || '#6B8E7F';
+    const demo = props.demoState || 'withHabits';
+    this.state = {
+      screen: 'today',
+      habits: demo === 'empty' ? [] : defaultHabits(),
+      createStep: 1,
+      draft: emptyDraft(accent)
+    };
+  }
+
+  toggleHabitDone(id) {
+    this.setState(s => ({
+      habits: s.habits.map(h => h.id === id ? Object.assign({}, h, { doneToday: !h.doneToday }) : h)
+    }));
+  }
+
+  renderVals() {
+    const accent = this.props.accentColor || '#6B8E7F';
+    const accentTint = accent === '#5C7A63' ? '#DEE7E1' : accent === '#8FA382' ? '#EBEFE6' : accent === '#7A9B76' ? '#E7EEE4' : '#E4ECE7';
+    const userName = this.props.userName || 'Alex';
+    const s = this.state;
+    const habits = s.habits;
+
+    const jsDay = new Date().getDay();
+    const todayIndex = (jsDay + 6) % 7;
+
+    const hour = new Date().getHours();
+    const greetWord = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+    const greeting = greetWord + ', ' + userName;
+    const todayDateStr = new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+
+    const doneCount = habits.filter(h => h.doneToday).length;
+    const total = habits.length;
+    const summaryFraction = doneCount + '/' + total;
+    const summaryHeadline = total === 0 ? 'Ready when you are' : doneCount === 0 ? 'Ready when you are' : (doneCount === total ? 'All done for today!' : doneCount + ' of ' + total + ' done');
+    const summarySub = total === 0 ? 'Add your first small habit below.' : doneCount === 0 ? 'No rush — pick one to start.' : doneCount === total ? 'You showed up for yourself today.' : 'Nice progress — keep going at your pace.';
+
+    const habitsToday = habits.map(h => ({
+      id: h.id,
+      name: h.name,
+      letter: ((h.name.match(/[a-zA-Z]/) || ['?'])[0]).toUpperCase(),
+      subtitle: scheduleLabel(h),
+      isDone: h.doneToday,
+      cardBg: h.doneToday ? accentTint : '#FFFFFF',
+      cardBorder: h.doneToday ? accent : '#ECE6DB',
+      iconColor: h.colorHex,
+      circleBg: h.doneToday ? accent : '#FFFFFF',
+      circleBorder: h.doneToday ? accent : '#DCD5C7',
+      toggle: () => this.toggleHabitDone(h.id)
+    }));
+
+    const totalPast = habits.reduce((sum, h) => sum + h.history.slice(0, todayIndex).filter((v, i) => h.days[i] && v).length + (h.doneToday ? 1 : 0), 0);
+    const weeklySummaryText = habits.length === 0 ? 'Add a habit to start seeing your week take shape.' : 'You showed up ' + totalPast + ' times this week — keep it up.';
+
+    const startOfWeek = new Date();
+    startOfWeek.setDate(startOfWeek.getDate() - todayIndex);
+    const endOfWeek = new Date(startOfWeek);
+    endOfWeek.setDate(startOfWeek.getDate() + 6);
+    const fmt = d => d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+    const weeklyRangeLabel = fmt(startOfWeek) + ' – ' + fmt(endOfWeek);
+
+    const weeklyHabits = habits.map(h => {
+      const streak = computeStreak(h, todayIndex);
+      return {
+        name: h.name,
+        streakLabel: streak === 0 ? 'Getting started' : streak + '-day streak',
+        streakColor: streak > 0 ? accent : '#9A9284',
+        streakBg: streak > 0 ? accentTint : '#F1EEE7',
+        days: buildWeekDays(h, todayIndex, accent)
+      };
+    });
+
+    const draft = s.draft;
+    const colorOptions = ICON_COLORS.map(hex => ({
+      hex: hex,
+      ring: draft.colorHex === hex ? hex : '#FFFFFF',
+      select: () => this.setState({ draft: Object.assign({}, draft, { colorHex: hex }) })
+    }));
+
+    const scheduleDefs = [
+      { key: 'daily', label: 'Every day' },
+      { key: 'weekdays', label: 'Weekdays' },
+      { key: 'custom', label: 'Custom days' }
+    ];
+    const scheduleOptions = scheduleDefs.map(def => {
+      const active = draft.scheduleType === def.key;
+      return {
+        label: def.label,
+        border: active ? accent : '#ECE6DB',
+        bg: active ? accentTint : '#FFFFFF',
+        dotBorder: active ? accent : '#DCD5C7',
+        dotBg: active ? accent : '#FFFFFF',
+        select: () => this.setState({ draft: Object.assign({}, draft, { scheduleType: def.key, days: daysForType(def.key, draft.days) }) })
+      };
+    });
+    const isCustomSchedule = draft.scheduleType === 'custom';
+    const customDayToggles = draft.days.map((on, i) => ({
+      label: DAY_LABELS[i],
+      bg: on ? accent : '#FFFFFF',
+      color: on ? '#FFFFFF' : '#9A9284',
+      border: on ? accent : '#DCD5C7',
+      toggle: () => {
+        const nd = draft.days.slice();
+        nd[i] = !nd[i];
+        this.setState({ draft: Object.assign({}, draft, { days: nd }) });
+      }
+    }));
+
+    const reminderTrackBg = draft.reminderOn ? accent : '#DCD5C7';
+    const reminderKnobLeft = draft.reminderOn ? '23px' : '3px';
+
+    const stepLabels = { 1: 'Step 1 of 3', 2: 'Step 2 of 3', 3: 'Step 3 of 3', 4: '' };
+    const primaryLabels = { 1: 'Next', 2: 'Next', 3: 'Add habit', 4: "Let's go" };
+    let primaryDisabled = false;
+    if (s.createStep === 1 && draft.name.trim() === '') primaryDisabled = true;
+    if (s.createStep === 2 && isCustomSchedule && !draft.days.some(Boolean)) primaryDisabled = true;
+
+    const confirmSummary = '"' + draft.name + '" is on your list — ' + scheduleLabel(draft) + '. Small steps, real progress.';
+
+    return {
+      isToday: s.screen === 'today',
+      isWeekly: s.screen === 'weekly',
+      isCreate: s.screen === 'create',
+      showTabBar: s.screen !== 'create',
+      accentColor: accent,
+      accentTint: accentTint,
+      greeting: greeting,
+      todayDateStr: todayDateStr,
+      summaryFraction: summaryFraction,
+      summaryHeadline: summaryHeadline,
+      summarySub: summarySub,
+      isEmpty: habits.length === 0,
+      hasHabits: habits.length > 0,
+      habitsToday: habitsToday,
+      weeklyRangeLabel: weeklyRangeLabel,
+      weeklySummaryText: weeklySummaryText,
+      weeklyHabits: weeklyHabits,
+      stepLabel: stepLabels[s.createStep],
+      isStep1: s.createStep === 1,
+      isStep2: s.createStep === 2,
+      isStep3: s.createStep === 3,
+      isStep4: s.createStep === 4,
+      draftName: draft.name,
+      onNameChange: e => this.setState({ draft: Object.assign({}, draft, { name: e.target.value }) }),
+      colorOptions: colorOptions,
+      scheduleOptions: scheduleOptions,
+      isCustomSchedule: isCustomSchedule,
+      customDayToggles: customDayToggles,
+      reminderOn: draft.reminderOn,
+      reminderTrackBg: reminderTrackBg,
+      reminderKnobLeft: reminderKnobLeft,
+      onReminderToggle: () => this.setState({ draft: Object.assign({}, draft, { reminderOn: !draft.reminderOn }) }),
+      reminderTime: draft.reminderTime,
+      onReminderTimeChange: e => this.setState({ draft: Object.assign({}, draft, { reminderTime: e.target.value }) }),
+      confirmSummary: confirmSummary,
+      showBack: s.createStep > 1 && s.createStep < 4,
+      primaryLabel: primaryLabels[s.createStep],
+      primaryBg: primaryDisabled ? '#D9D2C4' : accent,
+      primaryDisabled: primaryDisabled,
+      onBack: () => this.setState({ createStep: Math.max(1, s.createStep - 1) }),
+      onPrimary: () => {
+        if (s.createStep === 1) { if (draft.name.trim() !== '') this.setState({ createStep: 2 }); return; }
+        if (s.createStep === 2) { if (!(isCustomSchedule && !draft.days.some(Boolean))) this.setState({ createStep: 3 }); return; }
+        if (s.createStep === 3) {
+          const newHabit = {
+            id: 'h' + Date.now(),
+            name: draft.name.trim(),
+            colorHex: draft.colorHex,
+            scheduleType: draft.scheduleType,
+            days: draft.days.slice(),
+            reminderOn: draft.reminderOn,
+            reminderTime: draft.reminderTime,
+            history: new Array(todayIndex).fill(false),
+            doneToday: false
+          };
+          this.setState({ habits: habits.concat([newHabit]), createStep: 4 });
+          return;
+        }
+        this.setState({ screen: 'today', createStep: 1, draft: emptyDraft(accent) });
+      },
+      onClose: () => this.setState({ screen: 'today', createStep: 1, draft: emptyDraft(accent) }),
+      goToday: () => this.setState({ screen: 'today' }),
+      goWeekly: () => this.setState({ screen: 'weekly' }),
+      goCreate: () => this.setState({ screen: 'create', createStep: 1, draft: emptyDraft(accent) }),
+      todayIconBg: s.screen === 'today' ? accent : '#E3DDCF',
+      todayLabelColor: s.screen === 'today' ? accent : '#9A9284',
+      weeklyIconBg: s.screen === 'weekly' ? accent : '#E3DDCF',
+      weeklyLabelColor: s.screen === 'weekly' ? accent : '#9A9284'
+    };
+  }
+}
+
+</script>
+
+
+</body></html>

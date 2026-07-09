@@ -18,10 +18,17 @@ From EXP-20260707-001/002 (Claude Design):
 - The EXP-002 audit narrows the candidate: the artifact persists structure and behavior once-and-referenced, but visual decisions are re-derived at each use site with within-artifact drift, and the format provides no mechanism for markup and logic to share a style definition (OBS-20260709-022, -023).
 - The only decision-shaped record of visual design is a post-generation prose summary in the conversation; rationale and artifact are disjoint representations, neither derivable from the other (OBS-20260709-024).
 
+From EXP-20260707-003 (cross-mode test):
+
+- Same-session prototype→deck conversion transfers decisions at value fidelity (7 hex reused exactly), but the carrier is visible and procedural — the pipeline screenshots the live artifact — so session context suffices; a fresh session reproduces only the design language and re-derives every value (OBS-20260709-026, -027). The shared-IR reading is falsified at the value level and unnecessary at the language level.
+- Cross-mode style consistency is surfaced as a delegated intake question rather than resolved representationally (OBS-20260709-025).
+- A complete semantic CSS token system appeared in one deck run (20 custom properties, 327 `var()` refs) — the first in nine audited artifacts — precisely in the run that had no source artifact to copy values from; tokenization is run-contingent, bounding the EXP-002 conclusion (OBS-20260709-028).
+- The same run wrote a `scratchpad.md` before designing (first observed pre-generation planning artifact, contents unobserved) and included a design-spec slide, putting the design decisions in named form at three layers: scratchpad, tokens, spec slide (OBS-20260709-029).
+
 ## Related experiments
 
 - [EXP-20260707-002-artifact-code-autopsy](../../experiments/claude-design/EXP-20260707-002-artifact-code-autopsy.md) (completed)
-- [EXP-20260707-003-cross-mode-consistency](../../experiments/claude-design/EXP-20260707-003-cross-mode-consistency.md) (in progress)
+- [EXP-20260707-003-cross-mode-consistency](../../experiments/claude-design/EXP-20260707-003-cross-mode-consistency.md) (completed)
 
 ## Competing definitions
 
@@ -38,4 +45,5 @@ Observed consistency may be explained by conversation context, templates, or dir
 - 2026-07-02: Initial working hypothesis.
 - 2026-07-08: First evidence: the `.dc.html` template DSL identified as the leading IR candidate; CSS-token hypothesis revised after cross-run comparison.
 - 2026-07-09: EXP-002 audit completed: persisted-IR reading holds for structure/behavior, falsified for visual styling; rationale exists only as post-hoc conversational prose.
+- 2026-07-09 (later): EXP-003 completed: cross-session shared-IR reading falsified at the value level, unnecessary at the language level; but a run-contingent token system and a pre-generation scratchpad observed — named design representations exist in the repertoire, emitted under conditions not yet characterized.
 
