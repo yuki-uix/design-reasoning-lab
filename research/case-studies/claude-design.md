@@ -1,21 +1,48 @@
-# Claude Design (Research Preview)
+# Claude Design (Research Preview): how it thinks
 
 ## Status
 
-Active case study; no findings recorded yet.
-
-## Scope
-
-Observe how Claude Design elicits intent, allocates decisions, forms plans, and produces artifacts across available output modes.
+First synthesis, written 2026-07-10. Corpus: four completed Claude Design experiments ([EXP-001](../../experiments/claude-design/EXP-20260707-001-ambiguity-ladder.md), [EXP-002](../../experiments/claude-design/EXP-20260707-002-artifact-code-autopsy.md), [EXP-003](../../experiments/claude-design/EXP-20260707-003-cross-mode-consistency.md), [EXP-004](../../experiments/claude-design/EXP-20260707-004-slider-comment-ownership.md)), two contrast experiments on v0 ([EXP-005](../../experiments/v0/EXP-20260707-005-ambiguity-ladder-v0.md), [EXP-006](../../experiments/v0/EXP-20260709-006-little-wins-cross-account.md)), 43 observations, four findings ([FND-001](../../findings/FND-001-elicitation-is-product-policy.md)–[FND-004](../../findings/FND-004-ownership-mechanism-stack.md)). Everything below is bounded by the version context; the product is a research preview and may change under us.
 
 ## Version context
 
-Record the access date, interface state, named model or product version (when visible), account tier if relevant, and enabled features in every experiment.
+All runs 2026-07-07 to 2026-07-10, macOS desktop app, model selector showing "Sonnet 5 Medium", signed in, no design system connected. The v0 contrast runs used v0.dev/v0.app (model undisclosed) across two free-tier accounts. Per-run details live in each experiment's evidence manifest.
 
-## Open questions
+## Summary
 
-- Which inputs are requested before generation?
-- Which decisions remain implicit?
-- Are planning patterns shared across output modes?
-- What evidence would distinguish an intermediate representation from ordinary conversational context?
+Claude Design's distinctiveness is not in what it designs — it is in how it negotiates with the human about who decides what. Given the same brief, Claude Design and v0 produce artifacts that converge to a striking degree: the same warm palette family, the same font shortlist, sometimes the same verbatim seed strings. What differs is everything around the artifact: Claude Design always elicits before generating, parameterizes some of its decisions into user-facing controls, compiles element comments into anchored instructions, and hands back ownership through a stack of product mechanisms. v0 asks nothing, exposes nothing, and resolves every ambiguity from its priors. The case study's one-line answer to "how does this tool think?" is therefore: **it thinks like the same model everyone else uses, wrapped in a product that externalizes the negotiation over decision ownership.**
 
+## 1. It always asks first — and ambiguity changes what, not whether
+
+Every prototype request across every experiment produced a pre-generation intake form ("A few quick questions before I build"), regenerated per run with a different question schema each time, with "Decide for me" and free-text delegation as first-class answers ([OBS-001](../../observations/OBS-20260708-001-structured-intake-form.md), [OBS-002](../../observations/OBS-20260708-002-intake-schema-per-run.md), [OBS-019](../../observations/OBS-20260709-019-intake-schema-varies-again.md)). The question budget is roughly constant (6–8 questions) no matter how much the brief specifies; what moves is altitude — a fully specified brief draws sub-decision questions (which green, which streak visualization), a five-word brief draws foundational ones (form factor, overall vibe, tracking model) ([OBS-003](../../observations/OBS-20260708-003-question-count-flat-altitude-varies.md)). Elicitation is product policy, not an ambiguity response: v0 asked zero questions in four runs over the same ladder, including the five-word prompt ([FND-001](../../findings/FND-001-elicitation-is-product-policy.md)).
+
+## 2. What it asks about tracks what the artifact can't be wrong about
+
+The intake never asks abstract brief questions directly — audience was never elicited in any run; it is reached only through concrete proxies like sample data ([OBS-004](../../observations/OBS-20260708-004-audience-removed-silent-default.md)). The cleanest boundary evidence is a same-day pair: for a coffee-roaster landing page the intake's first question was the roaster's name ("or should I make one up?"); for an e-commerce dashboard no identity question appeared and the artifact silently shipped an invented store, user persona, and product catalog ([OBS-039](../../observations/OBS-20260710-039-brand-vacuum-elicited-then-invented.md), [OBS-041](../../observations/OBS-20260710-041-identity-vacuum-ask-or-assume-by-domain.md)). The same missing fact is load-bearing in one artifact and set dressing in the other. Interpretation, moderate confidence: the ask/assume boundary is drawn per decision by cost-of-error to the artifact, not per dimension of the brief.
+
+## 3. Where the design comes from: priors, in layers
+
+What the human doesn't specify (and doesn't get asked about) is filled from priors that both products evidently share. The same styled brief produced near-identical design languages across Claude Design and v0 — warm hue-90–95 base, sage green ~150, a nameable rounded-sans pool — and even verbatim-identical content strings: "Read to the kids" and "Drink a glass of water" appear in both products' exports ([OBS-021](../../observations/OBS-20260709-021-cross-product-design-language-convergence.md), [OBS-037](../../observations/OBS-20260710-037-cross-product-verbatim-seed-convergence.md)). The fill is layered by stability: copy register, palette family, and seed content are nearly deterministic; concrete token values cluster as near-misses; names (brands, personas) are sampled per run from small pools — Claude Design has produced "Maya" twice, v0 "Little Wins" twice ([FND-003](../../findings/FND-003-priors-fill-vacuums-in-layers.md)). Invented specifics are locally sampled, not globally checked: one artifact placed its roastery in the Mission and its address in Oakland ([OBS-039](../../observations/OBS-20260710-039-brand-vacuum-elicited-then-invented.md)).
+
+## 4. Nothing persists between sessions except those priors
+
+Within a session, decisions replicate at the value level across output modes — including via a literal screenshot pipeline from prototype to deck ([OBS-026](../../observations/OBS-20260709-026-same-session-consistency-is-value-level.md)). Across fresh sessions, only the design-language family survives; every concrete value diverges ([OBS-027](../../observations/OBS-20260709-027-fresh-session-converges-on-language-not-values.md)). Inside the artifacts there is no authoritative layer: repeated values have no single definition, token systems appear in some runs and not others, decomposition follows data shape, and stated design rationale is generated after the artifact ([OBS-022](../../observations/OBS-20260709-022-no-single-definition-for-repeated-values.md)–[OBS-024](../../observations/OBS-20260709-024-design-rationale-post-hoc-only.md), [OBS-028](../../observations/OBS-20260709-028-token-layer-appears-run-contingently.md)). The parsimonious model is context carry-over plus priors, with no persistent design representation ([FND-002](../../findings/FND-002-consistency-is-context-not-representation.md)) — with one visible exception: deck mode emits a written plan artifact before generating ([OBS-029](../../observations/OBS-20260709-029-written-plan-artifact-appears-in-deck-mode.md)).
+
+## 5. Ownership returns through a stack of mechanisms — none of which push back
+
+Beyond intake, decisions come back to the human through Tweaks controls (post-generation, taste-level, contingent: three controls on one project, zero on two others; partially wired where present) and through the feedback channels, which allocate the last slice per request: chat keeps referent-resolution with the agent (it decided which element was "the primary action" — a different one than the human pointed at), an anchored comment moves referent-resolution to the human via compiled DOM metadata, and direct canvas editing removes the agent entirely — at which point nothing defends the artifact's abstractions, and a save can silently replace a template binding with static values ([FND-004](../../findings/FND-004-ownership-mechanism-stack.md), [OBS-042](../../observations/OBS-20260710-042-channel-determines-element-and-layer.md), [OBS-043](../../observations/OBS-20260710-043-canvas-edit-breaks-binding-comment-anchor-persists.md)). Across every mechanism and channel observed, the agent never asked for confirmation and never defended a prior decision. Ownership flows one way, without friction — and occasionally without substance (a color control whose derived variants stay hardcoded).
+
+## 6. What is actually distinctive
+
+Both products self-QA in an embedded verification loop; both invent brands and personas to fill vacuums; both speak the same design language for the same brief. After six experiments, the distinctive surface of Claude Design reduces to two things, both product decisions rather than model capabilities: **it elicits** (FND-001) and **it externalizes ownership transfer** (FND-004). The corollary cuts both ways: users get negotiation surfaces v0 users don't have, and the negotiation is partly ceremonial — a fixed question budget, contingent controls, delegation that routes back to the same priors v0 uses silently.
+
+## Answers to the scope note's original questions
+
+- *Which inputs are requested before generation?* A generated, per-run 6–8 question form at the artifact's most uncertain altitude; identity-critical facts by name; never the abstract brief.
+- *Which decisions remain implicit?* Audience (always), all craft values not asked about, invented identity where it is not load-bearing, and everything on runs where controls don't fire.
+- *Are planning patterns shared across output modes?* The intake recurs per artifact (including on conversion); deck mode uniquely externalizes a written plan; craft values transfer within a session only.
+- *What would distinguish an intermediate representation from conversational context?* Cross-session value stability without context. Tested; not found (FND-002).
+
+## What this case study cannot yet say
+
+One run per cell nearly everywhere; one intent domain for the ladder; priors tested only where they are strongest (calm-warm brief). Registered discriminators still open: styled one-liner re-run (controls contingency), chat ×3 (referent-resolution stability), minimal canvas-edit reproduction (serialization width), an off-distribution style brief (prior strength), and a second contrast product to separate "Claude Design is distinctive" from "v0 is distinctive". Adversarial requests (contradicting accessibility or usability) have not been run, so "never defends" is untested where defending would matter.
