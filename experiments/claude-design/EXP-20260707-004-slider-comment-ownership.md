@@ -3,7 +3,7 @@ id: EXP-20260707-004-slider-comment-ownership
 product: claude-design
 date: 2026-07-07
 researcher: yuki
-status: in-progress
+status: completed
 protocol: protocols/behavioral-observation-v1.md
 research_question: research/questions/RQ-003-decision-ownership.md
 ---
@@ -52,9 +52,12 @@ Fresh sessions per project; no design system connected.
 
 ## Deviations
 
-1. Part 1 is complete (P-FULL habit tracker 2026-07-09 evening; landing page and dashboard 2026-07-10 afternoon); Part 2 is pending. The Part 1 trio spans two dates rather than one; comparisons should note the possible version drift.
-2. The evidence working folders were researcher-named `evidence/0709-exp-03/` (a mislabel for this EXP-004 run) and `evidence/0710/`; reorganized on ingestion, see manifest Transformations.
-3. The process logs were not fully expanded before capture (collapsed "Refining logic ×3" / "Refining design ×8" groups); the control inventories are unaffected because they are confirmed in the exports' code.
+1. Part 1 (P-FULL habit tracker 2026-07-09 evening; landing page and dashboard 2026-07-10 afternoon) spans two dates rather than one; comparisons should note the possible version drift. Part 2 ran 2026-07-10 afternoon.
+2. Part 2's substrate is the EXP-001 P-FULL project ("Habit tracker for parents"), not the Part 1 rerun project — consistent with the registered "the P-FULL habit tracker (EXP-001)", but noted because the two projects differ (the Part 1 rerun carries the Tweaks controls). State restoration used project duplication (three copies, one per channel), verified byte-identical by normalized template diff.
+3. The registered latency measure was not captured for Part 2 (no "Worked for…" counters in the captures).
+4. The direct-canvas-edit channel used the Edit panel's Simple properties (border + shadow on the FAB) as the equivalent manual change.
+5. The evidence working folders were researcher-named `evidence/0709-exp-03/` (a mislabel for this EXP-004 run) and `evidence/0710/`; reorganized on ingestion, see manifest Transformations.
+6. The process logs were not fully expanded before capture (collapsed "Refining logic ×3" / "Refining design ×8" groups); the control inventories are unaffected because they are confirmed in the exports' code.
 
 ## Observations
 
@@ -64,6 +67,8 @@ Fresh sessions per project; no design system connected.
 - [OBS-20260710-039-brand-vacuum-elicited-then-invented](../../observations/OBS-20260710-039-brand-vacuum-elicited-then-invented.md)
 - [OBS-20260710-040-dashboard-zero-controls-inventory-complete](../../observations/OBS-20260710-040-dashboard-zero-controls-inventory-complete.md)
 - [OBS-20260710-041-identity-vacuum-ask-or-assume-by-domain](../../observations/OBS-20260710-041-identity-vacuum-ask-or-assume-by-domain.md)
+- [OBS-20260710-042-channel-determines-element-and-layer](../../observations/OBS-20260710-042-channel-determines-element-and-layer.md)
+- [OBS-20260710-043-canvas-edit-breaks-binding-comment-anchor-persists](../../observations/OBS-20260710-043-canvas-edit-breaks-binding-comment-anchor-persists.md)
 
 ## Part 1 tabulation (complete)
 
@@ -79,7 +84,19 @@ No control: typeface, spacing/density, streak-visualization style, screen struct
 
 **Project 3 (e-commerce dashboard): zero controls** (OBS-20260710-040). Same free-text-only Tweaks, no `data-props` in the export; the intake (8 questions, including a native 1–3 layout-variations slider and a "Who's the primary viewer?" question, no identity question) again covered the taste space; the artifact silently invented "Sundial Goods" and persona "Jamie Ma — Ops Lead" (OBS-20260710-041).
 
-**Part 1 interim outcome.** Inventory across domains: 3 / 0 / 0. The pre-registered hypothesis assumed controls reliably appear and asked which decisions they parameterize; the observed variable is whether they appear at all. Where they appeared (P-FULL only), the predicted taste/structure split held. Two candidate rules survive for the 3–0–0 pattern, currently indistinguishable: run-variance, or intake-absorption (the only controls-producing run is the only one whose brief pre-resolved the taste space, so intake never claimed it). Discriminating prediction registered in OBS-20260710-040: a one-liner domain re-run with a fully specified style clause should produce controls under intake-absorption. Part 2 (channel comparison) proceeds on the habit-tracker project as registered.
+**Part 1 interim outcome.** Inventory across domains: 3 / 0 / 0. The pre-registered hypothesis assumed controls reliably appear and asked which decisions they parameterize; the observed variable is whether they appear at all. Where they appeared (P-FULL only), the predicted taste/structure split held. Two candidate rules survive for the 3–0–0 pattern, currently indistinguishable: run-variance, or intake-absorption (the only controls-producing run is the only one whose brief pre-resolved the taste space, so intake never claimed it). Discriminating prediction registered in OBS-20260710-040: a one-liner domain re-run with a fully specified style clause should produce controls under intake-absorption.
+
+## Part 2 tabulation
+
+Same sentence ("Make the primary action stand out more."), three byte-identical project copies (verified by normalized template diff):
+
+| Channel | Element changed | Layer | Scope | Confirmation asked | References element | Defends |
+| --- | --- | --- | --- | --- | --- | --- |
+| Chat | create-sheet Continue/"Add habit" button (agent-resolved) | logic (`primaryButtonStyle` + new hover const/binding) | single element + hover state | no | yes ("the 'Continue'/'Add habit' button in the create-habit sheet") | no |
+| Element comment (on FAB) | the anchored FAB | template (inline style, coherent oklch idiom) | single element | no | yes ("the create button … against the nav bar") | no |
+| Canvas edit | FAB (human-executed) | raw inline serialization (hex color, contradictory style string) | edited element + collateral binding loss on the sheet overlay | n/a | n/a | n/a |
+
+Mechanism note: "Send to Claude" compiles a comment into a structured prompt carrying `data-comment-anchor`, React component, DOM path, and selector (OBS-20260710-042); the anchor attribute persists in exported code, and the canvas edit silently replaced `{{ sheetOverlayStyle }}` with static values (OBS-20260710-043).
 
 ## Evidence
 
@@ -89,14 +106,18 @@ See `evidence/EXP-20260707-004-slider-comment-ownership/manifest.md`.
 
 Controls are created for continuous, taste-dominant decisions (color, density, size) and not for structural or content decisions — that is, the agent returns ownership where human preference is decisive and error is cheap. For Part 2, element comments produce narrower-scoped changes than chat for the same request. Falsified if controls also parameterize structural/content decisions, or if channel has no effect on change scope.
 
+### Outcome
+
+Part 1: neither confirmed nor cleanly falsified — the hypothesis's premise failed. Controls do not reliably appear (3/0/0 across domains); where they appeared, the taste/structure split held exactly (no structural or content-architecture control; OBS-20260710-036). Part 2: the scope prediction is falsified — both agent channels produced equally narrow single-element changes — but "channel has no effect" is also falsified: the channel decided *which element* changed and *which layer* absorbed the edit (OBS-20260710-042), an effect the pre-registration did not anticipate.
+
 ## Conclusion
 
-Not yet run.
+Supported by evidence: ownership returns to the human through at least three mechanisms with different scopes — intake questions (pre-generation, brief-level), Tweaks controls (post-generation, taste-level, contingent: 3/0/0 and partially wired where present), and feedback channels (post-generation, per-request). The channel comparison resolves into an ownership matrix: chat = agent resolves the referent and executes in the logic layer; anchored comment = human resolves the referent via compiled DOM metadata, agent executes idiomatically; canvas edit = human does both, at the cost of idiom coherence and, in this run, a silently severed template binding on an untouched element (OBS-20260710-043). The agent never asked for confirmation and never defended a prior decision in any channel. Boundary refinements beyond the registration: the identity vacuum is asked-about or silently filled depending on how identity-central the artifact is (OBS-20260710-041), and elicitation/controls appear to be alternative outlets rather than one mechanism (open discriminator registered in OBS-20260710-040). Confidence: high for the per-run facts (all inventories and diffs code-confirmed); low-to-moderate for every cross-run rule (n=1 per cell throughout).
 
 ## Limitations
 
-State restoration between Part 2 channels may be imperfect in a research-preview product; log the actual restoration method used. Three domains is a small sample for the control inventory.
+One run per domain and per channel; latency unmeasured in Part 2; Part 1 spans two dates on a research-preview product; the two zero-control runs are also the two one-sentence briefs (brief-specificity and domain confounded); the chat channel's element resolution may be steered by the artifact's internal `primaryAction` naming; the canvas-edit binding loss cannot be attributed between editor serialization and stray interaction from the captures alone.
 
 ## Next experiment
 
-If controls follow the taste/structure split, test whether an explicit request ("give me a slider for the number of habits shown") crosses the boundary and how the agent responds.
+Three registered discriminators, in value order: (1) a one-liner domain re-run with a fully specified style clause — controls appearing would support intake-absorption over run-variance (OBS-20260710-040); (2) chat channel ×3 on fresh duplicates to test referent-resolution stability (OBS-20260710-042); (3) the minimal canvas-edit reproduction to isolate serialization width (OBS-20260710-043). The original follow-up stands: explicitly request a slider for a structural decision ("number of habits shown") and observe whether the boundary is defended.

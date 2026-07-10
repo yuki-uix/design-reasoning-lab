@@ -9,6 +9,6 @@ New records must use the experiment template and link to the product context in 
 - [EXP-20260707-003-cross-mode-consistency](EXP-20260707-003-cross-mode-consistency.md) — what survives prototype→slides, same session versus fresh session (RQ-002). Completed 2026-07-09 after two failed attempts (OBS-018): same-session transfer is value-exact via a visible screenshot pipeline; fresh session reproduces only the design language (OBS-025–029).
 
 ## Planned
-- [EXP-20260707-004-slider-comment-ownership](EXP-20260707-004-slider-comment-ownership.md) — which decisions become user-facing controls; feedback-channel comparison (RQ-003).
+- [EXP-20260707-004-slider-comment-ownership](EXP-20260707-004-slider-comment-ownership.md) — which decisions become user-facing controls; feedback-channel comparison (RQ-003). Completed 2026-07-10.
 
 Contrast condition on v0: [EXP-20260707-005-ambiguity-ladder-v0](../v0/EXP-20260707-005-ambiguity-ladder-v0.md).
