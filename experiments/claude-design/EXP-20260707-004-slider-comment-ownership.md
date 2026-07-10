@@ -52,16 +52,18 @@ Fresh sessions per project; no design system connected.
 
 ## Deviations
 
-1. Only Part 1 project 1 (P-FULL habit tracker) has been run (2026-07-09 evening); projects 2–3 and Part 2 are pending. If the remaining projects run on a later date, the same-day comparability intended for the Part 1 trio is weakened; log actual dates.
-2. The evidence working folder was researcher-named `evidence/0709-exp-03/` (a mislabel for this EXP-004 run); reorganized on ingestion, see manifest Transformations.
-3. The process log was not fully expanded before capture (collapsed "Refining logic ×3" groups); the control inventory is unaffected because it is confirmed in the export's code.
+1. Part 1 projects 1–2 have been run (P-FULL habit tracker 2026-07-09 evening, landing page 2026-07-10 afternoon); project 3 and Part 2 are pending. The Part 1 trio therefore spans two dates rather than one; comparisons should note the possible version drift.
+2. The evidence working folders were researcher-named `evidence/0709-exp-03/` (a mislabel for this EXP-004 run) and `evidence/0710/`; reorganized on ingestion, see manifest Transformations.
+3. The process logs were not fully expanded before capture (collapsed "Refining logic ×3" / "Refining design ×8" groups); the control inventories are unaffected because they are confirmed in the exports' code.
 
 ## Observations
 
 - [OBS-20260710-036-tweaks-inventory-p-full](../../observations/OBS-20260710-036-tweaks-inventory-p-full.md)
 - [OBS-20260710-037-cross-product-verbatim-seed-convergence](../../observations/OBS-20260710-037-cross-product-verbatim-seed-convergence.md)
+- [OBS-20260710-038-landing-page-zero-controls](../../observations/OBS-20260710-038-landing-page-zero-controls.md)
+- [OBS-20260710-039-brand-vacuum-elicited-then-invented](../../observations/OBS-20260710-039-brand-vacuum-elicited-then-invented.md)
 
-## Interim tabulation (Part 1, project 1 of 3)
+## Interim tabulation (Part 1, projects 1–2 of 3)
 
 | Control | Section | Editor | Default | Range offered | Decision parameterized |
 | --- | --- | --- | --- | --- | --- |
@@ -69,7 +71,9 @@ Fresh sessions per project; no design system connected.
 | `userName` | Content | text | empty | free text | persona/greeting name |
 | `accentColor` | Style | color enum | sage `#7C9873` | sage/blue/clay/purple (muted hues, incl. off-brief) | accent hue — partially wired (dark/light variants hardcoded sage) |
 
-No control: typeface, spacing/density, streak-visualization style, screen structure, copy tone, seed content. Typeface and streak style were intake questions instead — in this run, intake and Tweaks parameterize disjoint decision sets.
+No control: typeface, spacing/density, streak-visualization style, screen structure, copy tone, seed content. Typeface and streak style were intake questions instead — in this run, intake and Tweaks parameterize mostly disjoint decision sets (`accentColor` is the partial overlap: its tone was an intake question, its hue came back as a control).
+
+**Project 2 (coffee-roaster landing page): zero controls.** Tweaks opens a free-text "Describe a tweak…" box only; the export declares no tweakable variables (OBS-20260710-038). Its 8-question intake covered nearly the whole taste space instead (name, vibe, colors, type, sections, imagery, variations, length). Control generation is therefore run- or domain-contingent; the dashboard run discriminates which.
 
 ## Evidence
 

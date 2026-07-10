@@ -1,6 +1,6 @@
 # Evidence manifest: EXP-20260707-004-slider-comment-ownership
 
-Screenshots are researcher captures of Claude Design (desktop app) on macOS. `p-full-Habit Tracker - standalone.html` is the product's own standalone export for the Part 1 P-FULL project. SHA-256 values are truncated to 12 hex chars; timestamps are local file mtimes (Asia/Shanghai). Part 1 covers three projects; only the first (P-FULL habit tracker) has been run at this access date.
+Screenshots are researcher captures of Claude Design (desktop app) on macOS. The `.html` files are the product's own standalone exports. SHA-256 values are truncated to 12 hex chars; timestamps are local file mtimes (Asia/Shanghai). Part 1 covers three projects; two have been run (P-FULL habit tracker on 2026-07-09, coffee-roaster landing page on 2026-07-10); the dashboard and Part 2 are pending.
 
 ## Part 1, project 1: P-FULL habit tracker (2026-07-09)
 
@@ -19,19 +19,36 @@ Notable facts inside the export's template (extraction per `evidence/EXP-2026070
 - Seed habits: "Drink a glass of water", "10-minute walk", "Read to the kids", "Stretch before bed"; the create-flow name placeholder is "e.g. Read to the kids".
 - Styling is inline hex throughout (59 `'Nunito'` occurrences, no CSS token layer) — a third color-system idiom for this brief on this product (cf. OBS-20260708-009, OBS-20260709-028).
 
+## Part 1, project 2: coffee-roaster landing page (2026-07-10)
+
+| File | Type | Captured at | Provenance | SHA-256 | Notes |
+| --- | --- | --- | --- | --- | --- |
+| `landing-page-questions.png` | screenshot | 2026-07-10T13:16 | researcher capture | fcc5fa30bd7e | one-sentence registered prompt visible; 8-question intake: roaster name ("or should I make one up?" + tagline), overall vibe, color direction, type style, sections multi-select (10 options), imagery approach, design-direction count, page length/density; all fields "Use your best judgment."; "Sonnet 5 Medium" visible |
+| `landing-page-conversation.png` | screenshot | 2026-07-10T13:24 | researcher capture | d97edbb0eb68 | delegation echo lists 8 parameter names (name, vibe, colors, type, sections, imagery, variations, length); summary "Built 'Millbrook & Co.' — a warm rustic coffee roaster landing page (cream/espresso/terracotta palette, Lora serif + Work Sans)…"; self-QA visible ("Found issues — fixing…", "Refining design ×8" then "×2", responsive-breakpoint and beans-header fixes with Undo affordance) |
+| `landing-page-output.png` | screenshot | 2026-07-10T13:38 | researcher capture | d13d56d19692 | full page at 50%: hero, stats bar (3kg batch / 2× weekly / 6 farms / 9 yrs), story, four invented bean products with prices, craft section, dark subscription CTA, visit block with hours and invented address "4118 Telegraph Ave, Oakland CA", newsletter, footer |
+| `landing-page-tweak.png` | screenshot | 2026-07-10T13:39 | researcher capture | d629b123776f | Tweaks button opens only a "Describe a tweak…" free-text box with an "Ideas" affordance — no variables panel appears for this project |
+| `landing-page-Millbrook Coffee Landing.html` | code export | 2026-07-10T13:40 | product download | 7a6a8c0946cf | standalone bundler-shell export; filename kept as downloaded |
+
+Notable facts inside the export's template:
+
+- The `<script type="text/x-dc">` block has **no `data-props` attribute — zero tweakable-variable declarations**, corroborating the free-text-only Tweaks UI at code level.
+- Fonts Lora + Work Sans via `@font-face`; palette led by espresso `#2a1f17`, cream `#f6f0e6`, terracotta `#a8532a` (hex inline, no token layer).
+- Invented content: brand "Millbrook & Co.", founder persona "Maya Reyes" with a garage-origin story, four named bean products with prices, opening hours, street address.
+- Content-coherence slip: hero kicker reads "SMALL-BATCH · ROASTED IN THE MISSION" while the badge and visit address place the roastery in Oakland (Telegraph Ave) — the Mission is a San Francisco district.
+
 ## Environment
 
 - Product and visible version: Claude Design (research preview), macOS desktop app; model selector shows "Sonnet 5 Medium"; signed in.
-- Access: 2026-07-09 evening; captures 22:17–22:35 local.
-- Feature context: fresh project "Habit tracker for busy parents"; no design system connected; Hi-fi design / Interactive prototype chips visible on the prompt.
+- Access: project 1 on 2026-07-09 evening (captures 22:17–22:35); project 2 on 2026-07-10 afternoon (captures 13:16–13:40).
+- Feature context: fresh projects ("Habit tracker for busy parents", "Independent coffee roaster landing"); no design system connected; Hi-fi design / Interactive prototype chips visible on both prompts.
 
 ## Transformations and redactions
 
-- Files were captured into a working folder `evidence/0709-exp-03/` (researcher-named; the label "exp-03" is a mislabel for this EXP-004 run) and moved here unchanged; hashes computed after the move. No renames.
+- Project 1 files were captured into a working folder `evidence/0709-exp-03/` (researcher-named; the label "exp-03" is a mislabel for this EXP-004 run), project 2 files into `evidence/0710/`; moved here unchanged, hashes computed after the move. No renames.
 
 ## Missing evidence
 
-- Part 1 projects 2 and 3 (coffee-roaster landing page, e-commerce dashboard) not yet run; Part 2 (three-channel comparison) not yet run.
-- The process log was not fully expanded before capture ("Designing, Finishing up" and "Refining logic ×3" groups are collapsed summaries).
-- Weekly and Create screens are not captured as screenshots (they are navigable inside the standalone export).
-- The intake form was captured before submission; no capture of the form's submitted state beyond the conversation echo.
+- Part 1 project 3 (e-commerce dashboard) not yet run; Part 2 (three-channel comparison) not yet run.
+- The process logs were not fully expanded before capture (collapsed "Refining logic ×3" / "Refining design ×8" groups).
+- Project 1: Weekly and Create screens not captured as screenshots (navigable inside the standalone export). Project 2: no capture of the "Ideas" affordance's contents inside the Tweaks box.
+- The intake forms were captured before submission; no capture of the submitted state beyond the conversation echoes.
