@@ -1,6 +1,6 @@
 # Evidence manifest: EXP-20260707-004-slider-comment-ownership
 
-Screenshots are researcher captures of Claude Design (desktop app) on macOS. The `.html` files are the product's own standalone exports. SHA-256 values are truncated to 12 hex chars; timestamps are local file mtimes (Asia/Shanghai). All three Part 1 projects have been run (P-FULL habit tracker on 2026-07-09; landing page and dashboard on 2026-07-10); Part 2 is pending.
+Screenshots are researcher captures of Claude Design (desktop app) on macOS. The `.html` files are the product's own standalone exports. SHA-256 values are truncated to 12 hex chars; timestamps are local file mtimes (Asia/Shanghai). All three Part 1 projects have been run (P-FULL habit tracker on 2026-07-09; landing page and dashboard on 2026-07-10), and Part 2's three channels were run on 2026-07-10 afternoon.
 
 ## Part 1, project 1: P-FULL habit tracker (2026-07-09)
 
@@ -52,11 +52,34 @@ Notable facts inside the export's template:
 - Invented content: store "Sundial Goods", persona "Jamie Ma — Ops Lead", five named products with SKUs, units, revenue and trend figures, four inventory alerts — none elicited; the intake asked no identity question for this project.
 - The intake itself contained a native slider control (layout variations 1–3), even though the generated artifact declares no tweakables.
 
+## Part 2: three-channel comparison (2026-07-10)
+
+Substrate: the EXP-001 P-FULL project ("Habit tracker for parents"; artifact "Habit Tracker.dc.html", 2 pages, Sora type, seeds 10-Minute Tidy / Bedtime Story / Drink Water / Stretch Break, "JT" avatar). State control by project duplication: three copies ("[copy 01/02/03]"), one per channel; the baseline standalone was exported from copy 01 before any change request. Code-level verification: after normalizing per-export asset UUIDs, each channel's template diffs against the baseline **only** in that channel's change — the three copies started byte-identical.
+
+| File | Type | Captured at | Provenance | SHA-256 | Notes |
+| --- | --- | --- | --- | --- | --- |
+| `baseline-Habit Tracker (standalone).html` | code export | 2026-07-10T16:03 | product download | cb6c09441112 | pre-change baseline, exported from copy 01 |
+| `channel-a.png` | screenshot | 2026-07-10T16:09 | researcher capture | 39583dff7f62 | copy 01, chat channel: request bubble verbatim; response "Made the 'Continue'/'Add habit' button in the create-habit sheet bolder — larger, shadowed, with a hover lift."; process log "Refining design, Refining logic ×2"; Undo affordance; Sonnet 5 Medium visible |
+| `channel-a-Habit Tracker (standalone).html` | code export | 2026-07-10T16:17 | product download | e423329b5f52 | post-change export (downloaded after channel B's, from the same completed copy-01 state) |
+| `channel-b.png` | screenshot | 2026-07-10T16:10 | researcher capture | fd8ce18e956a | copy 02, comment channel: Annotate popover pinned to the Today-view "+" FAB (selection ring visible), same sentence, "Add comment" / "Send to Claude" buttons; Comments panel still empty |
+| `channel-b-comments.png` | screenshot | 2026-07-10T16:12 | researcher capture | f440b098fee4 | comment posted in Comments panel ("yuki · just now", anchored "Habit Tracker"), Resolve checkbox, "Resolve all" / "Send to Claude" bar |
+| `channel-b-output.png` | screenshot | 2026-07-10T16:14 | researcher capture | 420ec4d36568 | "Send to Claude" compiled the comment into a structured prompt visible in chat: `**yuki** (on Habit Tracker.dc.html at [data-comment-anchor="28852c1cb7-button"])` with `<commented-element>` react/dom-path/selector metadata and `<teammate-comment>` text; response "Made the create button bigger, with a white ring border and stronger shadow so it pops against the nav bar."; process log includes "Resolved comments, Viewed comments" |
+| `channel-b-Habit Tracker (standalone).html` | code export | 2026-07-10T16:15 | product download | d04fde8b116e | post-change export |
+| `channel-c-edit-board.png` | screenshot | 2026-07-10T16:32 | researcher capture | 4ec7b8915751 | copy 03, Edit mode (Simple tab), FAB selected: properties before manual change — background `oklch(55% 0.09 150)`, radius 50%, shadow "0 8 18", border width 0/none |
+| `channel-c-edit-update.png` | screenshot | 2026-07-10T16:35 | researcher capture | 11485eaec5e1 | after manual change: shadow "0 6 38", border 3px solid `#24502E`; Save/Discard bar visible |
+| `channel-c-Habit Tracker (standalone).html` | code export | 2026-07-10T16:36 | product download | 613051efb2f5 | post-save export |
+
+Normalized template diffs against baseline (asset UUIDs masked):
+
+- **Channel A (chat)** — the agent resolved "the primary action" to the **create-habit sheet's Continue/"Add habit" button**, not the Today FAB. Single element changed, in the logic layer: `primaryButtonStyle` const enlarged (padding 15→16, font 15→16px, letter-spacing added, green glow shadow), a new `primaryButtonHoverStyle` const with translateY lift, and a `style-hover` binding added in the template. Disabled-state logic preserved.
+- **Channel B (comment on FAB)** — the anchored element changed, in the template layer: FAB 56→64px, icon 24→26 with stroke 2.4→2.6, 4px cream ring border (`oklch(98% 0.006 85)`, the app's background family) plus strengthened dual shadow, margin-top −22→−30. The `data-comment-anchor="28852c1cb7-button"` attribute **persists in the exported code**.
+- **Channel C (manual edit)** — raw property append on the FAB's inline style: shadow rewritten to `0px 6px 38px 1px`, then `font-weight: 400; border-width: 3px; border-style: solid; border-color: #24502E` appended while the original `border: none` remains earlier in the same string (later properties win); the border color is a hex outside the artifact's oklch idiom, and a spurious `font-weight: 400` was injected by the editor. Collateral damage on a *different* element: the create-sheet overlay div lost its `{{ sheetOverlayStyle }}` binding, replaced by static `left: -53px; top: -2px; position: absolute`.
+
 ## Environment
 
 - Product and visible version: Claude Design (research preview), macOS desktop app; model selector shows "Sonnet 5 Medium"; signed in.
-- Access: project 1 on 2026-07-09 evening (captures 22:17–22:35); projects 2–3 on 2026-07-10 afternoon (captures 13:16–13:40 and 13:56–14:16).
-- Feature context: fresh projects ("Habit tracker for busy parents", "Independent coffee roaster landing", "E-commerce analytics dashboard"); no design system connected; Hi-fi design / Interactive prototype chips visible on all prompts.
+- Access: project 1 on 2026-07-09 evening (captures 22:17–22:35); projects 2–3 on 2026-07-10 afternoon (captures 13:16–13:40 and 13:56–14:16); Part 2 on 2026-07-10 afternoon (captures 16:03–16:36).
+- Feature context: Part 1 used fresh projects ("Habit tracker for busy parents", "Independent coffee roaster landing", "E-commerce analytics dashboard"); Part 2 used three duplicates of the EXP-001 P-FULL project. No design system connected anywhere; Hi-fi design / Interactive prototype chips visible on all Part 1 prompts.
 
 ## Transformations and redactions
 
@@ -64,7 +87,9 @@ Notable facts inside the export's template:
 
 ## Missing evidence
 
-- Part 2 (three-channel comparison) not yet run.
+- Part 2 latency was not captured (no "Worked for…" counters visible in the channel captures); the registered latency measure is unmeasured.
+- Channel A's export was downloaded at 16:17, after channel B's run had begun on its own copy; the projects are isolated duplicates, so ordering does not contaminate content, but the download order deviates from the run order.
+- No capture of channel C's post-save agent-side reaction (whether the agent comments on or later respects the manual edit is unobserved).
 - The process logs were not fully expanded before capture (collapsed "Refining logic ×3" / "Refining design ×8" / "Refining design ×5" groups).
 - Project 1: Weekly and Create screens not captured as screenshots (navigable inside the standalone export). Projects 2–3: no capture of the "Ideas" affordance's contents inside the Tweaks box.
 - The intake forms were captured before submission; no capture of the submitted state beyond the conversation echoes. The dashboard delegation echo lists 7 parameters against 8 form questions (visual style not echoed); the discrepancy is preserved as captured.
