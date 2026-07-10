@@ -1,6 +1,6 @@
 # Evidence manifest: EXP-20260707-004-slider-comment-ownership
 
-Screenshots are researcher captures of Claude Design (desktop app) on macOS. The `.html` files are the product's own standalone exports. SHA-256 values are truncated to 12 hex chars; timestamps are local file mtimes (Asia/Shanghai). Part 1 covers three projects; two have been run (P-FULL habit tracker on 2026-07-09, coffee-roaster landing page on 2026-07-10); the dashboard and Part 2 are pending.
+Screenshots are researcher captures of Claude Design (desktop app) on macOS. The `.html` files are the product's own standalone exports. SHA-256 values are truncated to 12 hex chars; timestamps are local file mtimes (Asia/Shanghai). All three Part 1 projects have been run (P-FULL habit tracker on 2026-07-09; landing page and dashboard on 2026-07-10); Part 2 is pending.
 
 ## Part 1, project 1: P-FULL habit tracker (2026-07-09)
 
@@ -36,19 +36,36 @@ Notable facts inside the export's template:
 - Invented content: brand "Millbrook & Co.", founder persona "Maya Reyes" with a garage-origin story, four named bean products with prices, opening hours, street address.
 - Content-coherence slip: hero kicker reads "SMALL-BATCH · ROASTED IN THE MISSION" while the badge and visit address place the roastery in Oakland (Telegraph Ave) — the Mission is a San Francisco district.
 
+## Part 1, project 3: e-commerce analytics dashboard (2026-07-10)
+
+| File | Type | Captured at | Provenance | SHA-256 | Notes |
+| --- | --- | --- | --- | --- | --- |
+| `dashboard-questions.png` | screenshot | 2026-07-10T13:56 | researcher capture | 942189607445 | one-sentence registered prompt visible; 8-question intake: primary use case, metrics multi-select, primary viewer, visual style (4 thumbnails: warm minimal / dark data-dense / soft playful / sharp editorial), information density, static-vs-interactive scope, layout-variations **slider** (1–3, set at 1), data content; no name/brand question; all fields "Use your best judgment."; "Sonnet 5 Medium" visible |
+| `dashboard-output.png` | screenshot | 2026-07-10T14:14 | researcher capture | 0b59034697f7 | delegation echo lists 7 parameter names (purpose, metrics, audience, density, scope, variations, data — the visual-style question has no echoed counterpart); summary "Built as a warm-minimal dashboard… Date range toggle (7D/30D/90D) is fully interactive and swaps all data"; self-QA visible (two "Found issues — fixing…" rounds, "Refining design ×5", grid `minmax(0,…)`/`min-width:0` overflow fix, KPI font-size fix, Undo affordance); artifact: sidebar branded "Sundial Goods", user avatar "Jamie Ma — Ops Lead", KPI row, revenue chart, traffic sources, top-products table (artisan home goods with SKUs), inventory alerts |
+| `dashboard-tweak.png` | screenshot | 2026-07-10T14:14 | researcher capture | 09f65681bc9e | Tweaks button opens only the "Describe a tweak…" free-text box with "Ideas" affordance — no variables panel; 90D toggle state visible |
+| `dashboard-Ecommerce Analytics Dashboard.html` | code export | 2026-07-10T14:16 | product download | b241ccebf8a0 | standalone bundler-shell export; filename kept as downloaded |
+
+Notable facts inside the export's template:
+
+- `<script type="text/x-dc">` again has **no `data-props` attribute — zero tweakable-variable declarations**, matching the free-text-only Tweaks UI.
+- `font-family: 'System'` throughout (system font stack) — no webfont this run, unlike Nunito (project 1) and Lora + Work Sans (project 2).
+- Invented content: store "Sundial Goods", persona "Jamie Ma — Ops Lead", five named products with SKUs, units, revenue and trend figures, four inventory alerts — none elicited; the intake asked no identity question for this project.
+- The intake itself contained a native slider control (layout variations 1–3), even though the generated artifact declares no tweakables.
+
 ## Environment
 
 - Product and visible version: Claude Design (research preview), macOS desktop app; model selector shows "Sonnet 5 Medium"; signed in.
-- Access: project 1 on 2026-07-09 evening (captures 22:17–22:35); project 2 on 2026-07-10 afternoon (captures 13:16–13:40).
-- Feature context: fresh projects ("Habit tracker for busy parents", "Independent coffee roaster landing"); no design system connected; Hi-fi design / Interactive prototype chips visible on both prompts.
+- Access: project 1 on 2026-07-09 evening (captures 22:17–22:35); projects 2–3 on 2026-07-10 afternoon (captures 13:16–13:40 and 13:56–14:16).
+- Feature context: fresh projects ("Habit tracker for busy parents", "Independent coffee roaster landing", "E-commerce analytics dashboard"); no design system connected; Hi-fi design / Interactive prototype chips visible on all prompts.
 
 ## Transformations and redactions
 
-- Project 1 files were captured into a working folder `evidence/0709-exp-03/` (researcher-named; the label "exp-03" is a mislabel for this EXP-004 run), project 2 files into `evidence/0710/`; moved here unchanged, hashes computed after the move. No renames.
+- Project 1 files were captured into a working folder `evidence/0709-exp-03/` (researcher-named; the label "exp-03" is a mislabel for this EXP-004 run), project 2–3 files into `evidence/0710/`; moved here unchanged, hashes computed after the move. No renames.
 
 ## Missing evidence
 
-- Part 1 project 3 (e-commerce dashboard) not yet run; Part 2 (three-channel comparison) not yet run.
-- The process logs were not fully expanded before capture (collapsed "Refining logic ×3" / "Refining design ×8" groups).
-- Project 1: Weekly and Create screens not captured as screenshots (navigable inside the standalone export). Project 2: no capture of the "Ideas" affordance's contents inside the Tweaks box.
-- The intake forms were captured before submission; no capture of the submitted state beyond the conversation echoes.
+- Part 2 (three-channel comparison) not yet run.
+- The process logs were not fully expanded before capture (collapsed "Refining logic ×3" / "Refining design ×8" / "Refining design ×5" groups).
+- Project 1: Weekly and Create screens not captured as screenshots (navigable inside the standalone export). Projects 2–3: no capture of the "Ideas" affordance's contents inside the Tweaks box.
+- The intake forms were captured before submission; no capture of the submitted state beyond the conversation echoes. The dashboard delegation echo lists 7 parameters against 8 form questions (visual style not echoed); the discrepancy is preserved as captured.
+- Project 3 has no separate conversation capture; the full conversation is visible within `dashboard-output.png`.
