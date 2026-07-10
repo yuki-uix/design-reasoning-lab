@@ -3,7 +3,7 @@ id: EXP-20260707-004-slider-comment-ownership
 product: claude-design
 date: 2026-07-07
 researcher: yuki
-status: planned
+status: in-progress
 protocol: protocols/behavioral-observation-v1.md
 research_question: research/questions/RQ-003-decision-ownership.md
 ---
@@ -52,11 +52,34 @@ Fresh sessions per project; no design system connected.
 
 ## Deviations
 
-None.
+1. Part 1 is complete (P-FULL habit tracker 2026-07-09 evening; landing page and dashboard 2026-07-10 afternoon); Part 2 is pending. The Part 1 trio spans two dates rather than one; comparisons should note the possible version drift.
+2. The evidence working folders were researcher-named `evidence/0709-exp-03/` (a mislabel for this EXP-004 run) and `evidence/0710/`; reorganized on ingestion, see manifest Transformations.
+3. The process logs were not fully expanded before capture (collapsed "Refining logic ×3" / "Refining design ×8" groups); the control inventories are unaffected because they are confirmed in the exports' code.
 
 ## Observations
 
-Link atomic observation records. Do not interpret behavior in this section.
+- [OBS-20260710-036-tweaks-inventory-p-full](../../observations/OBS-20260710-036-tweaks-inventory-p-full.md)
+- [OBS-20260710-037-cross-product-verbatim-seed-convergence](../../observations/OBS-20260710-037-cross-product-verbatim-seed-convergence.md)
+- [OBS-20260710-038-landing-page-zero-controls](../../observations/OBS-20260710-038-landing-page-zero-controls.md)
+- [OBS-20260710-039-brand-vacuum-elicited-then-invented](../../observations/OBS-20260710-039-brand-vacuum-elicited-then-invented.md)
+- [OBS-20260710-040-dashboard-zero-controls-inventory-complete](../../observations/OBS-20260710-040-dashboard-zero-controls-inventory-complete.md)
+- [OBS-20260710-041-identity-vacuum-ask-or-assume-by-domain](../../observations/OBS-20260710-041-identity-vacuum-ask-or-assume-by-domain.md)
+
+## Part 1 tabulation (complete)
+
+| Control | Section | Editor | Default | Range offered | Decision parameterized |
+| --- | --- | --- | --- | --- | --- |
+| `celebrations` | Behavior | boolean | on | on/off | check-off celebration (tone) |
+| `userName` | Content | text | empty | free text | persona/greeting name |
+| `accentColor` | Style | color enum | sage `#7C9873` | sage/blue/clay/purple (muted hues, incl. off-brief) | accent hue — partially wired (dark/light variants hardcoded sage) |
+
+No control: typeface, spacing/density, streak-visualization style, screen structure, copy tone, seed content. Typeface and streak style were intake questions instead — in this run, intake and Tweaks parameterize mostly disjoint decision sets (`accentColor` is the partial overlap: its tone was an intake question, its hue came back as a control).
+
+**Project 2 (coffee-roaster landing page): zero controls.** Tweaks opens a free-text "Describe a tweak…" box only; the export declares no tweakable variables (OBS-20260710-038). Its 8-question intake covered nearly the whole taste space instead (name, vibe, colors, type, sections, imagery, variations, length).
+
+**Project 3 (e-commerce dashboard): zero controls** (OBS-20260710-040). Same free-text-only Tweaks, no `data-props` in the export; the intake (8 questions, including a native 1–3 layout-variations slider and a "Who's the primary viewer?" question, no identity question) again covered the taste space; the artifact silently invented "Sundial Goods" and persona "Jamie Ma — Ops Lead" (OBS-20260710-041).
+
+**Part 1 interim outcome.** Inventory across domains: 3 / 0 / 0. The pre-registered hypothesis assumed controls reliably appear and asked which decisions they parameterize; the observed variable is whether they appear at all. Where they appeared (P-FULL only), the predicted taste/structure split held. Two candidate rules survive for the 3–0–0 pattern, currently indistinguishable: run-variance, or intake-absorption (the only controls-producing run is the only one whose brief pre-resolved the taste space, so intake never claimed it). Discriminating prediction registered in OBS-20260710-040: a one-liner domain re-run with a fully specified style clause should produce controls under intake-absorption. Part 2 (channel comparison) proceeds on the habit-tracker project as registered.
 
 ## Evidence
 
