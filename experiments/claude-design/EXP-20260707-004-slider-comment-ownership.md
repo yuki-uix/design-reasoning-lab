@@ -3,7 +3,7 @@ id: EXP-20260707-004-slider-comment-ownership
 product: claude-design
 date: 2026-07-07
 researcher: yuki
-status: planned
+status: in-progress
 protocol: protocols/behavioral-observation-v1.md
 research_question: research/questions/RQ-003-decision-ownership.md
 ---
@@ -52,11 +52,24 @@ Fresh sessions per project; no design system connected.
 
 ## Deviations
 
-None.
+1. Only Part 1 project 1 (P-FULL habit tracker) has been run (2026-07-09 evening); projects 2–3 and Part 2 are pending. If the remaining projects run on a later date, the same-day comparability intended for the Part 1 trio is weakened; log actual dates.
+2. The evidence working folder was researcher-named `evidence/0709-exp-03/` (a mislabel for this EXP-004 run); reorganized on ingestion, see manifest Transformations.
+3. The process log was not fully expanded before capture (collapsed "Refining logic ×3" groups); the control inventory is unaffected because it is confirmed in the export's code.
 
 ## Observations
 
-Link atomic observation records. Do not interpret behavior in this section.
+- [OBS-20260710-036-tweaks-inventory-p-full](../../observations/OBS-20260710-036-tweaks-inventory-p-full.md)
+- [OBS-20260710-037-cross-product-verbatim-seed-convergence](../../observations/OBS-20260710-037-cross-product-verbatim-seed-convergence.md)
+
+## Interim tabulation (Part 1, project 1 of 3)
+
+| Control | Section | Editor | Default | Range offered | Decision parameterized |
+| --- | --- | --- | --- | --- | --- |
+| `celebrations` | Behavior | boolean | on | on/off | check-off celebration (tone) |
+| `userName` | Content | text | empty | free text | persona/greeting name |
+| `accentColor` | Style | color enum | sage `#7C9873` | sage/blue/clay/purple (muted hues, incl. off-brief) | accent hue — partially wired (dark/light variants hardcoded sage) |
+
+No control: typeface, spacing/density, streak-visualization style, screen structure, copy tone, seed content. Typeface and streak style were intake questions instead — in this run, intake and Tweaks parameterize disjoint decision sets.
 
 ## Evidence
 
