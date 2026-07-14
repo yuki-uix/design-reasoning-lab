@@ -4,7 +4,7 @@ This repository studies AI-native design systems through behavioral reverse engi
 
 Design Reasoning Lab is a long-term, open-source research project for examining how AI-native design tools interpret intent, make decisions, and collaborate with people. It is not a product, prompt collection, benchmark leaderboard, or tutorial.
 
-The current case study is **Claude Design (Research Preview)**. Future studies may include Figma Make, Google Stitch, Lovable, v0, Cursor, and other AI-native design products.
+The current case study is **Claude Design (Research Preview)**, with **v0** as a contrast product. Scope is registered for **OpenPencil** and **Pencil.dev** ([`research/case-studies/`](research/case-studies/)). Future studies may include Figma Make, Google Stitch, Lovable, Cursor, and other AI-native design products.
 
 ## Why this repository exists
 
