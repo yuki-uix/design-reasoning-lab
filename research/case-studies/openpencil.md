@@ -2,7 +2,7 @@
 
 ## Status
 
-Scope registered 2026-07-14. Informal first contact only (yuki has used the editor); no pre-registered experiments yet. Experiment slug: `experiments/openpencil/`.
+Scope registered 2026-07-14. Experiment slug: `experiments/openpencil/`. First experiment complete: [EXP-007 tool-surface inventory](../../experiments/openpencil/EXP-20260714-007-tool-surface-inventory.md) (2026-07-15, source-only; H1 "neutral pipe" falsified, H2 falsified, H3 split by channel — see its conclusion for the registered behavioral follow-ups).
 
 ## Identification
 
