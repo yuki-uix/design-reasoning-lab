@@ -1,0 +1,847 @@
+{
+  "core": 22,
+  "extended": 83,
+  "extracted": 105,
+  "defs": [
+    {
+      "constName": "analyzeClusters",
+      "name": "analyze_clusters",
+      "mutates": false,
+      "description": "Find repeated design patterns (potential components). Groups nodes by structural signature — type, size, and child structure.",
+      "file": "packages/core/src/tools/analyze/clusters.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "analyzeColors",
+      "name": "analyze_colors",
+      "mutates": false,
+      "description": "Analyze color palette usage across the current page. Shows frequency, variable bindings, and optionally clusters similar colors.",
+      "file": "packages/core/src/tools/analyze/colors.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "diffCreate",
+      "name": "diff_create",
+      "mutates": false,
+      "description": "Create a structural diff between two node trees. Compares properties (fills, strokes, effects, text, size, position) in unified diff format.",
+      "file": "packages/core/src/tools/analyze/diff.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "diffShow",
+      "name": "diff_show",
+      "mutates": false,
+      "description": "Preview what would change if properties were applied to a node. Shows a unified diff of current vs proposed state.",
+      "file": "packages/core/src/tools/analyze/diff.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "evalCode",
+      "name": "eval",
+      "mutates": true,
+      "description": "Execute JavaScript with full Figma Plugin API access. Use for operations not covered by other tools. The `figma` global is available.",
+      "file": "packages/core/src/tools/analyze/eval/index.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "analyzeOverlaps",
+      "name": "analyze_overlaps",
+      "mutates": false,
+      "description": "Detect visual overlaps and layout overflows across the current page. Useful for finding content that covers footers, text that bleeds outside frames, and accidental sibling overlaps.",
+      "file": "packages/core/src/tools/analyze/overlaps/index.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "analyzeSpacing",
+      "name": "analyze_spacing",
+      "mutates": false,
+      "description": "Analyze spacing values (gap, padding) across the current page. Checks grid compliance.",
+      "file": "packages/core/src/tools/analyze/spacing.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "analyzeTypography",
+      "name": "analyze_typography",
+      "mutates": false,
+      "description": "Analyze typography usage across the current page. Shows font families, sizes, weights, and their frequencies.",
+      "file": "packages/core/src/tools/analyze/typography.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "calc",
+      "name": "calc",
+      "mutates": false,
+      "description": "Arithmetic calculator. ALWAYS use instead of mental math. Pass one expression or a JSON array of expressions — all evaluated in one call. Supports: + - * / % ** ( ) min max floor ceil round abs sqrt pow. Examples: \"844 - 56 - 96 - 82\", '[\"1440 * 8 / 12\", \"(952 - 16) / 2\", \"floor(390 * 0.6)\"]'",
+      "file": "packages/core/src/tools/calc.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "designToComponentMap",
+      "name": "design_to_component_map",
+      "mutates": false,
+      "description": "Analyze the document and return a structured component decomposition: components (with variants, props, instance counts), screens, and a dependency overview.",
+      "file": "packages/core/src/tools/codegen/component-map.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "designToTokens",
+      "name": "design_to_tokens",
+      "mutates": false,
+      "description": "Extract design tokens from Figma variables as CSS custom properties, Tailwind theme config, or JSON. Resolves aliases, handles multiple modes (light/dark).",
+      "file": "packages/core/src/tools/codegen/tokens.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "createShape",
+      "name": "create_shape",
+      "mutates": true,
+      "description": "Create a shape on the canvas. Use FRAME for containers/cards, RECTANGLE for solid blocks, ELLIPSE for circles, TEXT for labels, SECTION for page sections.",
+      "file": "packages/core/src/tools/create/basic.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "createPage",
+      "name": "create_page",
+      "mutates": true,
+      "description": "Create a new page.",
+      "file": "packages/core/src/tools/create/basic.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "createSlice",
+      "name": "create_slice",
+      "mutates": true,
+      "description": "Create a slice (export region) on the canvas.",
+      "file": "packages/core/src/tools/create/basic.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "createComponent",
+      "name": "create_component",
+      "mutates": true,
+      "description": "Convert a frame/group into a component.",
+      "file": "packages/core/src/tools/create/components.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "createInstance",
+      "name": "create_instance",
+      "mutates": true,
+      "description": "Create an instance of a component.",
+      "file": "packages/core/src/tools/create/components.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "fetchIconsTool",
+      "name": "fetch_icons",
+      "mutates": false,
+      "description": "Pre-fetch icons from Iconify into cache. Batches by prefix (one HTTP request per set). Call this once with all needed icons, then use insert_icon to place them instantly. Popular sets: lucide (outline), mdi (filled), heroicons, tabler, solar, mingcute, ri (remix).",
+      "file": "packages/core/src/tools/create/icons.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "insertIcon",
+      "name": "insert_icon",
+      "mutates": true,
+      "description": "Insert one or more vector icons onto the canvas. Pass a single name or multiple names to batch-insert into the same parent. If already cached by fetch_icons — instant, no network request.",
+      "file": "packages/core/src/tools/create/icons.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "searchIconsTool",
+      "name": "search_icons",
+      "mutates": false,
+      "description": "Search Iconify for icons by keyword. Accepts multiple queries — all searched in parallel. Returns results keyed by query.",
+      "file": "packages/core/src/tools/create/icons.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "render",
+      "name": "render",
+      "mutates": true,
+      "description": "Render JSX to design nodes. Use replace_id to swap a skeleton placeholder with real content (keeps position in parent). Example: <Frame name=\"Card\" w={320} h=\"hug\" flex=\"col\" gap={16} p={24} bg=\"#FFF\" rounded={16}><Text size={18} weight=\"bold\">Title</Text></Frame>",
+      "file": "packages/core/src/tools/create/render.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "importSvg",
+      "name": "import_svg",
+      "mutates": true,
+      "description": "Import raw SVG markup onto the canvas. Parses <path>, <circle>, <ellipse>, <rect>, <line>, <polygon>, <polyline> elements and creates vector nodes. Supports fill, stroke, stroke-width, viewBox sizing.",
+      "file": "packages/core/src/tools/create/svg.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "createVector",
+      "name": "create_vector",
+      "mutates": true,
+      "description": "Create a vector node with optional path data.",
+      "file": "packages/core/src/tools/create/vector.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "describe",
+      "name": "describe",
+      "mutates": false,
+      "description": "Semantic description of one or more nodes. Pass `id` for a single node, or `ids` for multiple nodes in one call. Omit depth for auto — adapts to subtree size (small block → deeper, large page → shallower).",
+      "file": "packages/core/src/tools/describe/index.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "setEffects",
+      "name": "set_effects",
+      "mutates": true,
+      "description": "Set effects on a node (drop shadow, inner shadow, blur). Pass an array or a single effect.",
+      "file": "packages/core/src/tools/modify/effects.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setRotation",
+      "name": "set_rotation",
+      "mutates": true,
+      "description": "Set rotation angle of a node in degrees.",
+      "file": "packages/core/src/tools/modify/geometry.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setOpacity",
+      "name": "set_opacity",
+      "mutates": true,
+      "description": "Set opacity of a node (0-1).",
+      "file": "packages/core/src/tools/modify/geometry.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setRadius",
+      "name": "set_radius",
+      "mutates": true,
+      "description": "Set corner radius. Use individual corners for independent values.",
+      "file": "packages/core/src/tools/modify/geometry.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "setMinMax",
+      "name": "set_minmax",
+      "mutates": true,
+      "description": "Set min/max width and height constraints on a node.",
+      "file": "packages/core/src/tools/modify/geometry.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setLayout",
+      "name": "set_layout",
+      "mutates": true,
+      "description": "Set auto-layout (flexbox) on a frame. Direction, alignment, spacing, padding.",
+      "file": "packages/core/src/tools/modify/layout.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "setConstraints",
+      "name": "set_constraints",
+      "mutates": true,
+      "description": "Set resize constraints for a node within its parent.",
+      "file": "packages/core/src/tools/modify/layout.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setLayoutChild",
+      "name": "set_layout_child",
+      "mutates": true,
+      "description": "Configure auto-layout child: sizing (FIXED/HUG/FILL), grow, alignment, absolute positioning.",
+      "file": "packages/core/src/tools/modify/layout.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "setFill",
+      "name": "set_fill",
+      "mutates": true,
+      "description": "Set fill on a node. Solid: color=\"#ff0000\". Linear gradient: gradient=\"top-bottom\" or \"left-right\" with color (start) and color_end (end).",
+      "file": "packages/core/src/tools/modify/paint.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "setStroke",
+      "name": "set_stroke",
+      "mutates": true,
+      "description": "Set the stroke (border) of a node.",
+      "file": "packages/core/src/tools/modify/paint.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "setImageFill",
+      "name": "set_image_fill",
+      "mutates": true,
+      "description": "Set an image fill on a node from base64-encoded image data.",
+      "file": "packages/core/src/tools/modify/paint.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setVisible",
+      "name": "set_visible",
+      "mutates": true,
+      "description": "Set visibility of a node.",
+      "file": "packages/core/src/tools/modify/state.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setBlend",
+      "name": "set_blend",
+      "mutates": true,
+      "description": "Set blend mode of a node.",
+      "file": "packages/core/src/tools/modify/state.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setLocked",
+      "name": "set_locked",
+      "mutates": true,
+      "description": "Set locked state of a node.",
+      "file": "packages/core/src/tools/modify/state.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setStrokeAlign",
+      "name": "set_stroke_align",
+      "mutates": true,
+      "description": "Set stroke alignment of a node.",
+      "file": "packages/core/src/tools/modify/state.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setText",
+      "name": "set_text",
+      "mutates": true,
+      "description": "Set text content of a text node.",
+      "file": "packages/core/src/tools/modify/text.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "setFont",
+      "name": "set_font",
+      "mutates": true,
+      "description": "Set font properties of a text node.",
+      "file": "packages/core/src/tools/modify/text.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setFontRange",
+      "name": "set_font_range",
+      "mutates": true,
+      "description": "Set font properties for a text range.",
+      "file": "packages/core/src/tools/modify/text.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setTextResize",
+      "name": "set_text_resize",
+      "mutates": true,
+      "description": "Set text auto-resize mode.",
+      "file": "packages/core/src/tools/modify/text.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setTextProperties",
+      "name": "set_text_properties",
+      "mutates": true,
+      "description": "Set text layout properties: alignment, auto-resize, text case, decoration, truncation.",
+      "file": "packages/core/src/tools/modify/text.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "updateNode",
+      "name": "update_node",
+      "mutates": true,
+      "description": "Update properties of an existing node: position, size, opacity, corner radius, visibility, text, font.",
+      "file": "packages/core/src/tools/modify/update.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "getComponents",
+      "name": "get_components",
+      "mutates": false,
+      "description": "List all components in the document, optionally filtered by name.",
+      "file": "packages/core/src/tools/read/components.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "listFonts",
+      "name": "list_fonts",
+      "mutates": false,
+      "description": "List fonts used in the current page.",
+      "file": "packages/core/src/tools/read/fonts.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "listAvailableFonts",
+      "name": "list_available_fonts",
+      "mutates": false,
+      "description": "List font families the host can render (system fonts on desktop plus any bundled fonts). Use this to discover what fonts are available to set on a text node — distinct from list_fonts which only reports families currently used in the page.",
+      "file": "packages/core/src/tools/read/fonts.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "getJsx",
+      "name": "get_jsx",
+      "mutates": false,
+      "description": "Get JSX representation of a node and its children. Compact round-trip format — same syntax as the render tool.",
+      "file": "packages/core/src/tools/read/jsx.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "diffJsx",
+      "name": "diff_jsx",
+      "mutates": false,
+      "description": "Structural diff between two nodes in JSX format. Shows added/removed children, changed props.",
+      "file": "packages/core/src/tools/read/jsx.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "getPageTree",
+      "name": "get_page_tree",
+      "mutates": false,
+      "description": "Get the node tree of the current page. Returns lightweight hierarchy: id, type, name, size. Use depth, root_id, or node_types to keep large pages small. Use get_node for full properties of a specific node.",
+      "file": "packages/core/src/tools/read/nodes.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "getNode",
+      "name": "get_node",
+      "mutates": false,
+      "description": "Get detailed properties of a node by ID. Use depth to limit child recursion (0 = node only, 1 = direct children, etc). Default: unlimited.",
+      "file": "packages/core/src/tools/read/nodes.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "findNodes",
+      "name": "find_nodes",
+      "mutates": false,
+      "description": "Find nodes by name pattern and/or type.",
+      "file": "packages/core/src/tools/read/nodes.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "listPages",
+      "name": "list_pages",
+      "mutates": false,
+      "description": "List all pages in the document.",
+      "file": "packages/core/src/tools/read/pages.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "switchPage",
+      "name": "switch_page",
+      "mutates": true,
+      "description": "Switch to a different page by name or ID.",
+      "file": "packages/core/src/tools/read/pages.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "getCurrentPage",
+      "name": "get_current_page",
+      "mutates": false,
+      "description": "Get the current page name and ID.",
+      "file": "packages/core/src/tools/read/pages.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "pageBounds",
+      "name": "page_bounds",
+      "mutates": false,
+      "description": "Get bounding box of all objects on the current page.",
+      "file": "packages/core/src/tools/read/pages.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "queryNodes",
+      "name": "query_nodes",
+      "mutates": false,
+      "description": "Query nodes using XPath selectors. Node types are element names (FRAME, TEXT, RECTANGLE, ELLIPSE, etc.). Attributes: name, width, height, x, y, visible, opacity, cornerRadius, fontSize, fontFamily, fontWeight, layoutMode, itemSpacing, paddingTop/Right/Bottom/Left, strokeWeight, rotation, locked, blendMode, text, lineHeight, letterSpacing.\n\nExamples:\n  //FRAME — all frames\n  //FRAME[@width < 300] — frames narrower than 300px\n  //COMPONENT[starts-with(@name, 'Button')] — components starting with \"Button\"\n  //SECTION/FRAME — direct frame children of sections\n  //SECTION//TEXT — all text nodes inside sections\n  //*[@cornerRadius > 0] — any node with corner radius\n  //TEXT[contains(@text, 'Hello')] — text nodes containing \"Hello\"",
+      "file": "packages/core/src/tools/read/query.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "getSelection",
+      "name": "get_selection",
+      "mutates": false,
+      "description": "Get details about currently selected nodes.",
+      "file": "packages/core/src/tools/read/selection.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "selectNodes",
+      "name": "select_nodes",
+      "mutates": true,
+      "description": "Select one or more nodes by ID.",
+      "file": "packages/core/src/tools/read/selection.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "stockPhoto",
+      "name": "stock_photo",
+      "mutates": true,
+      "description": "Search stock photos and apply to nodes. Pass a JSON array — all fetched in parallel. Each item: {id, query, index?, orientation?}. Only works on leaf shapes (Rectangle/Ellipse).",
+      "file": "packages/core/src/tools/stock-photo.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "arrangeNodes",
+      "name": "arrange",
+      "mutates": true,
+      "description": "Arrange top-level nodes on the canvas in a grid, row, or column layout. Useful after batch creation to tidy up overlapping frames.",
+      "file": "packages/core/src/tools/structure/arrange.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "deleteNode",
+      "name": "delete_node",
+      "mutates": true,
+      "description": "Delete a node by ID.",
+      "file": "packages/core/src/tools/structure/basic.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "cloneNode",
+      "name": "clone_node",
+      "mutates": true,
+      "description": "Clone (duplicate) a node.",
+      "file": "packages/core/src/tools/structure/basic.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "renameNode",
+      "name": "rename_node",
+      "mutates": true,
+      "description": "Rename a node in the layers panel.",
+      "file": "packages/core/src/tools/structure/basic.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "nodeBounds",
+      "name": "node_bounds",
+      "mutates": false,
+      "description": "Get absolute bounding box of a node.",
+      "file": "packages/core/src/tools/structure/basic.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "nodeMove",
+      "name": "node_move",
+      "mutates": true,
+      "description": "Move a node to new coordinates.",
+      "file": "packages/core/src/tools/structure/basic.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "nodeResize",
+      "name": "node_resize",
+      "mutates": true,
+      "description": "Resize a node.",
+      "file": "packages/core/src/tools/structure/basic.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "batchUpdate",
+      "name": "batch_update",
+      "mutates": true,
+      "description": "Execute multiple modifications in one call. Each operation is {id, props} where props can include: spacing, padding, padding_horizontal, padding_vertical, counter_align, sizing_horizontal, sizing_vertical, grow, name, visible, corner_radius, auto_resize (for text), direction. Runs all updates with one layout recompute.",
+      "file": "packages/core/src/tools/structure/batch.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "reparentNode",
+      "name": "reparent_node",
+      "mutates": true,
+      "description": "Move a node into a different parent.",
+      "file": "packages/core/src/tools/structure/hierarchy.ts",
+      "channel": "CORE (sidebar+MCP)"
+    },
+    {
+      "constName": "groupNodes",
+      "name": "group_nodes",
+      "mutates": true,
+      "description": "Group selected nodes.",
+      "file": "packages/core/src/tools/structure/hierarchy.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "ungroupNode",
+      "name": "ungroup_node",
+      "mutates": true,
+      "description": "Ungroup a group node.",
+      "file": "packages/core/src/tools/structure/hierarchy.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "flattenNodes",
+      "name": "flatten_nodes",
+      "mutates": true,
+      "description": "Flatten nodes into a single vector.",
+      "file": "packages/core/src/tools/structure/hierarchy.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "nodeToComponent",
+      "name": "node_to_component",
+      "mutates": true,
+      "description": "Convert one or more frames/groups into components.",
+      "file": "packages/core/src/tools/structure/hierarchy.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "nodeReplaceWith",
+      "name": "node_replace_with",
+      "mutates": true,
+      "description": "Replace a node with JSX content.",
+      "file": "packages/core/src/tools/structure/replace.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "nodeAncestors",
+      "name": "node_ancestors",
+      "mutates": false,
+      "description": "Get the ancestor chain from a node to the page root.",
+      "file": "packages/core/src/tools/structure/tree.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "nodeChildren",
+      "name": "node_children",
+      "mutates": false,
+      "description": "Get direct children of a node.",
+      "file": "packages/core/src/tools/structure/tree.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "nodeTree",
+      "name": "node_tree",
+      "mutates": false,
+      "description": "Get a node tree with types and hierarchy.",
+      "file": "packages/core/src/tools/structure/tree.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "nodeBindings",
+      "name": "node_bindings",
+      "mutates": false,
+      "description": "Get variable bindings for a node.",
+      "file": "packages/core/src/tools/structure/tree.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "bindVariable",
+      "name": "bind_variable",
+      "mutates": true,
+      "description": "Bind a variable to a node property. For fills/strokes color bindings use indexed format like \"fills/0/color\".",
+      "file": "packages/core/src/tools/variables/bindings.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "listCollections",
+      "name": "list_collections",
+      "mutates": false,
+      "description": "List all variable collections.",
+      "file": "packages/core/src/tools/variables/collections.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "getCollection",
+      "name": "get_collection",
+      "mutates": false,
+      "description": "Get a variable collection by ID.",
+      "file": "packages/core/src/tools/variables/collections.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "createCollection",
+      "name": "create_collection",
+      "mutates": true,
+      "description": "Create a new variable collection.",
+      "file": "packages/core/src/tools/variables/collections.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "deleteCollection",
+      "name": "delete_collection",
+      "mutates": true,
+      "description": "Delete a variable collection and all its variables.",
+      "file": "packages/core/src/tools/variables/collections.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "listVariables",
+      "name": "list_variables",
+      "mutates": false,
+      "description": "List all design variables (colors, numbers, strings, booleans).",
+      "file": "packages/core/src/tools/variables/read.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "getVariable",
+      "name": "get_variable",
+      "mutates": false,
+      "description": "Get a variable by ID.",
+      "file": "packages/core/src/tools/variables/read.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "findVariables",
+      "name": "find_variables",
+      "mutates": false,
+      "description": "Find variables by name pattern.",
+      "file": "packages/core/src/tools/variables/read.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "unbindVariable",
+      "name": "unbind_variable",
+      "mutates": true,
+      "description": "Remove a variable binding from a node property.",
+      "file": "packages/core/src/tools/variables/unbind.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "createVariable",
+      "name": "create_variable",
+      "mutates": true,
+      "description": "Create a new variable in a collection.",
+      "file": "packages/core/src/tools/variables/values.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "setVariable",
+      "name": "set_variable",
+      "mutates": true,
+      "description": "Set the value of a variable for a specific mode.",
+      "file": "packages/core/src/tools/variables/values.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "deleteVariable",
+      "name": "delete_variable",
+      "mutates": true,
+      "description": "Delete a variable.",
+      "file": "packages/core/src/tools/variables/values.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "booleanUnion",
+      "name": "boolean_union",
+      "mutates": true,
+      "description": "Union (combine) multiple nodes.",
+      "file": "packages/core/src/tools/vector/boolean.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "booleanSubtract",
+      "name": "boolean_subtract",
+      "mutates": true,
+      "description": "Subtract the second node from the first.",
+      "file": "packages/core/src/tools/vector/boolean.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "booleanIntersect",
+      "name": "boolean_intersect",
+      "mutates": true,
+      "description": "Intersect multiple nodes.",
+      "file": "packages/core/src/tools/vector/boolean.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "booleanExclude",
+      "name": "boolean_exclude",
+      "mutates": true,
+      "description": "Exclude (XOR) multiple nodes.",
+      "file": "packages/core/src/tools/vector/boolean.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "exportSvg",
+      "name": "export_svg",
+      "mutates": false,
+      "description": "Export nodes as SVG markup. Returns the SVG string.",
+      "file": "packages/core/src/tools/vector/export.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "exportPdf",
+      "name": "export_pdf",
+      "mutates": false,
+      "description": "Export nodes as a vector PDF document. Text remains selectable, paths stay sharp at any zoom. Returns base64-encoded PDF data.",
+      "file": "packages/core/src/tools/vector/export.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "exportImage",
+      "name": "export_image",
+      "mutates": false,
+      "description": "Export nodes as a raster image (PNG, JPG, or WEBP). Returns base64-encoded image data. Use to visually verify designs.",
+      "file": "packages/core/src/tools/vector/export.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "pathGet",
+      "name": "path_get",
+      "mutates": false,
+      "description": "Get vector path data of a node.",
+      "file": "packages/core/src/tools/vector/path.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "pathSet",
+      "name": "path_set",
+      "mutates": true,
+      "description": "Set vector path data on a node. Provide a VectorNetwork JSON.",
+      "file": "packages/core/src/tools/vector/path.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "pathScale",
+      "name": "path_scale",
+      "mutates": true,
+      "description": "Scale vector path from center.",
+      "file": "packages/core/src/tools/vector/path.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "pathFlip",
+      "name": "path_flip",
+      "mutates": true,
+      "description": "Flip vector path horizontally or vertically.",
+      "file": "packages/core/src/tools/vector/path.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "pathMove",
+      "name": "path_move",
+      "mutates": true,
+      "description": "Move all path points by an offset.",
+      "file": "packages/core/src/tools/vector/path.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "viewportGet",
+      "name": "viewport_get",
+      "mutates": false,
+      "description": "Get current viewport position and zoom level.",
+      "file": "packages/core/src/tools/vector/viewport.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "viewportSet",
+      "name": "viewport_set",
+      "mutates": true,
+      "description": "Set viewport position and zoom.",
+      "file": "packages/core/src/tools/vector/viewport.ts",
+      "channel": "EXTENDED (MCP only)"
+    },
+    {
+      "constName": "viewportZoomToFit",
+      "name": "viewport_zoom_to_fit",
+      "mutates": true,
+      "description": "Zoom viewport to fit specified nodes.",
+      "file": "packages/core/src/tools/vector/viewport.ts",
+      "channel": "CORE (sidebar+MCP)"
+    }
+  ]
+}
