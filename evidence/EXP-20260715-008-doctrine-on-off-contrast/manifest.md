@@ -9,11 +9,13 @@ Pre-run manifest, created at registration per CONTRIBUTING ("Before an experimen
 Expected per run, in `run-<N>-<on|off>/`:
 
 - Full transcript (ON: sidebar chat log + Claude Code session file; OFF: terminal session transcript)
+- `advertised-tools.txt` — the MCP tool list captured before the brief (parity gate)
+- `permissions.log` — every permission prompt and its resolution, with timestamps
 - Exported `.pen` document at run end
 - `get_jsx` output of the root frame (text file)
 - Undo-history panel screenshot
 - Screen recording (may use Git LFS)
-- `versions.md` — OpenPencil app version, Claude Code version, model ID, OS, timestamps
+- `versions.md` — OpenPencil app version, Claude Code version, model ID, OS, MCP transport configuration (verbatim), ACP bootstrap details where visible, timestamps
 
 ## Environment
 
