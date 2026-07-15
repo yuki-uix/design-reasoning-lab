@@ -15,9 +15,9 @@ research_question: research/questions/RQ-004-explicit-representation.md
 Determine what OpenPencil inserts between the human and the model, by statically inventorying both of its agent channels and diffing them:
 
 - **Channel A (sidebar)**: the desktop app's built-in AI chat — OpenPencil authors the system prompt, the canvas serialization, and the tool registry.
-- **Channel B (MCP)**: an external harness (e.g. Claude Code) driving the canvas through the MCP server — OpenPencil contributes only the tool surface and its description strings.
+- **Channel B (MCP)**: the MCP server boundary that external harnesses (e.g. Claude Code) drive the canvas through — OpenPencil contributes only the tool surface and its description strings.
 
-The diff between the channels is a precise measurement of what the sidebar adds beyond the shared tool surface. The output places OpenPencil on a spectrum from "neutral pipe" to "product with design opinions" and identifies which layer any opinions live in.
+**Estimand.** The comparison is *sidebar pipeline vs the OpenPencil MCP boundary*, both read exclusively from OpenPencil's own source at the pinned commit. No external harness's code, prompts, or context handling is read, measured, or attributed to OpenPencil; what a harness like Claude Code adds on its side of the MCP boundary is a separate (behavioral) question, listed under next experiments. Within that definition, the channel diff measures exactly what the sidebar adds beyond the shared tool surface. The output places OpenPencil on a spectrum from "neutral pipe" to "product with design opinions" and identifies which layer any opinions live in.
 
 This is a static, source-only experiment under [tool-surface-analysis-v1](../../protocols/tool-surface-analysis-v1.md). No behavioral claims are made; every interpretive claim must register a behavioral cross-check candidate.
 
@@ -44,7 +44,15 @@ Secondary framing: the agent-facing analogue of [FND-004](../../findings/FND-004
 2. **Prompt layer (channel A only)**: system prompt text and any injected instructions, verbatim.
 3. **Context layer**: how canvas state reaches the model in each channel (serialization format, scope: full tree / selection / other).
 4. **Channel diff**: tools, prompts, or context present in one channel and absent in the other.
-5. **Altitude classification**: each tool classified as document structure / layout / style values / tokens & variables / content / meta (query, export, lint). Classification criteria fixed here, before extraction.
+5. **Altitude classification**: each tool assigned to exactly one primary category by its *operation target* — the document state it mutates or reads — not by its parameter list:
+   - **document structure**: creates, deletes, reparents, or reorders nodes (frames, groups, components, instances)
+   - **layout**: mutates position, size, constraints, or auto-layout properties of existing nodes
+   - **style values**: writes literal visual values (fills, strokes, effects, corner radius, typography properties) onto nodes
+   - **tokens & variables**: creates, edits, binds, or unbinds named reusable values (variables, styles, tokens); a tool belongs here only if it operates on the definition or the binding itself, even when the bound value is visual
+   - **content**: writes text content or image/media data
+   - **meta**: reads without mutating, or operates outside the document (query, selection, export, lint, viewport)
+
+   Tie-break rules, fixed before extraction: (1) a compound tool (e.g. create-and-style) is classified by its primary verb — the operation named first in its name/description — with secondary capabilities recorded in a `secondary` column of the inventory, never as a second row; (2) writing a literal visual value classifies as *style values* even where a variable could have been bound — *tokens & variables* requires touching the definition or binding; (3) read-only tools are always *meta*, regardless of what they read; (4) a tool that resists these rules goes into an explicit `unresolved` bucket with a stated rationale rather than being forced into a category.
 6. **Absence map**: decision categories from prior case studies (palette derivation, spacing systems, type scale, responsive behavior) with *no* corresponding tool — decisions that can only be resolved inside the model.
 
 ### Initial state
